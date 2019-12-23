@@ -1,0 +1,35 @@
+@import 'style_rest_modal.css';
+@import 'style_chars_sheet.css';
+
+body,
+button {
+  /*filter: invert(100%);*/
+  font-family: arial;
+  /*font-size: 10px;*/
+  background-color: #1e2225;
+  color: rgb(200, 200, 200);
+}
+
+#resource_input {
+  width: 40px;
+}
+
+select, button {
+  background-color: #202727;
+  border: none;
+  color: rgb(200, 200, 200);
+  cursor: pointer;
+}
+
+select:hover, button:hover {
+  color: white;
+}
+
+.chars_sheet {
+  background-color: #414e4f;
+}
+
+
+/*#18121e;*/
+/*#437998;*/
+/*#233237;*/
