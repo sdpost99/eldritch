@@ -1,17 +1,24 @@
-function char_builder(data) {
-
-    var _Sel = {
-      player: data.id,
-      option: data.value,
+class DataFactory {
+    constructor(args) {
+        this.value = args.value;
+        this.option = args.getAttribute('option');
+        this.player = args.getAttribute('player');
+        // var _Sel = {
+        //     player: data.id,
+        //     option: data.value,
+        // }
+        // att_builder(_Sel); //  attributes builder
+        // char_sheet(_Sel); //  char sheet builder
     }
-
-    att_builder(_Sel); //  attributes builder
-    char_sheet(_Sel); //  char sheet builder
 }
 
-function char_sheet(data) {
-    const player = data.player;
-    const option = data.option;
+
+function char_sheet() {
+
+    let data = DataFactory();
+
+    let player = data.player;
+    let option = data.option;
 
     var player_sheet = 'p' + player.slice(6);
     var player_att = rawData.playersData[option];
@@ -74,32 +81,48 @@ function char_sheet(data) {
 
 
 //crea diccionario de cada jugador con personaje seleccionado
-function att_builder(data) {
+function NewData_builder(args) {
 
-    const player = data.player;
-    const option = data.option;
+    var data = new DataFactory(args);
+    let player = data.player;
+    // let option = data.option;
+    let value = data.value;
 
-    newData[player].char = option;
-    var player_att = rawData.playersData[option];
+    newData[player] = {};
+    newData[player].char = value;
+    
+    var player_att = rawData.playersData[value];
+    
     newData[player].attributes = {};
-
     newData[player].attributes.health = player_att.health;
     newData[player].attributes.sanity = player_att.sanity;
-    newData[player].attributes.abilities = player_att.abilities;
+
+    newData[player].abilities = player_att.abilities;
     newData[player].current_location = player_att.original_location;
 
-    newData[player].attributes.skills = {};
-    newData[player].attributes.skills.lore = player_att.skills.lore;
-    newData[player].attributes.skills.inf = player_att.skills.inf;
-    newData[player].attributes.skills.obs = player_att.skills.obs;
-    newData[player].attributes.skills.str = player_att.skills.str;
-    newData[player].attributes.skills.will = player_att.skills.will;
+    newData[player].skills = {};
+    newData[player].skills.lore = player_att.skills.lore;
+    newData[player].skills.inf = player_att.skills.inf;
+    newData[player].skills.obs = player_att.skills.obs;
+    newData[player].skills.str = player_att.skills.str;
+    newData[player].skills.will = player_att.skills.will;
 
     newData[player].tokens = {};
-    newData[player].tokens.focus = 0;
-    newData[player].tokens.resource = 0;
-    newData[player].tokens.ship = 0;
-    newData[player].tokens.train = 0;
-    newData[player].tokens.clue = 0;
-    newData[player].tokens.eldritch = 0;
+    newData[player].tokens.focus = player_att.tokens.focus;
+    newData[player].tokens.resource = player_att.tokens.resource;
+    newData[player].tokens.ship = player_att.tokens.ship;
+    newData[player].tokens.train = player_att.tokens.train;
+    newData[player].tokens.clue = player_att.tokens.clue;
+    newData[player].tokens.eldritch = player_att.tokens.eldritch;
+
+    newData[player].cards = {};
+    newData[player].cards.artifacts = player_att.artifacts;
+    newData[player].cards.assets = player_att.assets;
+    newData[player].cards.conditions = player_att.conditions;
+    newData[player].cards.unique_assets = player_att.unique_assets;
+    newData[player].cards.spells = player_att.spells;
+    newData[player].cards.personal_story = player_att.personal_story;
+
+    console.log(newData);
+
 }

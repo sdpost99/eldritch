@@ -1,5 +1,5 @@
-@import 'style_rest_modal.css';
-@import 'style_chars_sheet.css';
+@import './style_rest_modal.css';
+@import './style_chars_sheet.css';
 
 body,
 button {
@@ -14,14 +14,16 @@ button {
   width: 40px;
 }
 
-select, button {
+select,
+button {
   background-color: #202727;
   border: none;
   color: rgb(200, 200, 200);
   cursor: pointer;
 }
 
-select:hover, button:hover {
+select:hover,
+button:hover {
   color: white;
 }
 

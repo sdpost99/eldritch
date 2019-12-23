@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -15,16 +15,15 @@
 
 
 <body onload="UI_builder(document.getElementById('n_players'))">
-  <script src="./script_drop_sel.js"></script>
-  <script src="./script_UI_builder.js"></script>
-  <script src="./script_data_chars.js"></script>
-  <script src="./script_data_locations.js"></script>
-  <script src="./script_Skills_modificator.js"></script>
-  <script src="./script_Tokens_modificator.js"></script>
-  <script src="./script_Tokens_modificator.js"></script>
-  <script src="./script_health_sanity.js"></script>
-  <script src="./script_char_builder.js"></script>
-  <script src="./script_rest_drag.js"></script>
+  <script src="./scripts/script_drop_sel.js"></script>
+  <script src="./scripts/script_UI_builder.js"></script>
+  <script src="./scripts/data/script_data_chars.js"></script>
+  <script src="./scripts/data/script_data_locations.js"></script>
+  <script src="./scripts/script_Skills_modificator.js"></script>
+  <script src="./scripts/script_Tokens_modificator.js"></script>
+  <script src="./scripts/script_health_sanity.js"></script>
+  <script src="./scripts/script_char_builder.js"></script>
+  <script src="./scripts/script_rest_drag.js"></script>
   <div>
     <select id="n_players" onchange="UI_builder(this)">
       <!-- <option value="0">Players</option> -->
@@ -114,16 +113,9 @@
 
   <script>
     var rawData = players_RAW();
-    var newData = players_RAW();
+    var newData = {};
     var rawData_Locations = Locations_RAW();
     var gameProp = game_properties();
-
-    // var drag_move = document.getElementById("modal-drag-move");
-
-    // var drag-move = dragElement(document.getElementById("modal-drag-move"));
-    // function start_drag_move(){
-    //   dragElement();
-    // }
 
     dragElement(document.getElementById("modal-drag-move"));
     dragElement(document.getElementById("modal-drag-rest"));

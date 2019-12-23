@@ -1,35 +1,14 @@
-// import * as myModule from 'data.js';
-
-// import {players_RAW} from 'data';
-// import * as name from 'players_RAW';
-
-// import {dropdown_selection} from './script_drop_sel.js';
-
 
 function UI_builder(players) {
 
-
-
-  //  var nd_tbl = document.getElementById("main_table");
   var action_list = ['', 'move', 'rest', 'focus', 'trade', 'resource', 'action', 'acquire', 'delayed', 'train', 'ship'];
   var skills_list = ['lore', 'inf', 'obs', 'str', 'will'];
   var tokens_list = rawData.tokens;
 
-  //  var rows = nd_tbl.rows.length;
-  //  for (i = 1; i < rows; i++) {
-  //    nd_tbl.deleteRow(1);
-  //  }
-
   for (var row = 0; row < players.value; row++) {
-    // console.log(players.value);
-    //    var nd_tr = document.createElement("tr");
-    //    nd_tbl.appendChild(nd_tr);
-
     char_sheet_builder()
-
-    //characters dropdown builder
     var xx = document.getElementById('char_name' + row);
-    xx.appendChild(Chars_builder());
+    xx.appendChild(Char_dropDwn_builder());
   }
 
 
@@ -62,21 +41,15 @@ function UI_builder(players) {
   }
 
 
-  function Chars_builder() {
-
-
+  function Char_dropDwn_builder() {
     var char_list = Object.keys(rawData.playersData);
-    // console.log(char_list);
-
-
     var nd_div = document.createElement('div');
     nd_div.setAttribute('class', 'char_drop_div');
 
     var nd_sel = document.createElement('select');
-    nd_sel.setAttribute('id', 'player' + (row + 1));
-    nd_sel.setAttribute('class', 'char_drop');
-    nd_sel.setAttribute('onchange', 'char_builder(this)'); //for debugging
-    // nd_sel.setAttribute('onfocus', 'dropdown_selection(this)'); //for debugging
+    nd_sel.setAttribute('onchange', 'NewData_builder(this)');
+    nd_sel.setAttribute('player', 'player' + (row + 1));
+    nd_sel.setAttribute('option', 'character');
 
     for (var i = 0; i < (char_list.length) + 1; i++) {
       var nd_ele = document.createElement('option');
@@ -84,16 +57,14 @@ function UI_builder(players) {
       nd_ele.setAttribute('class', 'char_drop_element');
 
       if (i === 0) {
-        var nd_ele_tx = document.createTextNode('Select Character');
+        nd_ele.innerHTML = ('Select Character');
         nd_ele.setAttribute('value', 'start');
       } else {
-        var nd_ele_tx = document.createTextNode(char_list[i - 1]);
+        nd_ele.innerHTML = (char_list[i - 1]);
         nd_ele.setAttribute('value', char_list[i - 1]);
       }
 
-      nd_ele.appendChild(nd_ele_tx);
       nd_sel.appendChild(nd_ele);
-      // nd_sel.selectedIndex = 1; // opcion temporal solo para debugging
     }
 
     nd_div.appendChild(nd_sel);
@@ -312,14 +283,6 @@ function UI_builder(players) {
       tokens_header_td.innerHTML = item;
       tokens_tr1.appendChild(tokens_header_td);
 
-      //tokens number
-      // var tokens_number_td = document.createElement('td');
-      // tokens_number_td.setAttribute('id', item);
-      // tokens_number_td.innerHTML = 0;
-
-
-
-
       var tokens_number_td = document.createElement('td');
 
       var tokens_minus_btn = document.createElement('button');
@@ -346,13 +309,7 @@ function UI_builder(players) {
       tokens_number_td.appendChild(tokens_plus_btn);
 
       tokens_tr2.appendChild(tokens_number_td);
-
-
-
-
-
     }
-
 
     //locations
     var location_div = document.createElement('div');
@@ -375,9 +332,5 @@ function UI_builder(players) {
       action_tr.appendChild(action_td);
     }
     char_sheet_div.appendChild(action_div);
-
-
-
   }
-
 }
