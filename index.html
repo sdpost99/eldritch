@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
+
+
+  <title>Eldritch Horror</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+
+<body onload="UI_builder(document.getElementById('n_players'))">
+  <script src="./script_drop_sel.js"></script>
+  <script src="./script_UI_builder.js"></script>
+  <script src="./script_data_chars.js"></script>
+  <script src="./script_data_locations.js"></script>
+  <script src="./script_Skills_modificator.js"></script>
+  <script src="./script_Tokens_modificator.js"></script>
+  <script src="./script_Tokens_modificator.js"></script>
+  <script src="./script_health_sanity.js"></script>
+  <script src="./script_char_builder.js"></script>
+  <script src="./script_rest_drag.js"></script>
+  <div>
+    <select id="n_players" onchange="UI_builder(this)">
+      <!-- <option value="0">Players</option> -->
+      <option value="1">1 Player</option>
+      <option value="2">2 Players</option>
+      <!-- <option value="3">3 Players</option>
+      <option value="4">4 Players</option>
+      <option value="5">5 Players</option>
+      <option value="6">6 Players</option>
+      <option value="7">7 Players</option>
+      <option value="8">8 Players</option> -->
+    </select>
+
+    <button type="button" onclick="Logger()">newData</button>
+    <button type="button" onclick="Logger2()">rawData</button>
+  </div>
+  <table>
+    <tr>
+      <td class="sheets" id="p1"></td>
+      <td class="sheets" id="p2"></td>
+      <td class="sheets" id="p3"></td>
+      <td class="sheets" id="p4"></td>
+      <td class="sheets" id="p5"></td>
+      <td class="sheets" id="p6"></td>
+      <td class="sheets" id="p7"></td>
+      <td class="sheets" id="p8"></td>
+    </tr>
+  </table>
+
+  <div class="modal-blocker">
+
+    <div class="modal-container" id="modal-rest">
+      <div class="modal-header" id="modal-drag-rest">
+        Character Rest Options
+      </div>
+      <div class="modal-content">
+        <div class="modal-title">
+          <p>Available resources:<span id="av_res"></span></p>
+        </div>
+        <div class="row">
+          <div class="column" name='rest'>
+            <div class="sub-title">Select amount of resources:</div>
+            <div id="rest_radio"></div>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button id="rest_health_btn">Restore Health</button>
+          <button id="rest_sanity_btn">Restore Sanity</button>
+          <button id="rest_cancel_btn">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-container" id="modal-move">
+      <div class="modal-header" id="modal-drag-move">
+        Character Movement Options
+      </div>
+      <div class="modal-content">
+        <div class="modal-title">
+          <p>Current Location: <span id="cl"></span></p>
+        </div>
+        <div class="row">
+          <div class="column" name='move'>
+            <div class="sub-title">Available movements:</div>
+            <div id="move-normal-radio"></div>
+          </div>
+          <div class="column" name='move'>
+            <div class="sub-title">Extra ship movements:</div>
+            <div id="move-ship-radio"></div>
+          </div>
+          <div class="column" name='move'>
+            <div class="sub-title">Extra train movements:</div>
+            <div id="move-train-radio"></div>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button id="move-accept-btn">Move</button>
+          <button id="move-cancel-btn">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var rawData = players_RAW();
+    var newData = players_RAW();
+    var rawData_Locations = Locations_RAW();
+    var gameProp = game_properties();
+
+    // var drag_move = document.getElementById("modal-drag-move");
+
+    // var drag-move = dragElement(document.getElementById("modal-drag-move"));
+    // function start_drag_move(){
+    //   dragElement();
+    // }
+
+    dragElement(document.getElementById("modal-drag-move"));
+    dragElement(document.getElementById("modal-drag-rest"));
+
+    function Logger() {
+      console.log(newData);
+    }
+
+    function Logger2() {
+      console.log(rawData);
+    }
+  </script>
+</body>
+
+</html>
