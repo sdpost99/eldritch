@@ -1,21 +1,6 @@
-class DataFactory {
-    constructor(args) {
-        this.value = args.value;
-        this.option = args.getAttribute('option');
-        this.player = args.getAttribute('player');
-        // var _Sel = {
-        //     player: data.id,
-        //     option: data.value,
-        // }
-        // att_builder(_Sel); //  attributes builder
-        // char_sheet(_Sel); //  char sheet builder
-    }
-}
-
-
 function char_sheet() {
 
-    let data = DataFactory();
+    // let data = DataFactory();
 
     let player = data.player;
     let option = data.option;
@@ -81,11 +66,10 @@ function char_sheet() {
 
 
 //crea diccionario de cada jugador con personaje seleccionado
-function NewData_builder(args) {
+function NewData_Factory(args) {
 
-    var data = new DataFactory(args);
+    var data = new args_Factory(args);
     let player = data.player;
-    // let option = data.option;
     let value = data.value;
 
     newData[player] = {};
@@ -95,17 +79,29 @@ function NewData_builder(args) {
     
     newData[player].attributes = {};
     newData[player].attributes.health = player_att.health;
+    Printer(player, 'health', player_att.health);
     newData[player].attributes.sanity = player_att.sanity;
-
+    Printer(player, 'sanity', player_att.sanity);
+    
     newData[player].abilities = player_att.abilities;
-    newData[player].current_location = player_att.original_location;
+    Printer(player, 'ability_01', player_att.abilities[0]);
+    Printer(player, 'ability_02', player_att.abilities[1]);
 
+    newData[player].current_location = player_att.original_location;
+    let locationName = rawData_Locations[player_att.original_location].name;
+    Printer(player, 'location', locationName);
+    
     newData[player].skills = {};
     newData[player].skills.lore = player_att.skills.lore;
     newData[player].skills.inf = player_att.skills.inf;
     newData[player].skills.obs = player_att.skills.obs;
     newData[player].skills.str = player_att.skills.str;
     newData[player].skills.will = player_att.skills.will;
+    Printer(player, 'lore-number', player_att.skills.lore);
+    Printer(player, 'inf-number', player_att.skills.inf);
+    Printer(player, 'obs-number', player_att.skills.obs);
+    Printer(player, 'str-number', player_att.skills.str);
+    Printer(player, 'will-number', player_att.skills.will);
 
     newData[player].tokens = {};
     newData[player].tokens.focus = player_att.tokens.focus;

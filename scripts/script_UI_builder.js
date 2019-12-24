@@ -47,7 +47,7 @@ function UI_builder(players) {
     nd_div.setAttribute('class', 'char_drop_div');
 
     var nd_sel = document.createElement('select');
-    nd_sel.setAttribute('onchange', 'NewData_builder(this)');
+    nd_sel.setAttribute('onchange', 'Selector(this)');
     nd_sel.setAttribute('player', 'player' + (row + 1));
     nd_sel.setAttribute('option', 'character');
 
@@ -97,24 +97,26 @@ function UI_builder(players) {
 
     //abilities builder
     var abilities_div = document.createElement('div');
-    abilities_div.setAttribute('id', 'abilities');
+    abilities_div.setAttribute('class', 'abilities');
     var abilities_ul = document.createElement('ul');
-    var abilities_il1 = document.createElement('li');
-    var abilities_il2 = document.createElement('li');
-    abilities_ul.appendChild(abilities_il1);
-    abilities_ul.appendChild(abilities_il2);
+    var ability_01 = document.createElement('li');
+    ability_01.setAttribute('id', 'ability_01')
+    var ability_02 = document.createElement('li');
+    ability_02.setAttribute('id', 'ability_02')
+    abilities_ul.appendChild(ability_01);
+    abilities_ul.appendChild(ability_02);
     abilities_div.appendChild(abilities_ul);
     char_sheet_div.appendChild(abilities_div);
 
     //attributes builder
     var att_div = document.createElement('div');
-    att_div.setAttribute('id', 'attributes');
+    att_div.setAttribute('class', 'attributes');
     var att_table = document.createElement('table');
     att_div.appendChild(att_table);
     var att_tr = document.createElement('tr');
-    att_tr.setAttribute('id', 'attributes-header');
+    att_tr.setAttribute('class', 'attributes-header');
     var att_tr2 = document.createElement('tr');
-    att_tr2.setAttribute('id', 'attributes-numbers');
+    att_tr2.setAttribute('class', 'attributes-numbers');
     att_table.appendChild(att_tr);
     att_table.appendChild(att_tr2);
 
@@ -143,8 +145,9 @@ function UI_builder(players) {
     //health
     var att_health_td = document.createElement('td');
     att_health_td.setAttribute('id', 'health-td');
+
     var att_health_plus = document.createElement('button');
-    att_health_plus.setAttribute('id', 'player' + (row + 1));
+    // att_health_plus.setAttribute('id', 'player' + (row + 1));
     att_health_plus.setAttribute('class', 'health_drop');
     att_health_plus.setAttribute('value', '+');
     att_health_plus.setAttribute('onclick', 'dropdown_selection(this)');
@@ -152,7 +155,7 @@ function UI_builder(players) {
 
     //health plus
     var att_health_minus = document.createElement('button');
-    att_health_minus.setAttribute('id', 'player' + (row + 1));
+    // att_health_minus.setAttribute('id', 'player' + (row + 1));
     att_health_minus.setAttribute('class', 'health_drop');
     att_health_minus.setAttribute('value', '-');
     att_health_minus.setAttribute('onclick', 'dropdown_selection(this)');
@@ -162,6 +165,7 @@ function UI_builder(players) {
     var att_health_number = document.createElement('span');
     att_health_number.setAttribute('id', 'health');
     att_health_number.innerHTML = 0;
+
     att_health_td.appendChild(att_health_minus);
     att_health_td.appendChild(att_health_number);
     att_health_td.appendChild(att_health_plus);
@@ -204,14 +208,14 @@ function UI_builder(players) {
 
     //skills
     var skills_div = document.createElement('div');
-    skills_div.setAttribute('id', 'skills');
+    skills_div.setAttribute('class', 'skills');
     var skills_table = document.createElement('table');
     skills_div.appendChild(skills_table);
     var skills_tr1 = document.createElement('tr');
-    skills_tr1.setAttribute('id', 'skills-header');
+    skills_tr1.setAttribute('class', 'skills-header');
     var skills_tr2 = document.createElement('tr');
     var skills_tr3 = document.createElement('tr');
-    skills_tr3.setAttribute('id', 'skills-number');
+    skills_tr3.setAttribute('class', 'skills-number');
     skills_table.appendChild(skills_tr1);
     skills_table.appendChild(skills_tr2);
     skills_table.appendChild(skills_tr3);
@@ -235,20 +239,19 @@ function UI_builder(players) {
       var skills_td = document.createElement('td');
       var skills_minus_btn = document.createElement('button');
       skills_minus_btn.innerHTML = '-';
-      skills_minus_btn.setAttribute('class', 'skills_drop');
-      skills_minus_btn.setAttribute('id', 'player' + (row + 1));
+      // skills_minus_btn.setAttribute('id', 'player' + (row + 1));
       skills_minus_btn.setAttribute('value', '-' + item);
       skills_minus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
       var skills_number = document.createElement('span');
       skills_number.innerHTML = 0;
-      skills_number.setAttribute('class', 'skills-number');
-      skills_number.setAttribute('id', item + '_number');
+      // skills_number.setAttribute('class', 'skills-number');
+      skills_number.setAttribute('id', item + '-number');
 
       var skills_plus_btn = document.createElement('button');
       skills_plus_btn.innerHTML = '+';
-      skills_plus_btn.setAttribute('class', 'skills_drop');
-      skills_plus_btn.setAttribute('id', 'player' + (row + 1));
+      // skills_plus_btn.setAttribute('class', 'skills-drop');
+      // skills_plus_btn.setAttribute('id', 'player' + (row + 1));
       skills_plus_btn.setAttribute('value', '+' + item);
       skills_plus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
@@ -262,14 +265,14 @@ function UI_builder(players) {
 
     //tokens builder
     var tokens_div = document.createElement('div');
-    tokens_div.setAttribute('id', 'tokens');
+    tokens_div.setAttribute('class', 'tokens');
     char_sheet_div.appendChild(tokens_div);
     var tokens_table = document.createElement('table');
     tokens_div.appendChild(tokens_table);
     var tokens_tr1 = document.createElement('tr');
-    tokens_tr1.setAttribute('id', 'tokens-header');
+    tokens_tr1.setAttribute('class', 'tokens-header');
     var tokens_tr2 = document.createElement('tr');
-    tokens_tr2.setAttribute('id', 'tokens-number');
+    tokens_tr2.setAttribute('class', 'tokens-number');
     tokens_table.appendChild(tokens_tr1);
     tokens_table.appendChild(tokens_tr2);
 
@@ -287,7 +290,7 @@ function UI_builder(players) {
 
       var tokens_minus_btn = document.createElement('button');
       tokens_minus_btn.innerHTML = '-';
-      tokens_minus_btn.setAttribute('class', 'tokens_drop');
+      // tokens_minus_btn.setAttribute('class', 'tokens_drop');
       tokens_minus_btn.setAttribute('id', 'player' + (row + 1));
       tokens_minus_btn.setAttribute('value', '-' + item);
       tokens_minus_btn.setAttribute('onclick', 'dropdown_selection(this)');
