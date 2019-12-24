@@ -54,7 +54,7 @@ function UI_builder(players) {
     for (var i = 0; i < (char_list.length) + 1; i++) {
       var nd_ele = document.createElement('option');
       nd_ele.setAttribute('value', String(i));
-      nd_ele.setAttribute('class', 'char_drop_element');
+      // nd_ele.setAttribute('class', 'char_drop_element');
 
       if (i === 0) {
         nd_ele.innerHTML = ('Select Character');
@@ -144,27 +144,30 @@ function UI_builder(players) {
 
     //health
     var att_health_td = document.createElement('td');
-    att_health_td.setAttribute('id', 'health-td');
+    att_health_td.setAttribute('id', 'health-bg');
 
-    var att_health_plus = document.createElement('button');
-    // att_health_plus.setAttribute('id', 'player' + (row + 1));
-    att_health_plus.setAttribute('class', 'health_drop');
-    att_health_plus.setAttribute('value', '+');
-    att_health_plus.setAttribute('onclick', 'dropdown_selection(this)');
-    att_health_plus.innerHTML = '+'
-
-    //health plus
-    var att_health_minus = document.createElement('button');
-    // att_health_minus.setAttribute('id', 'player' + (row + 1));
-    att_health_minus.setAttribute('class', 'health_drop');
-    att_health_minus.setAttribute('value', '-');
-    att_health_minus.setAttribute('onclick', 'dropdown_selection(this)');
-    att_health_minus.innerHTML = '-'
-
-    //health minus
+    //health number
     var att_health_number = document.createElement('span');
     att_health_number.setAttribute('id', 'health');
     att_health_number.innerHTML = 0;
+
+    //health increase
+    var att_health_plus = document.createElement('button');
+    // att_health_plus.setAttribute('value', '+');
+    att_health_plus.setAttribute('option', 'health');
+    att_health_plus.setAttribute('player', 'player' + (row + 1));
+    att_health_plus.setAttribute('action', 'increase');
+    att_health_plus.setAttribute('onclick', 'Selector(this)');
+    att_health_plus.innerHTML = '+'
+
+    //health reduce
+    var att_health_minus = document.createElement('button');
+    // att_health_minus.setAttribute('value', '-');
+    att_health_minus.setAttribute('option', 'health');
+    att_health_minus.setAttribute('player', 'player' + (row + 1));
+    att_health_minus.setAttribute('action', 'reduce');
+    att_health_minus.setAttribute('onclick', 'Selector(this)');
+    att_health_minus.innerHTML = '-'
 
     att_health_td.appendChild(att_health_minus);
     att_health_td.appendChild(att_health_number);
@@ -173,31 +176,43 @@ function UI_builder(players) {
     att_tr2.appendChild(att_health_td);
 
     //empty space
-    var empty = document.createElement('td');
-    empty.setAttribute('id', 'empty');
-    att_tr2.appendChild(empty);
+    var rest = document.createElement('td');
+    let rest_btn = document.createElement('button');
+    rest_btn.setAttribute('id', 'rest');
+    // rest_btn.setAttribute('value', 'rest');
+    rest_btn.setAttribute('option', 'rest');
+    rest_btn.setAttribute('player', 'player' + (row + 1));
+    rest_btn.setAttribute('action', 'increase');
+    rest_btn.setAttribute('onclick', 'Selector(this)');
+    rest_btn.innerHTML = 'REST';
+    rest.appendChild(rest_btn);
+    att_tr2.appendChild(rest);
 
     //sanity
     var att_sanity_td = document.createElement('td');
-    att_sanity_td.setAttribute('id', 'sanity-td');
-
-    var att_sanity_plus = document.createElement('button');
-    att_sanity_plus.setAttribute('id', 'player' + (row + 1));
-    att_sanity_plus.setAttribute('class', 'sanity_drop');
-    att_sanity_plus.setAttribute('value', '+');
-    att_sanity_plus.setAttribute('onclick', 'dropdown_selection(this)');
-    att_sanity_plus.innerHTML = '+'
-
-    var att_sanity_minus = document.createElement('button');
-    att_sanity_minus.setAttribute('id', 'player' + (row + 1));
-    att_sanity_minus.setAttribute('class', 'sanity_drop');
-    att_sanity_minus.setAttribute('value', '-');
-    att_sanity_minus.setAttribute('onclick', 'dropdown_selection(this)');
-    att_sanity_minus.innerHTML = '-'
+    att_sanity_td.setAttribute('id', 'sanity-bg');
 
     var att_sanity_number = document.createElement('span');
     att_sanity_number.setAttribute('id', 'sanity');
     att_sanity_number.innerHTML = 0;
+
+    //sanity increase
+    var att_sanity_plus = document.createElement('button');
+    // att_sanity_plus.setAttribute('value', 'increase+');
+    att_sanity_plus.setAttribute('option', 'sanity');
+    att_sanity_plus.setAttribute('player', 'player' + (row + 1));
+    att_sanity_plus.setAttribute('action', 'increase');
+    att_sanity_plus.setAttribute('onclick', 'Selector(this)');
+    att_sanity_plus.innerHTML = '+'
+
+    //sanity reduce
+    var att_sanity_minus = document.createElement('button');
+    // att_sanity_minus.setAttribute('value', 'reduce');
+    att_sanity_minus.setAttribute('option', 'sanity');
+    att_sanity_minus.setAttribute('player', 'player' + (row + 1));
+    att_sanity_minus.setAttribute('action', 'reduce');
+    att_sanity_minus.setAttribute('onclick', 'Selector(this)');
+    att_sanity_minus.innerHTML = '-'
 
     att_sanity_td.appendChild(att_sanity_minus);
     att_sanity_td.appendChild(att_sanity_number);
@@ -239,19 +254,15 @@ function UI_builder(players) {
       var skills_td = document.createElement('td');
       var skills_minus_btn = document.createElement('button');
       skills_minus_btn.innerHTML = '-';
-      // skills_minus_btn.setAttribute('id', 'player' + (row + 1));
       skills_minus_btn.setAttribute('value', '-' + item);
       skills_minus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
       var skills_number = document.createElement('span');
       skills_number.innerHTML = 0;
-      // skills_number.setAttribute('class', 'skills-number');
       skills_number.setAttribute('id', item + '-number');
 
       var skills_plus_btn = document.createElement('button');
       skills_plus_btn.innerHTML = '+';
-      // skills_plus_btn.setAttribute('class', 'skills-drop');
-      // skills_plus_btn.setAttribute('id', 'player' + (row + 1));
       skills_plus_btn.setAttribute('value', '+' + item);
       skills_plus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
@@ -290,20 +301,15 @@ function UI_builder(players) {
 
       var tokens_minus_btn = document.createElement('button');
       tokens_minus_btn.innerHTML = '-';
-      // tokens_minus_btn.setAttribute('class', 'tokens_drop');
-      // tokens_minus_btn.setAttribute('id', 'player' + (row + 1));
       tokens_minus_btn.setAttribute('value', '-' + item);
       tokens_minus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
       var tokens_number = document.createElement('span');
       tokens_number.innerHTML = 0;
-      // tokens_number.setAttribute('class', 'tokens-number');
       tokens_number.setAttribute('id', item + '-number');
 
       var tokens_plus_btn = document.createElement('button');
       tokens_plus_btn.innerHTML = '+';
-      // tokens_plus_btn.setAttribute('class', 'tokens_drop');
-      // tokens_plus_btn.setAttribute('id', 'player' + (row + 1));
       tokens_plus_btn.setAttribute('value', '+' + item);
       tokens_plus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 

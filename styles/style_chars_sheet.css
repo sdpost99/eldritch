@@ -1,5 +1,5 @@
 .chars_sheet {
-  border: 1px solid;
+  border: 1px solid black;
   width: 400px;
   cursor: default;
 }
@@ -11,7 +11,7 @@
 }
 .chars_sheet select {
   border: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid black;
   font-size: 24px;
   padding: 5px 10px;
   width: 100%;
@@ -28,8 +28,8 @@
 .abilities {
   background-color: #606b6c;
   margin: 8px 8px 10px 8px;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   height: 180px
 }
 .abilities li {
@@ -53,21 +53,68 @@ ul {
   width: 100%;
   border-collapse: collapse;
   margin: 10px 0;
+/*   color: red; */
+}
+
+.attributes table{
+/*   color: blue; */
+/*   border-spacing: 10px; */
+/*   padding: 20px; */
+/*   margin: 10px; */
+/*   border-collapse: separate; */
+/*   border-spacing: 10px 0px; */
 }
 .attributes-header {
-  font-size: 12px;
+  font-size: 10px;
 }
 .attributes-numbers {
   font-size: 38px;
-  border: 1px solid;
+/*   border-spacing: 10px; */
+/*   border-radius: 40px; */
+  
+/*   border: 1px solid; */
 /*   color: red; */
 }
-#health-td {
+
+
+.attributes-numbers td{
+/*   border-spacing: 10px; */
+/*   color: red; */
+/*   border-radius: 10px; */
+/*   border-bottom-right-radius: 20px; */
+/*   border-bottom-left-radius: 30px; */
+/*   box-shadow: 2px 2px 5px rgba(0,0,0,0.5); */
+/*   border: 1px solid black; */
+/*   padding: 10px; */
+/*   margin: 10px; */
+  
+}
+
+
+#rest {
+/*   visibi5lity: hidden; */
+/*   width: 100%; */
+/*   height: 50px; */
+  font-size: 12px;
+  padding: 10px;
+/*   box-shadow: none; */
+  background-color: rgb(35,35,40);
+/*   color: white; */
+/*   border-radius: 0px; */
+/*   border-radius: 0px; */
+/*   border: 1px solid black */
+}
+
+#health-bg{
   background-color: #481818;
+  width: 40%;
 }
-#sanity-td {
-  background-color: #182f48
+
+#sanity-bg {
+  background-color: #182f48;
+  width: 40%;
 }
+
 .skills button,
 .attributes button,
 .tokens button {
@@ -86,15 +133,7 @@ ul {
   cursor: pointer;
   color: white;
 }
-.sanity_drop,
-.health_drop {
-  font-size: 16px;
-  color: red;
-}
-#empty {
-  visibility: hidden;
-  width: 10px;
-}
+
 .skills-header td,
 .tokens-header {
   font-size: 10px;
@@ -155,14 +194,7 @@ ul {
   outline: none;
   padding: 5px 0;
 }
-#actions_dropdown option {
-  /*  font-size: 10px;*/
-}
-#actions_dropdown {
-  /*  box-sizing: border-box;*/
-  /*  padding: 0;*/
-  /*  margin: 0;*/
-}
+
 #actions_dropdown td {
   padding: 0 4px;
 }
