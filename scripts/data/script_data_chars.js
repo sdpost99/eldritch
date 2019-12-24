@@ -35,12 +35,12 @@ function players_RAW() {
         'inf': 2
       },
       'tokens': {
-        'focus': 0,
-        'resource': 0,
+        'focus': 2,
+        'resource': 1,
         'ship': 0,
-        'train': 0,
-        'clue': 0,
-        'eldritch': 0
+        'train': 1,
+        'clue': 5,
+        'eldritch': 6
       },
       'original_location': 'RM',
       'abilities': ['Action: If you have fewer than 2 Task Assets, gain 1 Task Unique Asset.', 'If you have not lost Sanity during a Combat Encounter, roll 2 additional dice when resolving the Strength test during that encounter.']
@@ -57,10 +57,10 @@ function players_RAW() {
       },
       'tokens': {
         'focus': 0,
-        'resource': 0,
-        'ship': 0,
+        'resource': 2,
+        'ship': 1,
         'train': 0,
-        'clue': 0,
+        'clue': 7,
         'eldritch': 0
       },
       'artifacts': [],

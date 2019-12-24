@@ -291,19 +291,19 @@ function UI_builder(players) {
       var tokens_minus_btn = document.createElement('button');
       tokens_minus_btn.innerHTML = '-';
       // tokens_minus_btn.setAttribute('class', 'tokens_drop');
-      tokens_minus_btn.setAttribute('id', 'player' + (row + 1));
+      // tokens_minus_btn.setAttribute('id', 'player' + (row + 1));
       tokens_minus_btn.setAttribute('value', '-' + item);
       tokens_minus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 
       var tokens_number = document.createElement('span');
       tokens_number.innerHTML = 0;
-      tokens_number.setAttribute('class', 'tokens-number');
-      tokens_number.setAttribute('id', item + '_number');
+      // tokens_number.setAttribute('class', 'tokens-number');
+      tokens_number.setAttribute('id', item + '-number');
 
       var tokens_plus_btn = document.createElement('button');
       tokens_plus_btn.innerHTML = '+';
-      tokens_plus_btn.setAttribute('class', 'tokens_drop');
-      tokens_plus_btn.setAttribute('id', 'player' + (row + 1));
+      // tokens_plus_btn.setAttribute('class', 'tokens_drop');
+      // tokens_plus_btn.setAttribute('id', 'player' + (row + 1));
       tokens_plus_btn.setAttribute('value', '+' + item);
       tokens_plus_btn.setAttribute('onclick', 'dropdown_selection(this)');
 

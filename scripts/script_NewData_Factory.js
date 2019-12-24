@@ -102,7 +102,7 @@ function NewData_Factory(args) {
     Printer(player, 'obs-number', player_att.skills.obs);
     Printer(player, 'str-number', player_att.skills.str);
     Printer(player, 'will-number', player_att.skills.will);
-
+    
     newData[player].tokens = {};
     newData[player].tokens.focus = player_att.tokens.focus;
     newData[player].tokens.resource = player_att.tokens.resource;
@@ -110,6 +110,12 @@ function NewData_Factory(args) {
     newData[player].tokens.train = player_att.tokens.train;
     newData[player].tokens.clue = player_att.tokens.clue;
     newData[player].tokens.eldritch = player_att.tokens.eldritch;
+    Printer(player, 'focus-number', player_att.tokens.focus);
+    Printer(player, 'resource-number', player_att.tokens.resource);
+    Printer(player, 'ship-number', player_att.tokens.ship);
+    Printer(player, 'train-number', player_att.tokens.train);
+    Printer(player, 'clue-number', player_att.tokens.clue);
+    Printer(player, 'eldritch-number', player_att.tokens.eldritch);
 
     newData[player].cards = {};
     newData[player].cards.artifacts = player_att.artifacts;

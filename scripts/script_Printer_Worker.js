@@ -7,6 +7,8 @@ function Printer(player, option, value) {
     var sheet = document.getElementById(player_sheet);
 
     let sel_opt_object = sheet.querySelector('#' + option);
-    sel_opt_object.innerHTML = value;
+    let sel_opt_getValue = newData[player].attributes[option];
+    sel_opt_object.innerHTML = sel_opt_getValue;
 
 }
+
