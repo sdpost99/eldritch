@@ -95,6 +95,8 @@ function UI_builder(players) {
     char_sheet_div.appendChild(char_name_div);
 
 
+    
+
     //abilities builder
     var abilities_div = document.createElement('div');
     abilities_div.setAttribute('class', 'abilities');
@@ -107,6 +109,67 @@ function UI_builder(players) {
     abilities_ul.appendChild(ability_02);
     abilities_div.appendChild(abilities_ul);
     char_sheet_div.appendChild(abilities_div);
+
+
+    //new attributes test
+    let attributes_main_div = document.createElement('div');
+    attributes_main_div.setAttribute('class', 'new-attributes-container')
+    char_sheet_div.appendChild(attributes_main_div);
+
+    // health
+    let attributes_health_div = document.createElement('div');
+    attributes_health_div.setAttribute('class', 'new-attributes-HnS');
+
+    // health max
+    let attributes_health_max_div = document.createElement('div');
+    attributes_health_max_div.setAttribute('class','new-attributes-max-header');
+    attributes_health_max_div.innerHTML = 'max health: ';
+    let attributes_health_max_nummber = document.createElement('div');
+    attributes_health_max_nummber.innerHTML = 'number'
+
+    // health number
+    let attributes_health_number_div = document.createElement('div');
+    attributes_health_number_div.setAttribute('class','new-attributes-number');
+    attributes_health_number_div.innerHTML = 'health number';
+
+    attributes_health_max_div.appendChild(attributes_health_max_nummber);
+    attributes_health_div.appendChild(attributes_health_max_div);
+    attributes_health_div.appendChild(attributes_health_number_div);
+
+    // rest
+    let attributes_rest_div = document.createElement('div');
+    attributes_rest_div.setAttribute('class', 'new-attributes-rest');
+    attributes_rest_div.innerHTML = 'rest';
+
+    // sanity
+    let attributes_sanity_div = document.createElement('div');
+    attributes_sanity_div.setAttribute('class', 'new-attributes-HnS');
+    
+    // sanity max
+    let attributes_sanity_max_div = document.createElement('div');
+    attributes_sanity_max_div.setAttribute('class','new-attributes-max-header');
+    attributes_sanity_max_div.innerHTML = 'max sanity';
+
+    //sanity number
+    let attributes_sanity_number_div = document.createElement('div');
+    attributes_sanity_number_div.setAttribute('class','new-attributes-number');
+    attributes_sanity_number_div.innerHTML = 'sanity number';
+
+    attributes_sanity_div.appendChild(attributes_sanity_max_div);
+    attributes_sanity_div.appendChild(attributes_sanity_number_div);
+
+
+
+
+
+    attributes_main_div.appendChild(attributes_health_div);
+    attributes_main_div.appendChild(attributes_rest_div);
+    attributes_main_div.appendChild(attributes_sanity_div);
+
+
+
+
+
 
     //attributes builder
     var att_div = document.createElement('div');
@@ -175,14 +238,30 @@ function UI_builder(players) {
 
     //rest
     var rest = document.createElement('td');
+    let rest_div = document.createElement('div');
     let rest_btn = document.createElement('button');
+    
     rest_btn.setAttribute('id', 'rest');
     rest_btn.setAttribute('option', 'rest');
     rest_btn.setAttribute('player', 'player' + (row + 1));
     rest_btn.setAttribute('action', 'increase');
     rest_btn.setAttribute('onclick', 'Selector(this)');
-    rest_btn.innerHTML = 'REST';
+    rest_btn.innerHTML = 'Normal Rest';
     rest.appendChild(rest_btn);
+
+    let rest_health_res_btn = document.createElement('button');
+    rest_health_res_btn.innerHTML = 2;
+    rest_health_res_btn.setAttribute('class','rest-res')
+    let rest_sanity_res_btn = document.createElement('button');
+    rest_sanity_res_btn.setAttribute('class','rest-res')
+    rest_sanity_res_btn.innerHTML = 2;
+
+    // att_tr2.appendChild(rest_health_res_btn);
+    // rest_div.appendChild(rest_btn);
+    rest.appendChild(rest_btn);
+    rest.appendChild(rest_health_res_btn);
+    rest.appendChild(rest_sanity_res_btn);
+
     att_tr2.appendChild(rest);
 
     //sanity

@@ -8,6 +8,12 @@ function health_sanity(args) {
 
   let sel_att_value = newData[player].attributes[option];
   let sel_att_value_top = newData[player].attributes[option + '_max'];
+  let resources = newData[player].tokens.resource;
+  console.log("Output: functionhealth_sanity -> resources", resources)
+
+  if(resources > 0){
+    // if(resources )
+  }
 
   if (action == 'increase') {
     if (sel_att_value < sel_att_value_top) {
@@ -20,5 +26,4 @@ function health_sanity(args) {
   }
   console.log(newData[player].attributes);
   Printer(player, option, newData[player].attributes[option]);
-
 }
