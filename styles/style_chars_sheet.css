@@ -1,6 +1,7 @@
 .chars_sheet {
   border: 1px solid black;
-  width: 450px;
+  width: 350px;
+/*   width: 100%; */
   cursor: default;
 }
 .player {

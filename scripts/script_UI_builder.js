@@ -1,4 +1,3 @@
-
 function UI_builder(players) {
 
   var action_list = ['', 'move', 'rest', 'focus', 'trade', 'resource', 'action', 'acquire', 'delayed', 'train', 'ship'];
@@ -94,9 +93,6 @@ function UI_builder(players) {
     char_name_div.setAttribute('id', 'char_name' + (row));
     char_sheet_div.appendChild(char_name_div);
 
-
-    
-
     //abilities builder
     var abilities_div = document.createElement('div');
     abilities_div.setAttribute('class', 'abilities');
@@ -116,79 +112,72 @@ function UI_builder(players) {
     att_main_div.setAttribute('class', 'att-container')
     char_sheet_div.appendChild(att_main_div);
 
-    // health
-    let att_health_container = document.createElement('div');
-    att_health_container.setAttribute('class', 'att-HnS');
+    function Attributes_factory(type) {
+      let att_container = document.createElement('div');
+      att_container.setAttribute('class', 'att-HnS');
 
-    // health max
-    let att_health_max_container = document.createElement('div');
-    att_health_max_container.setAttribute('class','att-max-header');
-    att_health_max_container.innerHTML = 'max health: ';
-    let att_health_max_number = document.createElement('div');
-    att_health_max_number.setAttribute('id', 'max-health')
-    att_health_max_number.innerHTML = '0'
-    att_health_max_container.appendChild(att_health_max_number)
+      // max header
+      let att_max_container = document.createElement('div');
+      att_max_container.setAttribute('class', 'att-max-container');
 
-    // health number
-    let att_health_number_container = document.createElement('div');
-    att_health_number_container.setAttribute('class','attr-number-container');
-    let attributes_health_min_btn = document.createElement('button');
-    attributes_health_min_btn.innerHTML = '-';
-    let attributes_health_number_btn = document.createElement('div');
-    attributes_health_number_btn.setAttribute('id', 'health');
-    attributes_health_number_btn.setAttribute('class', 'attr-number');
-    attributes_health_number_btn.innerHTML = 8;
-    let attributes_health_plus_btn = document.createElement('button');
-    attributes_health_plus_btn.innerHTML = '+';
+      let att_max_header = document.createElement('div');
+      att_max_header.innerHTML = 'Max ' + (type.charAt(0).toUpperCase() + type.slice(1)) + ':';
+      
+      let att_max_number = document.createElement('div');
+      att_max_number.setAttribute('id', 'max-' + type)
+      att_max_number.innerHTML = '0'
+      
+      att_max_container.appendChild(att_max_header)
+      att_max_container.appendChild(att_max_number)
 
-    //health appends
-    att_health_number_container.appendChild(attributes_health_min_btn);
-    att_health_number_container.appendChild(attributes_health_number_btn);
-    att_health_number_container.appendChild(attributes_health_plus_btn);
-    att_health_container.appendChild(att_health_max_container);
-    att_health_container.appendChild(att_health_number_container);
+      // attribute number
+      let att_number_container = document.createElement('div');
+      att_number_container.setAttribute('class', 'att-number-container');
+      att_number_container.setAttribute('id', 'att-number-' + type);
+      let att_min_btn = document.createElement('button');
+      att_min_btn.innerHTML = '-';
+      let att_number_btn = document.createElement('div');
+      att_number_btn.setAttribute('id', type);
+      att_number_btn.setAttribute('class', 'att-number');
+      att_number_btn.innerHTML = 8;
+      let att_plus_btn = document.createElement('button');
+      att_plus_btn.innerHTML = '+';
+
+      //appends
+      att_number_container.appendChild(att_min_btn);
+      att_number_container.appendChild(att_number_btn);
+      att_number_container.appendChild(att_plus_btn);
+      att_container.appendChild(att_max_container);
+      att_container.appendChild(att_number_container);
+      return att_container
+    }
 
     // rest
     let att_rest_container = document.createElement('div');
     att_rest_container.setAttribute('class', 'att-rest');
-    att_rest_container.innerHTML = 'rest';
 
-    // sanity
-    let att_sanity_container = document.createElement('div');
-    att_sanity_container.setAttribute('class', 'att-HnS');
+    let att_rest_btn = document.createElement('button');
+    att_rest_btn.setAttribute('id', 'att-rest-btn');
+    att_rest_btn.innerHTML = 'Rest';
 
-    //sanity max
-    let att_sanity_max_container = document.createElement('div');
-    att_sanity_max_container.setAttribute('class','att-max-header');
-    att_sanity_max_container.innerHTML = 'max sanity: ';
-    let att_sanity_max_number = document.createElement('div');
-    att_sanity_max_number.setAttribute('id', 'max-sanity')
-    att_sanity_max_number.innerHTML = '0'
-    att_sanity_max_container.appendChild(att_sanity_max_number)
+    let att_rest_res_health_btn = document.createElement('button');
+    att_rest_res_health_btn.innerHTML = 'resource to health';
+    att_rest_res_health_btn.setAttribute('id', 'att-rest-health-btn');
+    
+    let att_rest_res_sanity_btn = document.createElement('button');
+    att_rest_res_sanity_btn.innerHTML = 'resource to sanity'
+    att_rest_res_sanity_btn.setAttribute('id', 'att-rest-sanity-btn');
 
-    // sanity number
-    let att_sanity_number_container = document.createElement('div');
-    att_sanity_number_container.setAttribute('class','attr-number-container');
-    let attributes_sanity_min_btn = document.createElement('button');
-    attributes_sanity_min_btn.innerHTML = '-';
-    let attributes_sanity_number_btn = document.createElement('div');
-    attributes_sanity_number_btn.setAttribute('id', 'sanity');
-    attributes_sanity_number_btn.setAttribute('class', 'attr-number');
-    attributes_sanity_number_btn.innerHTML = 5;
-    let attributes_sanity_plus_btn = document.createElement('button');
-    attributes_sanity_plus_btn.innerHTML = '+';
+    let att_rest_res_container = document.createElement('div');
+    att_rest_res_container.appendChild(att_rest_res_health_btn)
+    att_rest_res_container.appendChild(att_rest_res_sanity_btn)
 
-    //sanity appends
-    att_sanity_number_container.appendChild(attributes_sanity_min_btn);
-    att_sanity_number_container.appendChild(attributes_sanity_number_btn);
-    att_sanity_number_container.appendChild(attributes_sanity_plus_btn);
-    att_sanity_container.appendChild(att_sanity_max_container);
-    att_sanity_container.appendChild(att_sanity_number_container);
+    att_rest_container.appendChild(att_rest_btn);
+    att_rest_container.appendChild(att_rest_res_container);
 
-
-    att_main_div.appendChild(att_health_container);
+    att_main_div.appendChild(Attributes_factory('health'));
     att_main_div.appendChild(att_rest_container);
-    att_main_div.appendChild(att_sanity_container);
+    att_main_div.appendChild(Attributes_factory('sanity'));
 
 
 
@@ -264,7 +253,7 @@ function UI_builder(players) {
     var rest = document.createElement('td');
     let rest_div = document.createElement('div');
     let rest_btn = document.createElement('button');
-    
+
     rest_btn.setAttribute('id', 'rest');
     rest_btn.setAttribute('option', 'rest');
     rest_btn.setAttribute('player', 'player' + (row + 1));
@@ -275,9 +264,9 @@ function UI_builder(players) {
 
     let rest_health_res_btn = document.createElement('button');
     rest_health_res_btn.innerHTML = 2;
-    rest_health_res_btn.setAttribute('class','rest-res')
+    rest_health_res_btn.setAttribute('class', 'rest-res')
     let rest_sanity_res_btn = document.createElement('button');
-    rest_sanity_res_btn.setAttribute('class','rest-res')
+    rest_sanity_res_btn.setAttribute('class', 'rest-res')
     rest_sanity_res_btn.innerHTML = 2;
 
     // att_tr2.appendChild(rest_health_res_btn);
