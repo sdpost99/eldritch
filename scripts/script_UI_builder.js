@@ -112,59 +112,83 @@ function UI_builder(players) {
 
 
     //new attributes test
-    let attributes_main_div = document.createElement('div');
-    attributes_main_div.setAttribute('class', 'new-attributes-container')
-    char_sheet_div.appendChild(attributes_main_div);
+    let att_main_div = document.createElement('div');
+    att_main_div.setAttribute('class', 'att-container')
+    char_sheet_div.appendChild(att_main_div);
 
     // health
-    let attributes_health_div = document.createElement('div');
-    attributes_health_div.setAttribute('class', 'new-attributes-HnS');
+    let att_health_container = document.createElement('div');
+    att_health_container.setAttribute('class', 'att-HnS');
 
     // health max
-    let attributes_health_max_div = document.createElement('div');
-    attributes_health_max_div.setAttribute('class','new-attributes-max-header');
-    attributes_health_max_div.innerHTML = 'max health: ';
-    let attributes_health_max_nummber = document.createElement('div');
-    attributes_health_max_nummber.innerHTML = 'number'
+    let att_health_max_container = document.createElement('div');
+    att_health_max_container.setAttribute('class','att-max-header');
+    att_health_max_container.innerHTML = 'max health: ';
+    let att_health_max_number = document.createElement('div');
+    att_health_max_number.setAttribute('id', 'max-health')
+    att_health_max_number.innerHTML = '0'
+    att_health_max_container.appendChild(att_health_max_number)
 
     // health number
-    let attributes_health_number_div = document.createElement('div');
-    attributes_health_number_div.setAttribute('class','new-attributes-number');
-    attributes_health_number_div.innerHTML = 'health number';
+    let att_health_number_container = document.createElement('div');
+    att_health_number_container.setAttribute('class','attr-number-container');
+    let attributes_health_min_btn = document.createElement('button');
+    attributes_health_min_btn.innerHTML = '-';
+    let attributes_health_number_btn = document.createElement('div');
+    attributes_health_number_btn.setAttribute('id', 'health');
+    attributes_health_number_btn.setAttribute('class', 'attr-number');
+    attributes_health_number_btn.innerHTML = 8;
+    let attributes_health_plus_btn = document.createElement('button');
+    attributes_health_plus_btn.innerHTML = '+';
 
-    attributes_health_max_div.appendChild(attributes_health_max_nummber);
-    attributes_health_div.appendChild(attributes_health_max_div);
-    attributes_health_div.appendChild(attributes_health_number_div);
+    //health appends
+    att_health_number_container.appendChild(attributes_health_min_btn);
+    att_health_number_container.appendChild(attributes_health_number_btn);
+    att_health_number_container.appendChild(attributes_health_plus_btn);
+    att_health_container.appendChild(att_health_max_container);
+    att_health_container.appendChild(att_health_number_container);
 
     // rest
-    let attributes_rest_div = document.createElement('div');
-    attributes_rest_div.setAttribute('class', 'new-attributes-rest');
-    attributes_rest_div.innerHTML = 'rest';
+    let att_rest_container = document.createElement('div');
+    att_rest_container.setAttribute('class', 'att-rest');
+    att_rest_container.innerHTML = 'rest';
 
     // sanity
-    let attributes_sanity_div = document.createElement('div');
-    attributes_sanity_div.setAttribute('class', 'new-attributes-HnS');
-    
-    // sanity max
-    let attributes_sanity_max_div = document.createElement('div');
-    attributes_sanity_max_div.setAttribute('class','new-attributes-max-header');
-    attributes_sanity_max_div.innerHTML = 'max sanity';
+    let att_sanity_container = document.createElement('div');
+    att_sanity_container.setAttribute('class', 'att-HnS');
 
-    //sanity number
-    let attributes_sanity_number_div = document.createElement('div');
-    attributes_sanity_number_div.setAttribute('class','new-attributes-number');
-    attributes_sanity_number_div.innerHTML = 'sanity number';
+    //sanity max
+    let att_sanity_max_container = document.createElement('div');
+    att_sanity_max_container.setAttribute('class','att-max-header');
+    att_sanity_max_container.innerHTML = 'max sanity: ';
+    let att_sanity_max_number = document.createElement('div');
+    att_sanity_max_number.setAttribute('id', 'max-sanity')
+    att_sanity_max_number.innerHTML = '0'
+    att_sanity_max_container.appendChild(att_sanity_max_number)
 
-    attributes_sanity_div.appendChild(attributes_sanity_max_div);
-    attributes_sanity_div.appendChild(attributes_sanity_number_div);
+    // sanity number
+    let att_sanity_number_container = document.createElement('div');
+    att_sanity_number_container.setAttribute('class','attr-number-container');
+    let attributes_sanity_min_btn = document.createElement('button');
+    attributes_sanity_min_btn.innerHTML = '-';
+    let attributes_sanity_number_btn = document.createElement('div');
+    attributes_sanity_number_btn.setAttribute('id', 'sanity');
+    attributes_sanity_number_btn.setAttribute('class', 'attr-number');
+    attributes_sanity_number_btn.innerHTML = 5;
+    let attributes_sanity_plus_btn = document.createElement('button');
+    attributes_sanity_plus_btn.innerHTML = '+';
+
+    //sanity appends
+    att_sanity_number_container.appendChild(attributes_sanity_min_btn);
+    att_sanity_number_container.appendChild(attributes_sanity_number_btn);
+    att_sanity_number_container.appendChild(attributes_sanity_plus_btn);
+    att_sanity_container.appendChild(att_sanity_max_container);
+    att_sanity_container.appendChild(att_sanity_number_container);
 
 
-
-
-
-    attributes_main_div.appendChild(attributes_health_div);
-    attributes_main_div.appendChild(attributes_rest_div);
-    attributes_main_div.appendChild(attributes_sanity_div);
+    att_main_div.appendChild(att_health_container);
+    att_main_div.appendChild(att_rest_container);
+    att_main_div.appendChild(att_sanity_container);
 
 
 

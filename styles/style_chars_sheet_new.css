@@ -1,74 +1,50 @@
-.new-attributes-container {
+.att-container {
     background-color: red;
-    /*     height: 150px; */
     display: flex;
-/*         justify-content: center; */
     margin: 10px;
     border: 3px solid black;
-    /*     align-items: stretch; */
-    /*     align-items: baseline; */
-/*     padding: 10px; */
-
 }
 
-.new-attributes-container div {
-    text-align: center;
-/*     font-size: 30px; */
-    /*   height: 90px; */
-    /* padding: 10px; */
-/*     margin: 10px; */
-    border: 2px solid;
-/*     padding: 60px 0; */
+.att-container div {
     display: flex;
-/*     justify-content: center; */
-/*     align-items: stretch; */
-
 }
 
-.new-attributes-max-header{
+.att-max-header{
     background-color: yellowgreen;
     color: black;
-/*     padding: 60px 0; */
     width: 100%;
-/*     height: 100%; */
-/*     margin: 0; */
+    font-size: 16px;
+    justify-content: center;
 }
 
-.new-attributes-number{
+.attr-number-container{
     background-color: purple;
     color: black;
-    padding: 60px 0;
-    width: 100%;
+    height: 80px;
+    flex-basis:100%;
+    align-content: stretch;
+}
+.attr-number{
+    color: red;
+    font-size:60px;
+    margin:auto;
+    border: none;
 }
 
-.new-attributes-HnS {
-    /*     flex-grow: 2; */
+.attr-number-container button {
+    width: 35px;
+}
+
+.att-HnS {
     background-color: blue;
-    flex-basis: 40%;
+    border: 4px solid black;
+    flex-basis: 200px;
     flex-wrap: wrap;
     margin: 10px;
-/*     justify-content: center; */
-/*     display: flex; */
-
 }
 
-.new-attributes-rest {
+.att-rest {
     background-color: green;
-    /*     flex-grow: 1; */
     flex-basis: 20%;
-/*     display: flex; */
-/*     justify-content: center; */
     margin: 10px;
-
 }
-
-
-
-/* .new-attributes-sanity { */
-    /*     flex-grow: 2; */
-/*     background-color: orange; */
-/*     flex-basis: 40%; */
-/*         margin: 10px; */
-/*     display: flex; */
-/*     justify-content: center; */
-/* } */
