@@ -14,20 +14,20 @@ function dropdown_selection(data) {
     Action(new_charData);
   }
 
-  //dropdown de health and sanity **DONE**
-  if (data.className == 'health_drop' || data.className == 'sanity_drop') {
-    health_sanity(new_charData);
-  }
+  // //dropdown de health and sanity **DONE**
+  // if (data.className == 'health_drop' || data.className == 'sanity_drop') {
+  //   health_sanity(new_charData);
+  // }
 
-  //dropdown de skills  **DONE**
-  if (data.className == 'skills_drop') {
-    Skills_modificator(new_charData);
-  }
+  // //dropdown de skills  **DONE**
+  // if (data.className == 'skills_drop') {
+  //   Skills_modificator(new_charData);
+  // }
 
-  //dropdown de tokens **DONE**
-  if (data.className == 'tokens_drop') {
-    Tokens_modificator(new_charData);
-  }
+  // //dropdown de tokens **DONE**
+  // if (data.className == 'tokens_drop') {
+  //   Tokens_modificator(new_charData);
+  // }
 }
 
 
@@ -38,145 +38,145 @@ function dropdown_selection(data) {
 //   toChange_span.innerHTML = newData[data.player].tokens[data.option];
 // }
 
-function Action_rest_modificator(data) {
-  console.log(data);
-  const player = data.player;
-  var health = data.attributes.health;
-  var health_top = data.health_top;
-  var sanity = newData[player].attributes.sanity;
-  var sanity_top = rawData.playersData[data.char].sanity;
-  if (data.current_resources > 0) {
-    if ((health + 1) < health_top || (sanity + 1) < sanity_top) {
-      Rest_modal(data);
-    } else {
-      Rest(1, 1, data);
-    }
-  } else {
-    Rest(1, 1, data);
-  }
-}
+// function Action_rest_modificator(data) {
+//   console.log(data);
+//   const player = data.player;
+//   var health = data.attributes.health;
+//   var health_top = data.health_top;
+//   var sanity = newData[player].attributes.sanity;
+//   var sanity_top = rawData.playersData[data.char].sanity;
+//   if (data.current_resources > 0) {
+//     if ((health + 1) < health_top || (sanity + 1) < sanity_top) {
+//       Rest_modal(data);
+//     } else {
+//       Rest(1, 1, data);
+//     }
+//   } else {
+//     Rest(1, 1, data);
+//   }
+// }
 
-function Rest_modal(data) {
-  const player = data.player;
-  let modal = document.querySelector(".modal-blocker");
-  let modal_rest = document.querySelector("#modal-rest");
-  var resource_av = document.getElementById('av_res');
-  var rest_health_btn = document.getElementById('rest_health_btn');
-  var rest_sanity_btn = document.getElementById('rest_sanity_btn');
-  var rest_cancel_btn = document.getElementById('rest_cancel_btn');
-  var current_resources = newData[player].tokens.resource;
-  var rest_radio_div = document.getElementById('rest_radio');
-  modal.style.visibility = "visible";
-  modal_rest.style.visibility = "visible";
+// function Rest_modal(data) {
+//   const player = data.player;
+//   let modal = document.querySelector(".modal-blocker");
+//   let modal_rest = document.querySelector("#modal-rest");
+//   var resource_av = document.getElementById('av_res');
+//   var rest_health_btn = document.getElementById('rest_health_btn');
+//   var rest_sanity_btn = document.getElementById('rest_sanity_btn');
+//   var rest_cancel_btn = document.getElementById('rest_cancel_btn');
+//   var current_resources = newData[player].tokens.resource;
+//   var rest_radio_div = document.getElementById('rest_radio');
+//   modal.style.visibility = "visible";
+//   modal_rest.style.visibility = "visible";
 
-  //removing radios if already exists in the modal rest window
-  var remove_radios = rest_radio_div.firstChild;
-  if (remove_radios !== null) {
-    while (rest_radio_div.firstChild) {
-      rest_radio_div.removeChild(rest_radio_div.firstChild);
-    }
-  }
+//   //removing radios if already exists in the modal rest window
+//   var remove_radios = rest_radio_div.firstChild;
+//   if (remove_radios !== null) {
+//     while (rest_radio_div.firstChild) {
+//       rest_radio_div.removeChild(rest_radio_div.firstChild);
+//     }
+//   }
 
-  resource_av.innerHTML = current_resources;
+//   resource_av.innerHTML = current_resources;
 
-  for (var i = 0; i < current_resources; i++) {
-    var rest_radio = document.createElement('input');
-    rest_radio.setAttribute('type', 'radio');
-    rest_radio.setAttribute('name', 'res_radio');
-    rest_radio.setAttribute('value', (i + 1));
-    rest_radio.setAttribute('onclick', 'Accept_btn(this.value)');
+//   for (var i = 0; i < current_resources; i++) {
+//     var rest_radio = document.createElement('input');
+//     rest_radio.setAttribute('type', 'radio');
+//     rest_radio.setAttribute('name', 'res_radio');
+//     rest_radio.setAttribute('value', (i + 1));
+//     rest_radio.setAttribute('onclick', 'Accept_btn(this.value)');
 
-    rest_health_btn.setAttribute('value', 0); //resetea valor de boton
-    rest_sanity_btn.setAttribute('value', 0); //resetea valor de boton
+//     rest_health_btn.setAttribute('value', 0); //resetea valor de boton
+//     rest_sanity_btn.setAttribute('value', 0); //resetea valor de boton
 
-    var rest_radio_label = document.createElement('span');
-    rest_radio_label.innerHTML = 'Use ' + Number(i + 1) + ' resource';
+//     var rest_radio_label = document.createElement('span');
+//     rest_radio_label.innerHTML = 'Use ' + Number(i + 1) + ' resource';
 
-    const radio_wraper = document.createElement('label');
-    radio_wraper.appendChild(rest_radio);
-    radio_wraper.appendChild(rest_radio_label);
+//     const radio_wraper = document.createElement('label');
+//     radio_wraper.appendChild(rest_radio);
+//     radio_wraper.appendChild(rest_radio_label);
 
-    newRow_div = document.createElement('div');
-    newRow_div.setAttribute('class', 'flex-div-btn');
-    newRow_div.setAttribute('name', 'rest-flex-div');
+//     newRow_div = document.createElement('div');
+//     newRow_div.setAttribute('class', 'flex-div-btn');
+//     newRow_div.setAttribute('name', 'rest-flex-div');
 
-    newRow_div.appendChild(radio_wraper);
-    rest_radio_div.appendChild(newRow_div);
-  }
+//     newRow_div.appendChild(radio_wraper);
+//     rest_radio_div.appendChild(newRow_div);
+//   }
 
-  rest_sanity_btn.onclick = function () {
-    rest_Modal(this, data);
-  };
-  rest_health_btn.onclick = function () {
-    rest_Modal(this, data);
-  };
-  rest_cancel_btn.onclick = function () {
-    modal.style.visibility = "hidden";
-    modal_rest.style.visibility = "hidden";
-  }
+//   rest_sanity_btn.onclick = function () {
+//     rest_Modal(this, data);
+//   };
+//   rest_health_btn.onclick = function () {
+//     rest_Modal(this, data);
+//   };
+//   rest_cancel_btn.onclick = function () {
+//     modal.style.visibility = "hidden";
+//     modal_rest.style.visibility = "hidden";
+//   }
 
-  function rest_Modal(clicked, data) {
-    var health_or_sanity = clicked.innerHTML.slice(8).toLowerCase();
-    const result_top = rawData.playersData[data.char][health_or_sanity];
-    const result_current = newData[data.player].attributes[health_or_sanity];
-    var result = Number(clicked.value);
-    if (result > 0) {
-      if ((result + 1 + result_current) > result_top) {
-        alert('Selecciona una cantidad de recursos que de como resultado\nun numero \bNO mayor al maximo de vida de tu personaje.\nMax. ' + health_or_sanity + ': ' + result_top);
-      } else {
-        modal.style.visibility = "hidden";
-        modal_rest.style.visibility = "hidden";
-        var health_newAmt = 0;
-        var sanity_newAmt = 0;
-        if (health_or_sanity == 'health') {
-          health_newAmt = result + 1;
-          sanity_newAmt = 1;
-        } else {
-          health_newAmt = 1;
-          sanity_newAmt = result + 1;
-        }
-        // console.log('health_newAmt ' + health_newAmt);
-        // console.log('sanity_newAmt ' + sanity_newAmt);
-        newData[data.player].tokens.resource = data.current_resources - result;
-        Rest(health_newAmt, sanity_newAmt, data);
-      }
+//   function rest_Modal(clicked, data) {
+//     var health_or_sanity = clicked.innerHTML.slice(8).toLowerCase();
+//     const result_top = rawData.playersData[data.char][health_or_sanity];
+//     const result_current = newData[data.player].attributes[health_or_sanity];
+//     var result = Number(clicked.value);
+//     if (result > 0) {
+//       if ((result + 1 + result_current) > result_top) {
+//         alert('Selecciona una cantidad de recursos que de como resultado\nun numero \bNO mayor al maximo de vida de tu personaje.\nMax. ' + health_or_sanity + ': ' + result_top);
+//       } else {
+//         modal.style.visibility = "hidden";
+//         modal_rest.style.visibility = "hidden";
+//         var health_newAmt = 0;
+//         var sanity_newAmt = 0;
+//         if (health_or_sanity == 'health') {
+//           health_newAmt = result + 1;
+//           sanity_newAmt = 1;
+//         } else {
+//           health_newAmt = 1;
+//           sanity_newAmt = result + 1;
+//         }
+//         // console.log('health_newAmt ' + health_newAmt);
+//         // console.log('sanity_newAmt ' + sanity_newAmt);
+//         newData[data.player].tokens.resource = data.current_resources - result;
+//         Rest(health_newAmt, sanity_newAmt, data);
+//       }
 
-    } else {
-      alert('Select resource amount to spend');
-    }
-  }
-}
+//     } else {
+//       alert('Select resource amount to spend');
+//     }
+//   }
+// }
 
-function Accept_btn(data) {
-  var rest_health_btn = document.getElementById('rest_health_btn');
-  var rest_sanity_btn = document.getElementById('rest_sanity_btn');
-  rest_health_btn.setAttribute('value', data);
-  rest_sanity_btn.setAttribute('value', data);
-  styling_modal(0, 'rest');
-}
+// function Accept_btn(data) {
+//   var rest_health_btn = document.getElementById('rest_health_btn');
+//   var rest_sanity_btn = document.getElementById('rest_sanity_btn');
+//   rest_health_btn.setAttribute('value', data);
+//   rest_sanity_btn.setAttribute('value', data);
+//   styling_modal(0, 'rest');
+// }
 
-function Rest(health_newAmt, sanity_newAmt, data) {
-  if (data.attributes.health < data.health_top) {
-    newData[data.player].attributes.health = data.attributes.health + health_newAmt;
-  }
-  // var temp_health = newData[data.player].attributes.health;
-  // console.log('health: ' + temp_health + ' health_top: ' + data.health_top);
+// function Rest(health_newAmt, sanity_newAmt, data) {
+//   if (data.attributes.health < data.health_top) {
+//     newData[data.player].attributes.health = data.attributes.health + health_newAmt;
+//   }
+//   // var temp_health = newData[data.player].attributes.health;
+//   // console.log('health: ' + temp_health + ' health_top: ' + data.health_top);
 
-  if (data.attributes.sanity < data.sanity_top) {
-    newData[data.player].attributes.sanity = data.attributes.sanity + sanity_newAmt;
-  }
-  // var temp_sanity = newData[data.player].attributes.sanity;
-  // console.log('sanity: ' + temp_sanity + ' sanity_top: ' + data.sanity_top);
+//   if (data.attributes.sanity < data.sanity_top) {
+//     newData[data.player].attributes.sanity = data.attributes.sanity + sanity_newAmt;
+//   }
+//   // var temp_sanity = newData[data.player].attributes.sanity;
+//   // console.log('sanity: ' + temp_sanity + ' sanity_top: ' + data.sanity_top);
 
-  const player_sheet = 'p' + data.player.slice(6);
-  const sheet = document.getElementById(player_sheet);
-  const health_td = sheet.querySelector('#health');
-  const sanity_td = sheet.querySelector('#sanity');
-  const resource_td = sheet.querySelector('#resource_number');
-  health_td.innerHTML = newData[data.player].attributes.health;
-  sanity_td.innerHTML = newData[data.player].attributes.sanity;
-  resource_td.innerHTML = newData[data.player].tokens.resource;
-}
+//   const player_sheet = 'p' + data.player.slice(6);
+//   const sheet = document.getElementById(player_sheet);
+//   const health_td = sheet.querySelector('#health');
+//   const sanity_td = sheet.querySelector('#sanity');
+//   const resource_td = sheet.querySelector('#resource_number');
+//   health_td.innerHTML = newData[data.player].attributes.health;
+//   sanity_td.innerHTML = newData[data.player].attributes.sanity;
+//   resource_td.innerHTML = newData[data.player].tokens.resource;
+// }
 
 function Action_move(data) {
   // console.log('move action');

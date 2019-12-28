@@ -5,50 +5,24 @@ function Selector(args) {
         case 'character':
             NewData_Factory(args);
             break;
-        case 'health':
-            health_sanity(args);
-            break;
-        case 'sanity':
-            health_sanity(args);
+        case 'heal':
+            heal(args);
             break;
         case 'rest':
-            args.setAttribute('option', 'sanity');
-            health_sanity(args);
-            args.setAttribute('option', 'health');
-            health_sanity(args);
-            args.setAttribute('option', 'rest');
+            args.setAttribute('value', 'sanity');
+            heal(args);
+            args.setAttribute('value', 'health');
+            heal(args);
             break;
-        case 'lore':
+        case 'rest_resource':
+            // health_sanity_resource(args);
+            // console.log("OUTPUT: args", args);
+            heal_resource(args);
+            break;
+        case 'skills':
             Skills(args);
             break;
-        case 'inf':
-            Skills(args);
-            break;
-        case 'obs':
-            Skills(args);
-            break;
-        case 'str':
-            Skills(args);
-            break;
-        case 'will':
-            Skills(args);
-            break;
-        case 'focus':
-            Tokens(args);
-            break;
-        case 'resource':
-            Tokens(args);
-            break;
-        case 'ship':
-            Tokens(args);
-            break;
-        case 'train':
-            Tokens(args);
-            break;
-        case 'clue':
-            Tokens(args);
-            break;
-        case 'eldritch':
+        case 'tokens':
             Tokens(args);
             break;
     }

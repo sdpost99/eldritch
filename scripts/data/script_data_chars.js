@@ -141,7 +141,7 @@ function game_properties() {
   data.focus = 2;
   data.train = 1;
   data.ship = 1;
-  data.resource = 2;
+  data.resource = 10;
   data.clue = 10;
   data.eldritch = 10;
   return data;

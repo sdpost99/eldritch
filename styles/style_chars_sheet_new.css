@@ -1,13 +1,13 @@
 .att-container {
-    background-color: red;
+    /*     background-color: red; */
     display: flex;
     margin: 10px;
-    height: 60px;
+    /*     height: 69px; */
 }
 
 .att-HnS {
     width: 100%;
-    background-color: blue
+    /*     background-color: blue */
 }
 
 .att-max-container {
@@ -15,19 +15,14 @@
     background-color: yellowgreen;
     color: black;
     justify-content: center;
-    height: 30%;
+    height: 15%;
     align-items: center;
-}
-
-#max-health,
-#max-sanity {
-    background-color: darkslategrey;
 }
 
 .att-number-container {
     display: flex;
     color: black;
-    height: 70%;
+    height: 85%;
     background-color: cornflowerblue;
 }
 
@@ -48,35 +43,120 @@
     width: 100%;
 }
 
-.att-rest {
+/* rest section */
+.att-rest-cont {
     background-color: green;
-    width: 300px;
+    width: 500px;
 }
 
+/* rest button container */
+.att-rest-btn-cont {
+    background-color: darkgoldenrod;
+    text-align: center;
+}
 
-.att-rest div {
-    height: 50%;
-    background-color: chocolate;
+/* rest button */
+.att-rest-btn-cont button {
+    margin: 0 0 10px 0;
+    background-color: indigo;
+    width: 100%;
+    /* height: 35px; */
+    padding: 10px 0;
+}
+
+/* Rest spending resources label container */
+.att-rest-label-cont {
+    background-color: blueviolet;
+    text-align: center;
+    /* padding: 10px 0; */
+}
+
+.att-rest-label-cont button {
+    background-color: saddlebrown;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* Rest type label container  */
+.att-rest-label-type-cont {
+    background-color: darkslategrey;
     display: flex;
+    text-align: center;
 }
 
-.att-rest button {
-    color: black;
+/* Rest type label divs / controla la altura del renglon*/
+.att-rest-label-type-cont div {
+    /* padding: 10px 0; */
     width: 100%;
 }
 
+/* Rest health label container */
+.att-rest-label-health-cont {
+    background-color: midnightblue;
+}
+
+/* rest sanity label container */
+.att-rest-label-sanity-cont {
+    background-color: crimson;
+}
+
+/* rest resources number container */
+.att-rest-numbers-cont {
+    display: flex;
+}
+
+/* spend resources botones */
+.att-rest-numbers-cont div {
+    width: 100%;
+    background-color: orangered;
+    display: flex;
+    text-align: center;
+}
+
+.att-rest-numbers-cont button,
+.att-rest-numbers-cont label {
+    width: 100%;
+}
+
+
+
+
+
+
+/* backup */
+
+.att-rest-res-header {
+    /* height: 50%; */
+    /*     background-color: chocolate; */
+    /*     display: flex; */
+    /*     width: 100%; */
+    /*     align-items: center; */
+    /*     justify-content:center; */
+}
+
+
+
+
+.att-rest button {
+    /*     color: black; */
+    /*     width: 100%; */
+}
+
 #att-rest-btn {
-    background-color: cornsilk;
-    height: 50%;
-    font-size: 20px;
+    /*     background-color: cornsilk; */
+    /*     height: 50%; */
+    /*     font-size: 16px; */
+    /*     margin: 0 0 20px 0; */
 }
 
 #att-rest-sanity-btn {
-    background-color: cadetblue;
-    text-align: right;
+    /*     background-color: cadetblue; */
+    /*     text-align: right; */
 }
 
 #att-rest-health-btn {
-    background-color: brown;
-    text-align: left;
+    /*     background-color: brown; */
+    /*     text-align: left; */
 }

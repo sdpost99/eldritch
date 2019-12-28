@@ -53,8 +53,6 @@ function UI_builder(players) {
     for (var i = 0; i < (char_list.length) + 1; i++) {
       var nd_ele = document.createElement('option');
       nd_ele.setAttribute('value', String(i));
-      // nd_ele.setAttribute('class', 'char_drop_element');
-
       if (i === 0) {
         nd_ele.innerHTML = ('Select Character');
         nd_ele.setAttribute('value', 'start');
@@ -62,12 +60,9 @@ function UI_builder(players) {
         nd_ele.innerHTML = (char_list[i - 1]);
         nd_ele.setAttribute('value', char_list[i - 1]);
       }
-
       nd_sel.appendChild(nd_ele);
     }
-
     nd_div.appendChild(nd_sel);
-
     return nd_div;
   }
 
@@ -122,11 +117,11 @@ function UI_builder(players) {
 
       let att_max_header = document.createElement('div');
       att_max_header.innerHTML = 'Max ' + (type.charAt(0).toUpperCase() + type.slice(1)) + ':';
-      
+
       let att_max_number = document.createElement('div');
       att_max_number.setAttribute('id', 'max-' + type)
       att_max_number.innerHTML = '0'
-      
+
       att_max_container.appendChild(att_max_header)
       att_max_container.appendChild(att_max_number)
 
@@ -134,13 +129,26 @@ function UI_builder(players) {
       let att_number_container = document.createElement('div');
       att_number_container.setAttribute('class', 'att-number-container');
       att_number_container.setAttribute('id', 'att-number-' + type);
+
       let att_min_btn = document.createElement('button');
+      att_min_btn.setAttribute('value', type);
+      att_min_btn.setAttribute('option', 'heal');
+      att_min_btn.setAttribute('player', 'player' + (row + 1));
+      att_min_btn.setAttribute('action', 'reduce');
+      att_min_btn.setAttribute('onclick', 'Selector(this)');
       att_min_btn.innerHTML = '-';
+
       let att_number_btn = document.createElement('div');
       att_number_btn.setAttribute('id', type);
       att_number_btn.setAttribute('class', 'att-number');
       att_number_btn.innerHTML = 8;
+
       let att_plus_btn = document.createElement('button');
+      att_plus_btn.setAttribute('value', type);
+      att_plus_btn.setAttribute('option', 'heal');
+      att_plus_btn.setAttribute('player', 'player' + (row + 1));
+      att_plus_btn.setAttribute('action', 'increase');
+      att_plus_btn.setAttribute('onclick', 'Selector(this)');
       att_plus_btn.innerHTML = '+';
 
       //appends
@@ -154,159 +162,114 @@ function UI_builder(players) {
 
     // rest
     let att_rest_container = document.createElement('div');
-    att_rest_container.setAttribute('class', 'att-rest');
+    att_rest_container.setAttribute('class', 'att-rest-cont');
 
+    //norma rest button
     let att_rest_btn = document.createElement('button');
-    att_rest_btn.setAttribute('id', 'att-rest-btn');
-    att_rest_btn.innerHTML = 'Rest';
+    // att_rest_btn.setAttribute('id', 'att-rest-btn');
+    att_rest_btn.setAttribute('option', 'rest');
+    att_rest_btn.setAttribute('player', 'player' + (row + 1));
+    att_rest_btn.setAttribute('action', 'increase');
+    att_rest_btn.setAttribute('onclick', 'Selector(this)');
+    att_rest_btn.innerHTML = 'Simple Rest';
+    let att_rest_btn_container = document.createElement('div');
+    att_rest_btn_container.setAttribute('class', 'att-rest-btn-cont');
+    att_rest_btn_container.appendChild(att_rest_btn);
 
-    let att_rest_res_health_btn = document.createElement('button');
-    att_rest_res_health_btn.innerHTML = 'resource to health';
-    att_rest_res_health_btn.setAttribute('id', 'att-rest-health-btn');
-    
-    let att_rest_res_sanity_btn = document.createElement('button');
-    att_rest_res_sanity_btn.innerHTML = 'resource to sanity'
-    att_rest_res_sanity_btn.setAttribute('id', 'att-rest-sanity-btn');
+    //spend resources labels
+    let att_spend_res_label = document.createElement('button');
+    att_spend_res_label.innerHTML = 'rest spending res';
+    let att_spend_res_health_label = document.createElement('label');
+    att_spend_res_health_label.innerHTML = 'health';
+    let att_spend_res_sanity_label = document.createElement('label');
+    att_spend_res_sanity_label.innerHTML = 'sanity';
 
-    let att_rest_res_container = document.createElement('div');
-    att_rest_res_container.appendChild(att_rest_res_health_btn)
-    att_rest_res_container.appendChild(att_rest_res_sanity_btn)
+    //spend resources label containers
+    let att_spend_res_label_container = document.createElement('div');
+    att_spend_res_label_container.setAttribute('class', 'att-rest-label-cont');
+    att_spend_res_label_container.appendChild(att_spend_res_label);
 
-    att_rest_container.appendChild(att_rest_btn);
-    att_rest_container.appendChild(att_rest_res_container);
+    let att_spend_res_health_label_container = document.createElement('div');
+    att_spend_res_health_label_container.appendChild(att_spend_res_health_label);
+    att_spend_res_health_label_container.setAttribute('class', 'att-rest-label-health-cont');
+    let att_spend_res_sanity_label_container = document.createElement('div');
+    att_spend_res_sanity_label_container.setAttribute('class', 'att-rest-label-sanity-cont');
+    att_spend_res_sanity_label_container.appendChild(att_spend_res_sanity_label);
+
+    let att_spend_res_type_label_container = document.createElement('div');
+    att_spend_res_type_label_container.setAttribute('class', 'att-rest-label-type-cont');
+    att_spend_res_type_label_container.appendChild(att_spend_res_health_label_container);
+    att_spend_res_type_label_container.appendChild(att_spend_res_sanity_label_container);
+
+
+    //spend resources buttons
+    let att_rest_res_health_min_btn = document.createElement('button');
+    att_rest_res_health_min_btn.innerHTML = '-';
+    att_rest_res_health_min_btn.setAttribute('value', 'health_resource');
+    att_rest_res_health_min_btn.setAttribute('option', 'rest_resource');
+    att_rest_res_health_min_btn.setAttribute('player', 'player' + (row + 1));
+    att_rest_res_health_min_btn.setAttribute('action', 'reduce');
+    att_rest_res_health_min_btn.setAttribute('onclick', 'Selector(this)');
+
+    let att_rest_res_health_number_btn = document.createElement('label');
+    att_rest_res_health_number_btn.innerHTML = '0';
+    att_rest_res_health_number_btn.setAttribute('id', 'health_resource')
+
+    let att_rest_res_health_max_btn = document.createElement('button');
+    att_rest_res_health_max_btn.innerHTML = '+';
+    att_rest_res_health_max_btn.setAttribute('value', 'health_resource');
+    att_rest_res_health_max_btn.setAttribute('option', 'rest_resource');
+    att_rest_res_health_max_btn.setAttribute('player', 'player' + (row + 1));
+    att_rest_res_health_max_btn.setAttribute('action', 'increase');
+    att_rest_res_health_max_btn.setAttribute('onclick', 'Selector(this)');
+
+    let att_rest_res_health_btn_container = document.createElement('div');
+    att_rest_res_health_btn_container.appendChild(att_rest_res_health_min_btn);
+    att_rest_res_health_btn_container.appendChild(att_rest_res_health_number_btn);
+    att_rest_res_health_btn_container.appendChild(att_rest_res_health_max_btn);
+
+    let att_rest_res_sanity_min_btn = document.createElement('button');
+    att_rest_res_sanity_min_btn.innerHTML = '-';
+    att_rest_res_sanity_min_btn.setAttribute('value', 'sanity_resource');
+    att_rest_res_sanity_min_btn.setAttribute('option', 'rest_resource');
+    att_rest_res_sanity_min_btn.setAttribute('player', 'player' + (row + 1));
+    att_rest_res_sanity_min_btn.setAttribute('action', 'reduce');
+    att_rest_res_sanity_min_btn.setAttribute('onclick', 'Selector(this)');
+
+    let att_rest_res_sanity_number_btn = document.createElement('label');
+    att_rest_res_sanity_number_btn.innerHTML = '0';
+    att_rest_res_sanity_number_btn.setAttribute('id', 'sanity_resource');
+
+    let att_rest_res_sanity_max_btn = document.createElement('button');
+    att_rest_res_sanity_max_btn.innerHTML = '+';
+    att_rest_res_sanity_max_btn.setAttribute('value', 'sanity_resource');
+    att_rest_res_sanity_max_btn.setAttribute('option', 'rest_resource');
+    att_rest_res_sanity_max_btn.setAttribute('player', 'player' + (row + 1));
+    att_rest_res_sanity_max_btn.setAttribute('action', 'increase');
+    att_rest_res_sanity_max_btn.setAttribute('onclick', 'Selector(this)');
+
+    let att_rest_res_sanity_btn_container = document.createElement('div');
+    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_min_btn);
+    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_number_btn);
+    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_max_btn);
+
+    //spend resources buttons containers
+    let att_rest_res_numbers_container = document.createElement('div');
+    att_rest_res_numbers_container.setAttribute('class', 'att-rest-numbers-cont');
+    att_rest_res_numbers_container.appendChild(att_rest_res_health_btn_container)
+    att_rest_res_numbers_container.appendChild(att_rest_res_sanity_btn_container)
+
+
+
+    att_rest_container.appendChild(att_rest_btn_container);
+    att_rest_container.appendChild(att_spend_res_label_container);
+    att_rest_container.appendChild(att_spend_res_type_label_container);
+    att_rest_container.appendChild(att_rest_res_numbers_container);
 
     att_main_div.appendChild(Attributes_factory('health'));
     att_main_div.appendChild(att_rest_container);
     att_main_div.appendChild(Attributes_factory('sanity'));
 
-
-
-
-
-
-    //attributes builder
-    var att_div = document.createElement('div');
-    att_div.setAttribute('class', 'attributes');
-    var att_table = document.createElement('table');
-    att_div.appendChild(att_table);
-    var att_tr = document.createElement('tr');
-    att_tr.setAttribute('class', 'attributes-header');
-    var att_tr2 = document.createElement('tr');
-    att_tr2.setAttribute('class', 'attributes-numbers');
-    att_table.appendChild(att_tr);
-    att_table.appendChild(att_tr2);
-
-    //health max
-    var att_1_td = document.createElement('td');
-    att_tr.appendChild(att_1_td);
-    att_1_td.innerHTML = 'Max. Health: ';
-    var att_2_span = document.createElement('span');
-    att_2_span.setAttribute('id', 'max-health');
-    att_2_span.innerHTML = 0;
-    att_1_td.appendChild(att_2_span);
-
-    //empty space
-    var empty1 = document.createElement('td');
-    att_tr.appendChild(empty1);
-
-    //sanity max
-    var att_2_td = document.createElement('td');
-    att_tr.appendChild(att_2_td);
-    att_2_td.innerHTML = 'Max. Sanity: ';
-    var att_4_span = document.createElement('span');
-    att_4_span.setAttribute('id', 'max-sanity');
-    att_4_span.innerHTML = 0
-    att_2_td.appendChild(att_4_span);
-
-    //health
-    var att_health_td = document.createElement('td');
-    att_health_td.setAttribute('id', 'health-bg');
-
-    //health number
-    var att_health_number = document.createElement('span');
-    att_health_number.setAttribute('id', 'health');
-    att_health_number.innerHTML = 0;
-
-    //health increase
-    var att_health_plus = document.createElement('button');
-    att_health_plus.setAttribute('option', 'health');
-    att_health_plus.setAttribute('player', 'player' + (row + 1));
-    att_health_plus.setAttribute('action', 'increase');
-    att_health_plus.setAttribute('onclick', 'Selector(this)');
-    att_health_plus.innerHTML = '+'
-
-    //health reduce
-    var att_health_minus = document.createElement('button');
-    att_health_minus.setAttribute('option', 'health');
-    att_health_minus.setAttribute('player', 'player' + (row + 1));
-    att_health_minus.setAttribute('action', 'reduce');
-    att_health_minus.setAttribute('onclick', 'Selector(this)');
-    att_health_minus.innerHTML = '-'
-
-    att_health_td.appendChild(att_health_minus);
-    att_health_td.appendChild(att_health_number);
-    att_health_td.appendChild(att_health_plus);
-
-    att_tr2.appendChild(att_health_td);
-
-    //rest
-    var rest = document.createElement('td');
-    let rest_div = document.createElement('div');
-    let rest_btn = document.createElement('button');
-
-    rest_btn.setAttribute('id', 'rest');
-    rest_btn.setAttribute('option', 'rest');
-    rest_btn.setAttribute('player', 'player' + (row + 1));
-    rest_btn.setAttribute('action', 'increase');
-    rest_btn.setAttribute('onclick', 'Selector(this)');
-    rest_btn.innerHTML = 'Normal Rest';
-    rest.appendChild(rest_btn);
-
-    let rest_health_res_btn = document.createElement('button');
-    rest_health_res_btn.innerHTML = 2;
-    rest_health_res_btn.setAttribute('class', 'rest-res')
-    let rest_sanity_res_btn = document.createElement('button');
-    rest_sanity_res_btn.setAttribute('class', 'rest-res')
-    rest_sanity_res_btn.innerHTML = 2;
-
-    // att_tr2.appendChild(rest_health_res_btn);
-    // rest_div.appendChild(rest_btn);
-    rest.appendChild(rest_btn);
-    rest.appendChild(rest_health_res_btn);
-    rest.appendChild(rest_sanity_res_btn);
-
-    att_tr2.appendChild(rest);
-
-    //sanity
-    var att_sanity_td = document.createElement('td');
-    att_sanity_td.setAttribute('id', 'sanity-bg');
-
-    var att_sanity_number = document.createElement('span');
-    att_sanity_number.setAttribute('id', 'sanity');
-    att_sanity_number.innerHTML = 0;
-
-    //sanity increase
-    var att_sanity_plus = document.createElement('button');
-    att_sanity_plus.setAttribute('option', 'sanity');
-    att_sanity_plus.setAttribute('player', 'player' + (row + 1));
-    att_sanity_plus.setAttribute('action', 'increase');
-    att_sanity_plus.setAttribute('onclick', 'Selector(this)');
-    att_sanity_plus.innerHTML = '+'
-
-    //sanity reduce
-    var att_sanity_minus = document.createElement('button');
-    att_sanity_minus.setAttribute('option', 'sanity');
-    att_sanity_minus.setAttribute('player', 'player' + (row + 1));
-    att_sanity_minus.setAttribute('action', 'reduce');
-    att_sanity_minus.setAttribute('onclick', 'Selector(this)');
-    att_sanity_minus.innerHTML = '-'
-
-    att_sanity_td.appendChild(att_sanity_minus);
-    att_sanity_td.appendChild(att_sanity_number);
-    att_sanity_td.appendChild(att_sanity_plus);
-
-    att_tr2.appendChild(att_sanity_td);
-    char_sheet_div.appendChild(att_div);
 
     //skills
     var skills_div = document.createElement('div');
@@ -324,7 +287,7 @@ function UI_builder(players) {
 
     skills_list.forEach(skills_fn);
 
-    function skills_fn(item, index) {
+    function skills_fn(item) {
       //skills header
       var skills_header_td = document.createElement('td');
       skills_header_td.setAttribute('id', item + '-bg');
@@ -341,8 +304,8 @@ function UI_builder(players) {
 
       //skills reduce
       var skills_minus_btn = document.createElement('button');
-      // skills_minus_btn.setAttribute('value', '-' + item);
-      skills_minus_btn.setAttribute('option', item);
+      skills_minus_btn.setAttribute('value', item);
+      skills_minus_btn.setAttribute('option', 'skills');
       skills_minus_btn.setAttribute('player', 'player' + (row + 1));
       skills_minus_btn.setAttribute('action', 'reduce');
       skills_minus_btn.setAttribute('onclick', 'Selector(this)');
@@ -355,8 +318,8 @@ function UI_builder(players) {
 
       //skills incrase
       var skills_plus_btn = document.createElement('button');
-      // skills_plus_btn.setAttribute('value', '+' + item);
-      skills_plus_btn.setAttribute('option', item);
+      skills_plus_btn.setAttribute('value', item);
+      skills_plus_btn.setAttribute('option', 'skills');
       skills_plus_btn.setAttribute('player', 'player' + (row + 1));
       skills_plus_btn.setAttribute('action', 'increase');
       skills_plus_btn.setAttribute('onclick', 'Selector(this)');
@@ -396,7 +359,8 @@ function UI_builder(players) {
       var tokens_number_td = document.createElement('td');
 
       var tokens_minus_btn = document.createElement('button');
-      tokens_minus_btn.setAttribute('option', item);
+      tokens_minus_btn.setAttribute('value', item);
+      tokens_minus_btn.setAttribute('option', 'tokens');
       tokens_minus_btn.setAttribute('player', 'player' + (row + 1));
       tokens_minus_btn.setAttribute('action', 'reduce');
       tokens_minus_btn.setAttribute('onclick', 'Selector(this)');
@@ -407,7 +371,8 @@ function UI_builder(players) {
       tokens_number.setAttribute('id', item);
 
       var tokens_plus_btn = document.createElement('button');
-      tokens_plus_btn.setAttribute('option', item);
+      tokens_plus_btn.setAttribute('value', item);
+      tokens_plus_btn.setAttribute('option', 'tokens');
       tokens_plus_btn.setAttribute('player', 'player' + (row + 1));
       tokens_plus_btn.setAttribute('action', 'increase');
       tokens_plus_btn.setAttribute('onclick', 'Selector(this)');
