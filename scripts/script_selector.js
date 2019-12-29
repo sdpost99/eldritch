@@ -15,9 +15,10 @@ function Selector(args) {
             heal(args);
             break;
         case 'rest_resource':
-            // health_sanity_resource(args);
-            // console.log("OUTPUT: args", args);
             heal_resource(args);
+            break;
+        case 'spend_rest_resource':
+            spend_rest_resource(args);
             break;
         case 'skills':
             Skills(args);

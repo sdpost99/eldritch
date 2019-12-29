@@ -1,0 +1,12 @@
+
+Todo:
+  ☐ Item
+  ☐ dfdsfs
+  ☐ dsds
+  ☐ dasd @started(19-12-28 04:13)
+
+  
+Archive:
+  ✔ Item @done(19-12-28 04:10) @project(Todo)
+  ✘ Item @cancelled(19-12-28 04:10) @project(Todo)
+  ✔ Item @done(19-12-28 04:09) @project(Todo)

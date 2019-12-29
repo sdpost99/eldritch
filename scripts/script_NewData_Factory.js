@@ -49,6 +49,11 @@ function NewData_Factory(args) {
     newData[player].cards.spells = player_att.spells;
     newData[player].cards.personal_story = player_att.personal_story;
 
+    newData[player].actions = {};
+    newData[player].actions.res_health = 0;
+    newData[player].actions.res_sanity = 0;
+
+
     Printer(player, 'health', player_att.health);
     Printer(player, 'max-health', player_att.health);
     Printer(player, 'sanity', player_att.sanity);

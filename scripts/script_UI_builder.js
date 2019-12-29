@@ -179,6 +179,13 @@ function UI_builder(players) {
     //spend resources labels
     let att_spend_res_label = document.createElement('button');
     att_spend_res_label.innerHTML = 'rest spending res';
+    // att_spend_res_label.setAttribute('value', 'heal_resource');
+    att_spend_res_label.setAttribute('option', 'spend_rest_resource');
+    att_spend_res_label.setAttribute('player', 'player' + (row + 1));
+    att_spend_res_label.setAttribute('action', 'increase');
+    att_spend_res_label.setAttribute('onclick', 'Selector(this)');
+
+
     let att_spend_res_health_label = document.createElement('label');
     att_spend_res_health_label.innerHTML = 'health';
     let att_spend_res_sanity_label = document.createElement('label');
