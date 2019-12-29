@@ -1,10 +1,12 @@
-function heal(args) {
+function Heal(args) {
 
   var data = new args_Factory(args);
   let player = data.player;
   // let option = data.option;
   let value = data.value;
+  console.log('OUTPUT: heal -> value', value);
   let action = data.action;
+  console.log('OUTPUT: heal -> action', action);
 
   let sel_att_value = newData[player].attributes[value];
   let sel_att_value_top = newData[player].attributes[value + '_max'];
@@ -21,4 +23,5 @@ function heal(args) {
   Printer(player, value, newData[player].attributes[value]);
 
   console.log(newData[player].attributes);
+  //TODO
 }

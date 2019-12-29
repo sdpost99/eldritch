@@ -1,12 +1,8 @@
 
 Todo:
-  ☐ Item
-  ☐ dfdsfs
-  ☐ dsds
-  ☐ dasd @started(19-12-28 04:13)
+  ☐ Trabajar en las accion de Action en abilities.
+  ☐ Buscar una forma de desplegar en la UI las acciones disponibles y no disponibles 
+  ☐ Trabaja el boton mover, este sera activado en la opcion de current location.
+  ☐ 
 
   
-Archive:
-  ✔ Item @done(19-12-28 04:10) @project(Todo)
-  ✘ Item @cancelled(19-12-28 04:10) @project(Todo)
-  ✔ Item @done(19-12-28 04:09) @project(Todo)

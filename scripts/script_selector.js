@@ -6,19 +6,19 @@ function Selector(args) {
             NewData_Factory(args);
             break;
         case 'heal':
-            heal(args);
+            Heal(args);
             break;
         case 'rest':
             args.setAttribute('value', 'sanity');
-            heal(args);
+            Heal(args);
             args.setAttribute('value', 'health');
-            heal(args);
+            Heal(args);
             break;
         case 'rest_resource':
-            heal_resource(args);
+            Heal_resource(args);
             break;
         case 'spend_rest_resource':
-            spend_rest_resource(args);
+            Spend_rest_resource(args);
             break;
         case 'skills':
             Skills(args);
@@ -31,10 +31,10 @@ function Selector(args) {
 
 
 class args_Factory {
-    constructor(args) {
-        this.player = args.getAttribute('player');
-        this.option = args.getAttribute('option');
-        this.action = args.getAttribute('action');
-        this.value = args.value;
+    constructor(object) {
+        this.player = object.getAttribute('player');
+        this.option = object.getAttribute('option');
+        this.action = object.getAttribute('action');
+        this.value = object.value;
     }
 }

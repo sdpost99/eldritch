@@ -130,31 +130,18 @@ function UI_builder(players) {
       att_number_container.setAttribute('class', 'att-number-container');
       att_number_container.setAttribute('id', 'att-number-' + type);
 
-      let att_min_btn = document.createElement('button');
-      att_min_btn.setAttribute('value', type);
-      att_min_btn.setAttribute('option', 'heal');
-      att_min_btn.setAttribute('player', 'player' + (row + 1));
-      att_min_btn.setAttribute('action', 'reduce');
-      att_min_btn.setAttribute('onclick', 'Selector(this)');
-      att_min_btn.innerHTML = '-';
+      let heal_reduce_btn = new Buttons_Factory(type, 'heal', (row + 1), 'reduce', '-').button;
+      let heal_increase_btn = new Buttons_Factory(type, 'heal', (row + 1), 'increase', '+').button;
 
       let att_number_btn = document.createElement('div');
       att_number_btn.setAttribute('id', type);
       att_number_btn.setAttribute('class', 'att-number');
       att_number_btn.innerHTML = 8;
 
-      let att_plus_btn = document.createElement('button');
-      att_plus_btn.setAttribute('value', type);
-      att_plus_btn.setAttribute('option', 'heal');
-      att_plus_btn.setAttribute('player', 'player' + (row + 1));
-      att_plus_btn.setAttribute('action', 'increase');
-      att_plus_btn.setAttribute('onclick', 'Selector(this)');
-      att_plus_btn.innerHTML = '+';
-
       //appends
-      att_number_container.appendChild(att_min_btn);
+      att_number_container.appendChild(heal_reduce_btn);
       att_number_container.appendChild(att_number_btn);
-      att_number_container.appendChild(att_plus_btn);
+      att_number_container.appendChild(heal_increase_btn);
       att_container.appendChild(att_max_container);
       att_container.appendChild(att_number_container);
       return att_container
@@ -166,25 +153,23 @@ function UI_builder(players) {
 
     //norma rest button
     let att_rest_btn = document.createElement('button');
-    // att_rest_btn.setAttribute('id', 'att-rest-btn');
     att_rest_btn.setAttribute('option', 'rest');
     att_rest_btn.setAttribute('player', 'player' + (row + 1));
     att_rest_btn.setAttribute('action', 'increase');
     att_rest_btn.setAttribute('onclick', 'Selector(this)');
-    att_rest_btn.innerHTML = 'Simple Rest';
     let att_rest_btn_container = document.createElement('div');
     att_rest_btn_container.setAttribute('class', 'att-rest-btn-cont');
     att_rest_btn_container.appendChild(att_rest_btn);
+    att_rest_btn.innerHTML = 'Simple Rest';
 
     //spend resources labels
     let att_spend_res_label = document.createElement('button');
-    att_spend_res_label.innerHTML = 'rest spending res';
-    // att_spend_res_label.setAttribute('value', 'heal_resource');
+    att_spend_res_label.setAttribute('value', '');
     att_spend_res_label.setAttribute('option', 'spend_rest_resource');
     att_spend_res_label.setAttribute('player', 'player' + (row + 1));
     att_spend_res_label.setAttribute('action', 'increase');
     att_spend_res_label.setAttribute('onclick', 'Selector(this)');
-
+    att_spend_res_label.innerHTML = 'Rest spending resources';
 
     let att_spend_res_health_label = document.createElement('label');
     att_spend_res_health_label.innerHTML = 'health';
@@ -210,62 +195,31 @@ function UI_builder(players) {
 
 
     //spend resources buttons
-    let att_rest_res_health_min_btn = document.createElement('button');
-    att_rest_res_health_min_btn.innerHTML = '-';
-    att_rest_res_health_min_btn.setAttribute('value', 'health_resource');
-    att_rest_res_health_min_btn.setAttribute('option', 'rest_resource');
-    att_rest_res_health_min_btn.setAttribute('player', 'player' + (row + 1));
-    att_rest_res_health_min_btn.setAttribute('action', 'reduce');
-    att_rest_res_health_min_btn.setAttribute('onclick', 'Selector(this)');
+    function Attributes_rest_btn_Factory(type) {
 
-    let att_rest_res_health_number_btn = document.createElement('label');
-    att_rest_res_health_number_btn.innerHTML = '0';
-    att_rest_res_health_number_btn.setAttribute('id', 'health_resource')
+      let rest_spend_reduce_btn = new Buttons_Factory(type + '_resource',
+        'rest_resource', (row + 1), 'reduce', '-').button;
+      let rest_spend_increase_btn = new Buttons_Factory(type + '_resource',
+        'rest_resource', (row + 1), 'increase', '+').button;
 
-    let att_rest_res_health_max_btn = document.createElement('button');
-    att_rest_res_health_max_btn.innerHTML = '+';
-    att_rest_res_health_max_btn.setAttribute('value', 'health_resource');
-    att_rest_res_health_max_btn.setAttribute('option', 'rest_resource');
-    att_rest_res_health_max_btn.setAttribute('player', 'player' + (row + 1));
-    att_rest_res_health_max_btn.setAttribute('action', 'increase');
-    att_rest_res_health_max_btn.setAttribute('onclick', 'Selector(this)');
+      let att_rest_res_health_number_btn = document.createElement('label');
+      att_rest_res_health_number_btn.innerHTML = '0';
+      att_rest_res_health_number_btn.setAttribute('id', type + '_resource')
 
-    let att_rest_res_health_btn_container = document.createElement('div');
-    att_rest_res_health_btn_container.appendChild(att_rest_res_health_min_btn);
-    att_rest_res_health_btn_container.appendChild(att_rest_res_health_number_btn);
-    att_rest_res_health_btn_container.appendChild(att_rest_res_health_max_btn);
+      let att_rest_res_health_btn_container = document.createElement('div');
+      att_rest_res_health_btn_container.appendChild(rest_spend_reduce_btn);
+      att_rest_res_health_btn_container.appendChild(att_rest_res_health_number_btn);
+      att_rest_res_health_btn_container.appendChild(rest_spend_increase_btn);
 
-    let att_rest_res_sanity_min_btn = document.createElement('button');
-    att_rest_res_sanity_min_btn.innerHTML = '-';
-    att_rest_res_sanity_min_btn.setAttribute('value', 'sanity_resource');
-    att_rest_res_sanity_min_btn.setAttribute('option', 'rest_resource');
-    att_rest_res_sanity_min_btn.setAttribute('player', 'player' + (row + 1));
-    att_rest_res_sanity_min_btn.setAttribute('action', 'reduce');
-    att_rest_res_sanity_min_btn.setAttribute('onclick', 'Selector(this)');
+      return att_rest_res_health_btn_container
+    }
 
-    let att_rest_res_sanity_number_btn = document.createElement('label');
-    att_rest_res_sanity_number_btn.innerHTML = '0';
-    att_rest_res_sanity_number_btn.setAttribute('id', 'sanity_resource');
-
-    let att_rest_res_sanity_max_btn = document.createElement('button');
-    att_rest_res_sanity_max_btn.innerHTML = '+';
-    att_rest_res_sanity_max_btn.setAttribute('value', 'sanity_resource');
-    att_rest_res_sanity_max_btn.setAttribute('option', 'rest_resource');
-    att_rest_res_sanity_max_btn.setAttribute('player', 'player' + (row + 1));
-    att_rest_res_sanity_max_btn.setAttribute('action', 'increase');
-    att_rest_res_sanity_max_btn.setAttribute('onclick', 'Selector(this)');
-
-    let att_rest_res_sanity_btn_container = document.createElement('div');
-    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_min_btn);
-    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_number_btn);
-    att_rest_res_sanity_btn_container.appendChild(att_rest_res_sanity_max_btn);
 
     //spend resources buttons containers
     let att_rest_res_numbers_container = document.createElement('div');
     att_rest_res_numbers_container.setAttribute('class', 'att-rest-numbers-cont');
-    att_rest_res_numbers_container.appendChild(att_rest_res_health_btn_container)
-    att_rest_res_numbers_container.appendChild(att_rest_res_sanity_btn_container)
-
+    att_rest_res_numbers_container.appendChild(Attributes_rest_btn_Factory('health'))
+    att_rest_res_numbers_container.appendChild(Attributes_rest_btn_Factory('sanity'))
 
 
     att_rest_container.appendChild(att_rest_btn_container);
@@ -308,34 +262,17 @@ function UI_builder(players) {
       skills_tr2.appendChild(skills_top);
 
       var skills_td = document.createElement('td');
-
-      //skills reduce
-      var skills_minus_btn = document.createElement('button');
-      skills_minus_btn.setAttribute('value', item);
-      skills_minus_btn.setAttribute('option', 'skills');
-      skills_minus_btn.setAttribute('player', 'player' + (row + 1));
-      skills_minus_btn.setAttribute('action', 'reduce');
-      skills_minus_btn.setAttribute('onclick', 'Selector(this)');
-      skills_minus_btn.innerHTML = '-';
+      let skills_reduce_btn = new Buttons_Factory(item, 'skills', (row + 1), 'reduce', '-').button;
+      let skills_increase_btn = new Buttons_Factory(item, 'skills', (row + 1), 'increase', '+').button;
 
       //skills number
       var skills_number = document.createElement('span');
       skills_number.innerHTML = 0;
       skills_number.setAttribute('id', item);
 
-      //skills incrase
-      var skills_plus_btn = document.createElement('button');
-      skills_plus_btn.setAttribute('value', item);
-      skills_plus_btn.setAttribute('option', 'skills');
-      skills_plus_btn.setAttribute('player', 'player' + (row + 1));
-      skills_plus_btn.setAttribute('action', 'increase');
-      skills_plus_btn.setAttribute('onclick', 'Selector(this)');
-      skills_plus_btn.innerHTML = '+';
-
-      skills_td.appendChild(skills_minus_btn);
+      skills_td.appendChild(skills_reduce_btn);
       skills_td.appendChild(skills_number);
-      skills_td.appendChild(skills_plus_btn);
-
+      skills_td.appendChild(skills_increase_btn);
       skills_tr3.appendChild(skills_td);
     }
     char_sheet_div.appendChild(skills_div);
@@ -362,33 +299,17 @@ function UI_builder(players) {
       var tokens_header_td = document.createElement('td');
       tokens_header_td.innerHTML = item;
       tokens_tr1.appendChild(tokens_header_td);
-
       var tokens_number_td = document.createElement('td');
-
-      var tokens_minus_btn = document.createElement('button');
-      tokens_minus_btn.setAttribute('value', item);
-      tokens_minus_btn.setAttribute('option', 'tokens');
-      tokens_minus_btn.setAttribute('player', 'player' + (row + 1));
-      tokens_minus_btn.setAttribute('action', 'reduce');
-      tokens_minus_btn.setAttribute('onclick', 'Selector(this)');
-      tokens_minus_btn.innerHTML = '-';
-
+      let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
+      let tokens_increase_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'increase', '+').button;
       var tokens_number = document.createElement('span');
       tokens_number.innerHTML = 0;
       tokens_number.setAttribute('id', item);
 
-      var tokens_plus_btn = document.createElement('button');
-      tokens_plus_btn.setAttribute('value', item);
-      tokens_plus_btn.setAttribute('option', 'tokens');
-      tokens_plus_btn.setAttribute('player', 'player' + (row + 1));
-      tokens_plus_btn.setAttribute('action', 'increase');
-      tokens_plus_btn.setAttribute('onclick', 'Selector(this)');
-      tokens_plus_btn.innerHTML = '+';
-
-      tokens_number_td.appendChild(tokens_minus_btn);
+      // tokens_number_td.appendChild(tokens_minus_btn);
+      tokens_number_td.appendChild(tokens_reduce_btn);
       tokens_number_td.appendChild(tokens_number);
-      tokens_number_td.appendChild(tokens_plus_btn);
-
+      tokens_number_td.appendChild(tokens_increase_btn);
       tokens_tr2.appendChild(tokens_number_td);
     }
 

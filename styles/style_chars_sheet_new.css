@@ -74,7 +74,7 @@
 .att-rest-label-cont button {
     background-color: saddlebrown;
     text-align: center;
-    padding: 10px 0;
+    padding: 4px 0;
     width: 100%;
     /* height: 100%; */
 }
@@ -118,45 +118,4 @@
 .att-rest-numbers-cont button,
 .att-rest-numbers-cont label {
     width: 100%;
-}
-
-
-
-
-
-
-/* backup */
-
-.att-rest-res-header {
-    /* height: 50%; */
-    /*     background-color: chocolate; */
-    /*     display: flex; */
-    /*     width: 100%; */
-    /*     align-items: center; */
-    /*     justify-content:center; */
-}
-
-
-
-
-.att-rest button {
-    /*     color: black; */
-    /*     width: 100%; */
-}
-
-#att-rest-btn {
-    /*     background-color: cornsilk; */
-    /*     height: 50%; */
-    /*     font-size: 16px; */
-    /*     margin: 0 0 20px 0; */
-}
-
-#att-rest-sanity-btn {
-    /*     background-color: cadetblue; */
-    /*     text-align: right; */
-}
-
-#att-rest-health-btn {
-    /*     background-color: brown; */
-    /*     text-align: left; */
 }

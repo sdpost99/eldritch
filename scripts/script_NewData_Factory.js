@@ -50,8 +50,8 @@ function NewData_Factory(args) {
     newData[player].cards.personal_story = player_att.personal_story;
 
     newData[player].actions = {};
-    newData[player].actions.res_health = 0;
-    newData[player].actions.res_sanity = 0;
+    newData[player].actions.health_resource = 0;
+    newData[player].actions.sanity_resource = 0;
 
 
     Printer(player, 'health', player_att.health);

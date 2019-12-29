@@ -1,66 +1,70 @@
-function heal_resource(args) {
+function Heal_resource(args) {
 
-    var data = new args_Factory(args);
-    let player = data.player;
-    let value = data.value;
-    let action = data.action;
-    let current_res = newData[player].tokens.resource;
+  var data = new args_Factory(args);
+  let player = data.player;
+  let value = data.value;
+  let action = data.action;
 
+  let sel_att_value = newData[player].actions[value];
+  let sel_att_value_top = newData[player].attributes[(value.slice(0, 6)) + '_max'];
+  let sel_att_value_current = newData[player].attributes[(value.slice(0, 6))];
+  let current_resource_tokens = newData[player].tokens.resource;
 
-    let sel_att_value = newData[player].actions.res_health[value];
-    // let sel_att_value_top = newData[player].attributes[value + '_max'];
-
-
-    // var player_sheet = 'p' + player.slice(6);
-    // var sheet = document.getElementById(player_sheet);
-    // let sel_opt_value = sheet.querySelector('#' + value).innerHTML;
-
-    if (action == 'increase') {
-        if (sel_att_value < sel_att_value_top) {
-          newData[player].attributes[value] = sel_att_value + 1;
-        }
-      } else {
-        if (sel_att_value > 0) {
-          newData[player].attributes[value] = sel_att_value - 1;
-        }
+  if (action == 'increase') {
+    if (sel_att_value < current_resource_tokens) {
+      if (sel_att_value < (sel_att_value_top - sel_att_value_current - 1)) {
+        newData[player].actions[value] = sel_att_value + 1;
       }
+    }
+  } else {
+    if (sel_att_value > 0) {
+      newData[player].actions[value] = sel_att_value - 1;
+    }
+  }
 
-    if (action == 'reduce') {
-        if (sel_opt_value > 0) {
-            sel_opt_value--;
-        }
-    }
-    if (action == 'increase') {
-        if (sel_opt_value < current_res) {
-            sel_opt_value++;
-        }
-    }
-    Printer(player, value, sel_opt_value);
-    console.log(newData[player].attributes);
+  if (value == 'sanity_resource') {
+    newData[player].actions['health_resource'] = 0;
+  } else {
+    newData[player].actions['sanity_resource'] = 0;
+  }
+
+  Printer(player, 'health_resource', newData[player].actions['health_resource']);
+  Printer(player, 'sanity_resource', newData[player].actions['sanity_resource']);
+  console.log(newData[player].actions);
 }
 
 
-function spend_rest_resource(args){
-    var data = new args_Factory(args);
-    let player = data.player;
-    console.log("Output: functionspend_heal_resource -> player", player)
-    let value = data.value;
-    console.log("Output: functionspend_heal_resource -> value", value)
-    let action = data.action;
-    console.log("Output: functionspend_heal_resource -> action", action)
-    // let current_res = newData[player].tokens.resource;
-    // console.log("Output: functionspend_heal_resource -> current_res", current_res)
+function Spend_rest_resource(args) {
+  var data = new args_Factory(args);
+  let player = data.player;
 
-    var player_sheet = 'p' + player.slice(6);
-    var sheet = document.getElementById(player_sheet);
-    let current_res_health = sheet.querySelector('#health_resource').innerHTML;
-    console.log("Output: functionspend_heal_resource -> current_res_health", current_res_health)
-    let current_res_sanity = sheet.querySelector('#sanity_resource').innerHTML;
-    console.log("Output: functionspend_heal_resource -> current_res_sanity", current_res_sanity)
+  let health_value = newData[player].actions.health_resource;
+  let sanity_value = newData[player].actions.sanity_resource;
 
-    if()
-    
-    args.value = 
-    heal(args);
+  args.value = 'health'
+  args.setAttribute('action', 'increase');
+  for (let i = 0; i < health_value + 1; i++) {
+    Heal(args);
+  }
+  args.value = 'sanity'
+  for (let i = 0; i < sanity_value + 1; i++) {
+    Heal(args)
+  }
 
+  args.value = 'resource';
+  args.setAttribute('action', 'reduce');
+  for (let i = 0; i < health_value; i++) {
+    Tokens(args);
+  }
+  for (let i = 0; i < sanity_value; i++) {
+    Tokens(args);
+  }
+
+  newData[player].actions['health_resource'] = 0;
+  newData[player].actions['sanity_resource'] = 0;
+
+  Printer(player, 'health_resource', newData[player].actions['health_resource']);
+  Printer(player, 'sanity_resource', newData[player].actions['sanity_resource']);
+
+  console.log(newData[player].actions);
 }

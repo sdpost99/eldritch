@@ -1,8 +1,8 @@
-function Tokens(args) {
+function Tokens(object) {
+  console.log('OUTPUT: Tokens -> args', object);
 
-  let data = new args_Factory(args);
+  let data = new args_Factory(object);
   let player = data.player;
-  // let option = data.option;
   let action = data.action;
   let value = data.value;
 
@@ -21,5 +21,5 @@ function Tokens(args) {
   }
 
   Printer(player, value, newData[player].tokens[value]);
-  console.log(newData[player].tokens);
+  // console.log(newData[player].tokens);
 }
