@@ -26,6 +26,10 @@ function Selector(args) {
         case 'tokens':
             Tokens(args);
             break;
+        case 'move':
+            console.log('move');
+            Move(args);
+            break;
     }
 }
 

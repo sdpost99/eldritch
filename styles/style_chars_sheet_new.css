@@ -1,13 +1,10 @@
 .att-container {
-    /*     background-color: red; */
     display: flex;
     margin: 10px;
-    /*     height: 69px; */
 }
 
 .att-HnS {
     width: 100%;
-    /*     background-color: blue */
 }
 
 .att-max-container {
@@ -17,6 +14,7 @@
     justify-content: center;
     height: 15%;
     align-items: center;
+    font-size: 10px;
 }
 
 .att-number-container {
@@ -84,11 +82,11 @@
     background-color: darkslategrey;
     display: flex;
     text-align: center;
+    font-size: 12px;
 }
 
 /* Rest type label divs / controla la altura del renglon*/
 .att-rest-label-type-cont div {
-    /* padding: 10px 0; */
     width: 100%;
 }
 
@@ -118,4 +116,103 @@
 .att-rest-numbers-cont button,
 .att-rest-numbers-cont label {
     width: 100%;
+}
+
+.actions-container {
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 9px;
+    margin-bottom: 10px;
+}
+
+.actions-container button {
+    background-color: darkseagreen;
+    color: black;
+    width: 32%;
+    padding: 5px 0;
+}
+
+.available-actions-main-container {
+   margin: 10px 9px;
+   border: 1px solid black;
+}
+
+.available-actions-header{
+    text-align: center;
+    background-color: brown;
+}
+
+.available-actions-container {
+    display: flex;
+    margin: 5px;
+}
+
+.available-actions-container div {
+    background-color: lightblue;
+    color: black;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.abilities {
+  background-color: #606b6c;
+  margin: 8px 8px 10px 8px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 180px
+}
+
+.abilities li {
+    margin: 8px;
+  padding: 5px 10px;;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+
+#ability_01:hover{
+    background-color: rgba(159,173,200,.7);
+    color: black;
+    cursor:pointer;
+box-shadow: 2px 2px S5px rgba(0,0,0,.2);
+border-radius: 5px;
+}
+
+#av-move{
+/*     display: none; */
+}
+#av-rest{
+    /* display: none; */
+}
+#av-adquire{
+    /* display: none; */
+}
+#av-trade{
+    /* display: none; */
+}
+#av-action{
+    /* display: none; */
+}
+#av-focus{
+    /* display: none; */
+}
+#av-resource{
+    /* display: none; */
+}
+#av-ship{
+    /* display: none; */
+}
+#av-train{
+    /* display: none; */
+}
+#av-delayed{
+    /* display: none; */
 }

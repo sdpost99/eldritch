@@ -107,14 +107,15 @@
             </table>
         </div>
         <div class="tokens">
+
             <table>
                 <tr class="tokens-header">
                     <td>focus</td>
                     <td>resource</td>
                     <td>ship</td>
                     <td>train</td>
-                    <td>clue</td>
-                    <td>eldritch</td>
+                    <!-- <td>clue</td> -->
+                    <!-- <td>eldritch</td> -->
                 </tr>
                 <tr class="tokens-number">
                     <td><button value="focus" option="tokens" player="player1" action="reduce"
@@ -129,69 +130,39 @@
                     <td><button value="train" option="tokens" player="player1" action="reduce"
                             onclick="Selector(this)">-</button><span id="train">0</span><button value="train"
                             option="tokens" player="player1" action="increase" onclick="Selector(this)">+</button></td>
-                    <td><button value="clue" option="tokens" player="player1" action="reduce"
+                    <!-- <td><button value="clue" option="tokens" player="player1" action="reduce"
                             onclick="Selector(this)">-</button><span id="clue">0</span><button value="clue"
                             option="tokens" player="player1" action="increase" onclick="Selector(this)">+</button></td>
                     <td><button value="eldritch" option="tokens" player="player1" action="reduce"
                             onclick="Selector(this)">-</button><span id="eldritch">0</span><button value="eldritch"
-                            option="tokens" player="player1" action="increase" onclick="Selector(this)">+</button></td>
+                            option="tokens" player="player1" action="increase" onclick="Selector(this)">+</button></td> -->
                 </tr>
             </table>
         </div>
-        <div id="location">current location</div>
-        <div id="actions_dropdown">
-            <table>
-                <tr>
-                    <td id="action1">
-                        <div class="action_drop_div"><select id="player1" class="action_drop"
-                                onchange="dropdown_selection(this)">
-                                <option class="action_drop_element" value="start">select action 1</option>
-                                <option class="action_drop_element" value="move">move</option>
-                                <option class="action_drop_element" value="rest">rest</option>
-                                <option class="action_drop_element" value="focus">focus</option>
-                                <option class="action_drop_element" value="trade">trade</option>
-                                <option class="action_drop_element" value="resource">resource</option>
-                                <option class="action_drop_element" value="action">action</option>
-                                <option class="action_drop_element" value="acquire">acquire</option>
-                                <option class="action_drop_element" value="delayed">delayed</option>
-                                <option class="action_drop_element" value="train">train</option>
-                                <option class="action_drop_element" value="ship">ship</option>
-                            </select></div>
-                    </td>
-                    <td id="action2">
-                        <div class="action_drop_div"><select id="player1" class="action_drop"
-                                onchange="dropdown_selection(this)">
-                                <option class="action_drop_element" value="start">select action 2</option>
-                                <option class="action_drop_element" value="move">move</option>
-                                <option class="action_drop_element" value="rest">rest</option>
-                                <option class="action_drop_element" value="focus">focus</option>
-                                <option class="action_drop_element" value="trade">trade</option>
-                                <option class="action_drop_element" value="resource">resource</option>
-                                <option class="action_drop_element" value="action">action</option>
-                                <option class="action_drop_element" value="acquire">acquire</option>
-                                <option class="action_drop_element" value="delayed">delayed</option>
-                                <option class="action_drop_element" value="train">train</option>
-                                <option class="action_drop_element" value="ship">ship</option>
-                            </select></div>
-                    </td>
-                    <td id="action3">
-                        <div class="action_drop_div"><select id="player1" class="action_drop"
-                                onchange="dropdown_selection(this)">
-                                <option class="action_drop_element" value="start">select action 3</option>
-                                <option class="action_drop_element" value="move">move</option>
-                                <option class="action_drop_element" value="rest">rest</option>
-                                <option class="action_drop_element" value="focus">focus</option>
-                                <option class="action_drop_element" value="trade">trade</option>
-                                <option class="action_drop_element" value="resource">resource</option>
-                                <option class="action_drop_element" value="action">action</option>
-                                <option class="action_drop_element" value="acquire">acquire</option>
-                                <option class="action_drop_element" value="delayed">delayed</option>
-                                <option class="action_drop_element" value="train">train</option>
-                                <option class="action_drop_element" value="ship">ship</option>
-                            </select></div>
-                    </td>
-                </tr>
-            </table>
+        <div class="actions-container">
+                <button>Trade</button>
+                <button>Adquire</button>
+                <button>Delayed</button>
+        </div>
+        <div class="location-container">
+            <button id="location">current location</button>
+        </div>
+        <div class="available-actions-main-container">
+            <div class="available-actions-header">Available Actions</div>
+            <div class="available-actions-container">
+                <div id="av-move">Move</div>
+                <div id="av-rest">Rest</div>
+                <div id="av-adquire">Adquire</div>
+                <div id="av-trade">Trade</div>
+                <div id="av-action">Actions</div>
+            </div>
+            <div class="available-actions-container">
+                <div id="av-focus">Focus</div>
+                <div id="av-resource">Resource</div>
+                <div id="av-ship">Ship</div>
+                <div id="av-train">Train</div>
+                <div id="av-delayed">Delayed</div>
+            </div>
         </div>
     </div>
 </body>

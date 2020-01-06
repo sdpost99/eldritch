@@ -116,18 +116,6 @@ function players_RAW() {
     }
   };
 
-  // for (var i = 0; i < 2; i++) {
-  //   data['player' + [i + 1]] = {
-  //     'char': false,
-  //     'attributes': false,
-  //     'first_player': false,
-  //     'activated': false,
-  //     'actions': actions,
-  //     // 'tokens': tokens,
-  //     'current_location': false
-  //   };
-  // }
-
   data.playersData = characters_list;
   data.tokens = token_list;
   data.actions = action_list;

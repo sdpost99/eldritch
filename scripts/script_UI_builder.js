@@ -92,10 +92,14 @@ function UI_builder(players) {
     var abilities_div = document.createElement('div');
     abilities_div.setAttribute('class', 'abilities');
     var abilities_ul = document.createElement('ul');
+
     var ability_01 = document.createElement('li');
     ability_01.setAttribute('id', 'ability_01')
+    ability_01.setAttribute('onclick', 'console.log("ss")');
+    
     var ability_02 = document.createElement('li');
     ability_02.setAttribute('id', 'ability_02')
+    
     abilities_ul.appendChild(ability_01);
     abilities_ul.appendChild(ability_02);
     abilities_div.appendChild(abilities_ul);
@@ -151,7 +155,7 @@ function UI_builder(players) {
     let att_rest_container = document.createElement('div');
     att_rest_container.setAttribute('class', 'att-rest-cont');
 
-    //norma rest button
+    //normal rest button
     let att_rest_btn = document.createElement('button');
     att_rest_btn.setAttribute('option', 'rest');
     att_rest_btn.setAttribute('player', 'player' + (row + 1));
@@ -315,8 +319,18 @@ function UI_builder(players) {
 
     //locations
     var location_div = document.createElement('div');
-    location_div.setAttribute('id', 'location');
-    location_div.innerHTML = 'current location';
+    location_div.setAttribute('class', 'location_container');
+
+    var location_btn = document.createElement('button');
+    location_btn.setAttribute('id', 'location');
+    // location_btn.setAttribute('value', '');
+    location_btn.setAttribute('option', 'move');
+    location_btn.setAttribute('player', 'player' + (row + 1));
+    // location_btn.setAttribute('action', 'increase');
+    location_btn.setAttribute('onclick', 'Selector(this)');
+    location_btn.innerHTML = 'current location';
+
+    location_div.appendChild(location_btn);
     char_sheet_div.appendChild(location_div);
 
     //actions
