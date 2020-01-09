@@ -2,6 +2,7 @@ function UI_builder(players) {
 
   var action_list = ['', 'move', 'rest', 'focus', 'trade', 'resource', 'action', 'acquire', 'delayed', 'train', 'ship'];
   var skills_list = ['lore', 'inf', 'obs', 'str', 'will'];
+  var action_tokens_list = rawData.action_tokens;
   var tokens_list = rawData.tokens;
 
   for (var row = 0; row < players.value; row++) {
@@ -281,22 +282,23 @@ function UI_builder(players) {
     }
     char_sheet_div.appendChild(skills_div);
 
-    //tokens builder
-    var tokens_div = document.createElement('div');
-    tokens_div.setAttribute('class', 'tokens');
-    char_sheet_div.appendChild(tokens_div);
-    var tokens_table = document.createElement('table');
-    tokens_div.appendChild(tokens_table);
-    var tokens_tr1 = document.createElement('tr');
-    tokens_tr1.setAttribute('class', 'tokens-header');
-    var tokens_tr2 = document.createElement('tr');
-    tokens_tr2.setAttribute('class', 'tokens-number');
-    tokens_table.appendChild(tokens_tr1);
-    tokens_table.appendChild(tokens_tr2);
+    //actions tokens builder
+    var action_tokens_div = document.createElement('div');
+    action_tokens_div.setAttribute('class', 'tokens');
+    char_sheet_div.appendChild(action_tokens_div);
+    var action_tokens_table = document.createElement('table');
+    action_tokens_div.appendChild(action_tokens_table);
+    var action_tokens_tr1 = document.createElement('tr');
+    action_tokens_tr1.setAttribute('class', 'tokens-header');
+    var action_tokens_tr2 = document.createElement('tr');
+    action_tokens_tr2.setAttribute('class', 'tokens-number');
+    action_tokens_table.appendChild(action_tokens_tr1);
+    action_tokens_table.appendChild(action_tokens_tr2);
 
-
-    //tokens
-    tokens_list.forEach(tokens_builder);
+    //action tokens
+    action_tokens_list.forEach(function(){
+      
+    });
 
     function tokens_builder(item) {
       //tokens header
@@ -310,7 +312,40 @@ function UI_builder(players) {
       tokens_number.innerHTML = 0;
       tokens_number.setAttribute('id', item);
 
-      // tokens_number_td.appendChild(tokens_minus_btn);
+      tokens_number_td.appendChild(tokens_reduce_btn);
+      tokens_number_td.appendChild(tokens_number);
+      tokens_number_td.appendChild(tokens_increase_btn);
+      tokens_tr2.appendChild(tokens_number_td);
+    }
+    
+    //tokens builder
+    var tokens_div = document.createElement('div');
+    tokens_div.setAttribute('class', 'tokens');
+    char_sheet_div.appendChild(tokens_div);
+    var tokens_table = document.createElement('table');
+    tokens_div.appendChild(tokens_table);
+    var tokens_tr1 = document.createElement('tr');
+    tokens_tr1.setAttribute('class', 'tokens-header');
+    var tokens_tr2 = document.createElement('tr');
+    tokens_tr2.setAttribute('class', 'tokens-number');
+    tokens_table.appendChild(tokens_tr1);
+    tokens_table.appendChild(tokens_tr2);
+
+    //tokens
+    action_tokens_list.forEach(tokens_builder);
+
+    function tokens_builder(item) {
+      //tokens header
+      var tokens_header_td = document.createElement('td');
+      tokens_header_td.innerHTML = item;
+      tokens_tr1.appendChild(tokens_header_td);
+      var tokens_number_td = document.createElement('td');
+      let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
+      let tokens_increase_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'increase', '+').button;
+      var tokens_number = document.createElement('span');
+      tokens_number.innerHTML = 0;
+      tokens_number.setAttribute('id', item);
+
       tokens_number_td.appendChild(tokens_reduce_btn);
       tokens_number_td.appendChild(tokens_number);
       tokens_number_td.appendChild(tokens_increase_btn);

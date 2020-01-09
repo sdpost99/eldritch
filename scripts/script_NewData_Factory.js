@@ -75,6 +75,6 @@ function NewData_Factory(args) {
     Printer(player, 'resource', player_att.tokens.resource);
     Printer(player, 'ship', player_att.tokens.ship);
     Printer(player, 'train', player_att.tokens.train);
-    Printer(player, 'clue', player_att.tokens.clue);
-    Printer(player, 'eldritch', player_att.tokens.eldritch);
+    // Printer(player, 'clue', player_att.tokens.clue);
+    // Printer(player, 'eldritch', player_att.tokens.eldritch);
 }

@@ -1,160 +1,123 @@
 .att-container {
-    display: flex;
-    margin: 10px;
+  display: flex;
+  margin: 10px;
 }
 
 .att-HnS {
-    width: 100%;
+  width: 100%;
 }
 
 .att-max-container {
-    display: flex;
-    background-color: yellowgreen;
-    color: black;
-    justify-content: center;
-    height: 15%;
-    align-items: center;
-    font-size: 10px;
+  display: flex;
+  background-color: yellowgreen;
+  color: black;
+  justify-content: center;
+  height: 15%;
+  align-items: center;
+  font-size: 10px;
 }
 
 .att-number-container {
-    display: flex;
-    color: black;
-    height: 85%;
-    background-color: cornflowerblue;
+  display: flex;
+  color: black;
+  height: 85%;
+  background-color: cornflowerblue;
 }
 
 .att-number {
-    font-size: 40px;
-    margin: auto;
+  font-size: 40px;
+  margin: auto;
 }
 
 #att-number-health {
-    background-color: darkcyan;
+  background-color: darkcyan;
 }
 
 #att-number-sanity {
-    background-color: firebrick;
+  background-color: firebrick;
 }
 
 .att-number-container button {
-    width: 100%;
+  width: 100%;
 }
 
 /* rest section */
 .att-rest-cont {
-    background-color: green;
-    width: 500px;
+  background-color: green;
+  width: 500px;
 }
 
 /* rest button container */
 .att-rest-btn-cont {
-    background-color: darkgoldenrod;
-    text-align: center;
+  background-color: darkgoldenrod;
+/*   text-align: center; */
 }
 
 /* rest button */
 .att-rest-btn-cont button {
-    margin: 0 0 10px 0;
-    background-color: indigo;
-    width: 100%;
-    /* height: 35px; */
-    padding: 10px 0;
+/*   margin: 0 0 10px 0; */
+  background-color: indigo;
+  width: 100%;
+  /* height: 35px; */
+  padding: 5px 0;
+  font-size: 12px;
 }
 
 /* Rest spending resources label container */
 .att-rest-label-cont {
-    background-color: blueviolet;
-    text-align: center;
-    /* padding: 10px 0; */
+/*   background-color: blueviolet; */
+/*   text-align: center; */
+  /* padding: 10px 0; */
 }
 
 .att-rest-label-cont button {
-    background-color: saddlebrown;
-    text-align: center;
-    padding: 4px 0;
-    width: 100%;
-    /* height: 100%; */
+  background-color: saddlebrown;
+  font-size: 12px;
+/*   text-align: center; */
+  padding: 5px 0;
+  width: 100%;
+  /* height: 100%; */
 }
 
 /* Rest type label container  */
 .att-rest-label-type-cont {
-    background-color: darkslategrey;
-    display: flex;
-    text-align: center;
-    font-size: 12px;
+  background-color: darkslategrey;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
 }
 
 /* Rest type label divs / controla la altura del renglon*/
 .att-rest-label-type-cont div {
-    width: 100%;
+  width: 100%;
 }
 
 /* Rest health label container */
 .att-rest-label-health-cont {
-    background-color: midnightblue;
+  background-color: midnightblue;
 }
 
 /* rest sanity label container */
 .att-rest-label-sanity-cont {
-    background-color: crimson;
+  background-color: crimson;
 }
 
 /* rest resources number container */
 .att-rest-numbers-cont {
-    display: flex;
+  display: flex;
 }
 
 /* spend resources botones */
 .att-rest-numbers-cont div {
-    width: 100%;
-    background-color: orangered;
-    display: flex;
-    text-align: center;
+  width: 100%;
+  background-color: orangered;
+  display: flex;
+  text-align: center;
 }
 
 .att-rest-numbers-cont button,
 .att-rest-numbers-cont label {
-    width: 100%;
-}
-
-.actions-container {
-    background-color: brown;
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 9px;
-    margin-bottom: 10px;
-}
-
-.actions-container button {
-    background-color: darkseagreen;
-    color: black;
-    width: 32%;
-    padding: 5px 0;
-}
-
-.available-actions-main-container {
-   margin: 10px 9px;
-   border: 1px solid black;
-}
-
-.available-actions-header{
-    text-align: center;
-    background-color: brown;
-}
-
-.available-actions-container {
-    display: flex;
-    margin: 5px;
-}
-
-.available-actions-container div {
-    background-color: lightblue;
-    color: black;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  width: 100%;
 }
 
 .abilities {
@@ -166,8 +129,9 @@
 }
 
 .abilities li {
-    margin: 8px;
-  padding: 5px 10px;;
+  margin: 8px;
+  padding: 5px 10px;
+  ;
 }
 
 ul {
@@ -177,42 +141,90 @@ ul {
   font-size: 12px;
 }
 
-
-#ability_01:hover{
-    background-color: rgba(159,173,200,.7);
-    color: black;
-    cursor:pointer;
-box-shadow: 2px 2px S5px rgba(0,0,0,.2);
-border-radius: 5px;
+#ability_01:hover {
+  background-color: rgba(159, 173, 200, .7);
+  color: black;
+  cursor: pointer;
+  box-shadow: 2px 2px S5px rgba(0, 0, 0, .2);
+  border-radius: 5px;
 }
 
-#av-move{
-/*     display: none; */
+.actions-container {
+  background-color: brown;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 9px;
+  margin-bottom: 10px;
 }
-#av-rest{
-    /* display: none; */
+
+.actions-container button {
+  background-color: darkseagreen;
+  color: black;
+  width: 32%;
+  padding: 5px 0;
 }
-#av-adquire{
-    /* display: none; */
+
+.available-actions-main-container {
+  margin: 10px 9px;
+  border: 1px solid black;
 }
-#av-trade{
-    /* display: none; */
+
+.available-actions-header {
+  text-align: center;
+  background-color: brown;
 }
-#av-action{
-    /* display: none; */
+
+.available-actions-container {
+  display: flex;
+  margin: 5px;
 }
-#av-focus{
-    /* display: none; */
+
+.available-actions-container div {
+  background-color: lightblue;
+  color: black;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
 }
-#av-resource{
-    /* display: none; */
+
+#av-move {
+  /*     display: none; */
 }
-#av-ship{
-    /* display: none; */
+
+#av-rest {
+  /* display: none; */
 }
-#av-train{
-    /* display: none; */
+
+#av-adquire {
+  /* display: none; */
 }
-#av-delayed{
-    /* display: none; */
+
+#av-trade {
+  /* display: none; */
+}
+
+#av-action {
+  /* display: none; */
+}
+
+#av-focus {
+  /* display: none; */
+}
+
+#av-resource {
+  /* display: none; */
+}
+
+#av-ship {
+  /* display: none; */
+}
+
+#av-train {
+  /* display: none; */
+}
+
+#av-delayed {
+  /* display: none; */
 }

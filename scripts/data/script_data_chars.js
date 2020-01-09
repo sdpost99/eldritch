@@ -1,11 +1,14 @@
 function players_RAW() {
   var data = {};
 
-  var token_list = [
+  var action_token_list = [
     'focus',
     'resource',
     'ship',
     'train',
+  ];
+  
+  var token_list = [
     'clue',
     'eldritch'
   ];
@@ -87,8 +90,8 @@ function players_RAW() {
         'resource': 0,
         'ship': 0,
         'train': 0,
-        'clue': 1,
-        'eldritch': 0
+        'clue': 7,
+        'eldritch': 3
       },
       'original_location': 'AR',
       'abilities': ['Action: Move to a space containing a Gate that corresponds to the current Omen.', 'During the Encounter Phase, you may spend 1 Focus or 1 Sanity to encounter a Gate on your space as if there are no Monsters on your space.']
@@ -108,8 +111,8 @@ function players_RAW() {
         'resource': 0,
         'ship': 0,
         'train': 0,
-        'clue': 0,
-        'eldritch': 0
+        'clue': 6,
+        'eldritch': 4
       },
       'original_location': 's17',
       'abilities': ['Action: You or another investigator on you space may discard 1 Injury or Illness Condition and/or perform a Rest action.', 'When you or another investigator on your space performs a Rest action, that investigator may recover 1 additional Health.']
@@ -117,8 +120,9 @@ function players_RAW() {
   };
 
   data.playersData = characters_list;
+  data.action_tokens = action_token_list;
   data.tokens = token_list;
-  data.actions = action_list;
+  // data.actions = action_list;
 
   return data;
 
@@ -126,11 +130,11 @@ function players_RAW() {
 
 function game_properties() {
   var data = {};
-  data.focus = 2;
-  data.train = 1;
-  data.ship = 1;
+  data.focus = 6;
+  data.train = 5;
+  data.ship = 4;
   data.resource = 10;
-  data.clue = 10;
-  data.eldritch = 10;
+  data.clue = 100;
+  data.eldritch = 100;
   return data;
 }
