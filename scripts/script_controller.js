@@ -1,4 +1,4 @@
-function Selector(args) {
+function Controller(args) {
     let sel_opt = args.getAttribute('option');
 
     switch (sel_opt) {

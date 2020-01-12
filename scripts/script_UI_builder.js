@@ -1,6 +1,6 @@
 function UI_builder(players) {
 
-  var action_list = ['', 'move', 'rest', 'focus', 'trade', 'resource', 'action', 'acquire', 'delayed', 'train', 'ship'];
+  var action_list = ['trade', 'acquire', 'delayed'];
   var skills_list = ['lore', 'inf', 'obs', 'str', 'will'];
   var action_tokens_list = rawData.action_tokens;
   var tokens_list = rawData.tokens;
@@ -47,7 +47,7 @@ function UI_builder(players) {
     nd_div.setAttribute('class', 'char_drop_div');
 
     var nd_sel = document.createElement('select');
-    nd_sel.setAttribute('onchange', 'Selector(this)');
+    nd_sel.setAttribute('onchange', 'Controller(this)');
     nd_sel.setAttribute('player', 'player' + (row + 1));
     nd_sel.setAttribute('option', 'character');
 
@@ -96,11 +96,11 @@ function UI_builder(players) {
 
     var ability_01 = document.createElement('li');
     ability_01.setAttribute('id', 'ability_01')
-    ability_01.setAttribute('onclick', 'console.log("ss")');
-    
+    ability_01.setAttribute('onclick', 'console.log("action ability selected")');
+
     var ability_02 = document.createElement('li');
     ability_02.setAttribute('id', 'ability_02')
-    
+
     abilities_ul.appendChild(ability_01);
     abilities_ul.appendChild(ability_02);
     abilities_div.appendChild(abilities_ul);
@@ -161,7 +161,7 @@ function UI_builder(players) {
     att_rest_btn.setAttribute('option', 'rest');
     att_rest_btn.setAttribute('player', 'player' + (row + 1));
     att_rest_btn.setAttribute('action', 'increase');
-    att_rest_btn.setAttribute('onclick', 'Selector(this)');
+    att_rest_btn.setAttribute('onclick', 'Controller(this)');
     let att_rest_btn_container = document.createElement('div');
     att_rest_btn_container.setAttribute('class', 'att-rest-btn-cont');
     att_rest_btn_container.appendChild(att_rest_btn);
@@ -173,7 +173,7 @@ function UI_builder(players) {
     att_spend_res_label.setAttribute('option', 'spend_rest_resource');
     att_spend_res_label.setAttribute('player', 'player' + (row + 1));
     att_spend_res_label.setAttribute('action', 'increase');
-    att_spend_res_label.setAttribute('onclick', 'Selector(this)');
+    att_spend_res_label.setAttribute('onclick', 'Controller(this)');
     att_spend_res_label.innerHTML = 'Rest spending resources';
 
     let att_spend_res_health_label = document.createElement('label');
@@ -282,106 +282,74 @@ function UI_builder(players) {
     }
     char_sheet_div.appendChild(skills_div);
 
-    //actions tokens builder
-    var action_tokens_div = document.createElement('div');
-    action_tokens_div.setAttribute('class', 'tokens');
-    char_sheet_div.appendChild(action_tokens_div);
-    var action_tokens_table = document.createElement('table');
-    action_tokens_div.appendChild(action_tokens_table);
-    var action_tokens_tr1 = document.createElement('tr');
-    action_tokens_tr1.setAttribute('class', 'tokens-header');
-    var action_tokens_tr2 = document.createElement('tr');
-    action_tokens_tr2.setAttribute('class', 'tokens-number');
-    action_tokens_table.appendChild(action_tokens_tr1);
-    action_tokens_table.appendChild(action_tokens_tr2);
+    Tokens_builder(action_tokens_list);
+    Tokens_builder(tokens_list);
 
-    //action tokens
-    action_tokens_list.forEach(function(){
-      
-    });
-
-    function tokens_builder(item) {
-      //tokens header
-      var tokens_header_td = document.createElement('td');
-      tokens_header_td.innerHTML = item;
-      tokens_tr1.appendChild(tokens_header_td);
-      var tokens_number_td = document.createElement('td');
-      let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
-      let tokens_increase_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'increase', '+').button;
-      var tokens_number = document.createElement('span');
-      tokens_number.innerHTML = 0;
-      tokens_number.setAttribute('id', item);
-
-      tokens_number_td.appendChild(tokens_reduce_btn);
-      tokens_number_td.appendChild(tokens_number);
-      tokens_number_td.appendChild(tokens_increase_btn);
-      tokens_tr2.appendChild(tokens_number_td);
-    }
-    
     //tokens builder
-    var tokens_div = document.createElement('div');
-    tokens_div.setAttribute('class', 'tokens');
-    char_sheet_div.appendChild(tokens_div);
-    var tokens_table = document.createElement('table');
-    tokens_div.appendChild(tokens_table);
-    var tokens_tr1 = document.createElement('tr');
-    tokens_tr1.setAttribute('class', 'tokens-header');
-    var tokens_tr2 = document.createElement('tr');
-    tokens_tr2.setAttribute('class', 'tokens-number');
-    tokens_table.appendChild(tokens_tr1);
-    tokens_table.appendChild(tokens_tr2);
+    function Tokens_builder(list) {
 
-    //tokens
-    action_tokens_list.forEach(tokens_builder);
+      var action_tokens_div = document.createElement('div');
+      action_tokens_div.setAttribute('class', 'tokens');
+      var action_tokens_table = document.createElement('table');
+      action_tokens_div.appendChild(action_tokens_table);
+      var action_tokens_tr1 = document.createElement('tr');
+      action_tokens_tr1.setAttribute('class', 'tokens-header');
+      var action_tokens_tr2 = document.createElement('tr');
+      action_tokens_tr2.setAttribute('class', 'tokens-number');
+      action_tokens_table.appendChild(action_tokens_tr1);
+      action_tokens_table.appendChild(action_tokens_tr2);
+      char_sheet_div.appendChild(action_tokens_div);
 
-    function tokens_builder(item) {
-      //tokens header
-      var tokens_header_td = document.createElement('td');
-      tokens_header_td.innerHTML = item;
-      tokens_tr1.appendChild(tokens_header_td);
-      var tokens_number_td = document.createElement('td');
-      let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
-      let tokens_increase_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'increase', '+').button;
-      var tokens_number = document.createElement('span');
-      tokens_number.innerHTML = 0;
-      tokens_number.setAttribute('id', item);
 
-      tokens_number_td.appendChild(tokens_reduce_btn);
-      tokens_number_td.appendChild(tokens_number);
-      tokens_number_td.appendChild(tokens_increase_btn);
-      tokens_tr2.appendChild(tokens_number_td);
+      list.forEach(function (item) {
+        var tokens_header_td = document.createElement('td');
+        tokens_header_td.innerHTML = item;
+        action_tokens_tr1.appendChild(tokens_header_td);
+        var tokens_number_td = document.createElement('td');
+        let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
+        let tokens_increase_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'increase', '+').button;
+        var tokens_number = document.createElement('span');
+        tokens_number.innerHTML = 0;
+        tokens_number.setAttribute('id', item);
+
+        tokens_number_td.appendChild(tokens_reduce_btn);
+        tokens_number_td.appendChild(tokens_number);
+        tokens_number_td.appendChild(tokens_increase_btn);
+        action_tokens_tr2.appendChild(tokens_number_td);
+      });
     }
+
+    
+    //actions
+    var action_div = document.createElement('div');
+    action_div.setAttribute('class', 'actions-container');
+    let action_btn_1 = document.createElement('button');
+    action_btn_1.innerHTML = 'Trade';
+    action_btn_1.setAttribute('onclick', "console.log('Trade action selected')")
+    let action_btn_2 = document.createElement('button');
+    action_btn_2.innerHTML = 'Adquire';
+    action_btn_2.setAttribute('onclick', "console.log('Adquire action selected')")
+    let action_btn_3 = document.createElement('button');
+    action_btn_3.innerHTML = 'Delayed';
+    action_btn_3.setAttribute('onclick', "console.log('Delayed action selected')")
+    action_div.appendChild(action_btn_1);
+    action_div.appendChild(action_btn_2);
+    action_div.appendChild(action_btn_3);
 
     //locations
     var location_div = document.createElement('div');
-    location_div.setAttribute('class', 'location_container');
-
+    location_div.setAttribute('class', 'location-container');
     var location_btn = document.createElement('button');
     location_btn.setAttribute('id', 'location');
-    // location_btn.setAttribute('value', '');
     location_btn.setAttribute('option', 'move');
     location_btn.setAttribute('player', 'player' + (row + 1));
-    // location_btn.setAttribute('action', 'increase');
-    location_btn.setAttribute('onclick', 'Selector(this)');
+    location_btn.setAttribute('onclick', 'Controller(this)');
     location_btn.innerHTML = 'current location';
-
     location_div.appendChild(location_btn);
+    
+    
+    char_sheet_div.appendChild(action_div);
     char_sheet_div.appendChild(location_div);
 
-    //actions
-    var action_div = document.createElement('div');
-    action_div.setAttribute('id', 'actions_dropdown');
-    var action_table = document.createElement('table');
-    action_div.appendChild(action_table);
-    var action_tr = document.createElement('tr');
-    action_table.appendChild(action_tr);
-
-    for (var a = 0; a < 3; a++) {
-      var action_td = document.createElement('td');
-      action_td.setAttribute('id', 'action' + (a + 1));
-      action_td.appendChild(Actions_builder(a + 1));
-      action_tr.appendChild(action_td);
-    }
-    char_sheet_div.appendChild(action_div);
   }
 }

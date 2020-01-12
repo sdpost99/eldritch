@@ -7,7 +7,7 @@ function players_RAW() {
     'ship',
     'train',
   ];
-  
+
   var token_list = [
     'clue',
     'eldritch'
@@ -73,7 +73,10 @@ function players_RAW() {
       'unique_assets': ['Death XIII'],
       'personal_story': 'Final Analysis',
       'original_location': 'RM',
-      'abilities': ['Action: You or another investigator on your space may discard 1 Madness Condition and/or perform a Rest Action', 'When another investigator performs a Rest Action on your space, they may gain 1 additional Sanity.']
+      'abilities': [
+        'Action: You or another investigator on your space may discard 1 Madness Condition and/or perform a Rest Action',
+        'When another investigator performs a Rest Action on your space, they may gain 1 additional Sanity.'
+      ]
     },
     'Luke Robinson': {
       'health': 4,
@@ -122,7 +125,6 @@ function players_RAW() {
   data.playersData = characters_list;
   data.action_tokens = action_token_list;
   data.tokens = token_list;
-  // data.actions = action_list;
 
   return data;
 

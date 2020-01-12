@@ -1,7 +1,15 @@
+.sheets{
+  background-color: red;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 .chars_sheet {
   border: 1px solid black;
   width: 350px;
-  /*   width: 100%; */
+  margin: 0;
+  padding: 0;
   cursor: default;
 }
 
@@ -98,8 +106,10 @@
 }
 
 .location-container {
-  background-color: lightcoral;
+/*   background-color: lightcoral; */
   margin: 0 9px;
+  margin-bottom: 10px;
+/*   padding: 10px; */
 }
 
 #location {
@@ -112,8 +122,4 @@
 .tokens-header {
   background-color: #202727;
   color: rgb(200, 200, 200);
-}
-
-.sheets {
-  padding: 0 5px;
 }

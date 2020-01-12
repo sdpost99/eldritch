@@ -10,163 +10,255 @@
 </head>
 
 <body>
-  <div class="chars_sheet" id="char_sheet1">
-    <div id="player1" class="player">player1</div>
-    <div id="char_name0">
-      <div class="char_drop_div"><select onchange="Selector(this)" player="player1" option="character">
-          <option value="start">Select Character</option>
-          <option value="Zoe Samaras">Zoe Samaras</option>
-          <option value="Caroline Fern">Caroline Fern</option>
-          <option value="Luke Robinson">Luke Robinson</option>
-          <option value="Vincent Lee">Vincent Lee</option>
-        </select></div>
-    </div>
-    <div class="abilities">
-      <ul>
-        <li id="ability_01"></li>
-        <li id="ability_02"></li>
-      </ul>
-    </div>
-    <div class="att-container">
-      <div class="att-HnS">
-        <div class="att-max-container">
-          <div>Max Health:</div>
-          <div id="max-health">0</div>
-        </div>
-        <div class="att-number-container" id="att-number-health"><button value="health" option="heal" player="player1" action="reduce" onclick="Selector(this)">-</button>
-          <div id="health" class="att-number">8</div><button value="health" option="heal" player="player1" action="increase" onclick="Selector(this)">+</button>
-        </div>
-      </div>
-      <div class="att-rest-cont">
-        <div class="att-rest-btn-cont"><button option="rest" player="player1" action="increase" onclick="Selector(this)">Simple Rest</button></div>
-        <div class="att-rest-label-cont"><button value="" option="spend_rest_resource" player="player1" action="increase" onclick="Selector(this)">Rest spending resources</button></div>
-        <div class="att-rest-label-type-cont">
-          <div class="att-rest-label-health-cont"><label>health</label></div>
-          <div class="att-rest-label-sanity-cont"><label>sanity</label></div>
-        </div>
-        <div class="att-rest-numbers-cont">
-          <div><button value="health_resource" option="rest_resource" player="player1" action="reduce" onclick="Selector(this)">-</button><label id="health_resource">0</label><button value="health_resource" option="rest_resource" player="player1"
-              action="increase" onclick="Selector(this)">+</button></div>
-          <div><button value="sanity_resource" option="rest_resource" player="player1" action="reduce" onclick="Selector(this)">-</button><label id="sanity_resource">0</label><button value="sanity_resource" option="rest_resource" player="player1"
-              action="increase" onclick="Selector(this)">+</button></div>
-        </div>
-      </div>
-      <div class="att-HnS">
-        <div class="att-max-container">
-          <div>Max Sanity:</div>
-          <div id="max-sanity">0</div>
-        </div>
-        <div class="att-number-container" id="att-number-sanity"><button value="sanity" option="heal" player="player1" action="reduce" onclick="Selector(this)">-</button>
-          <div id="sanity" class="att-number">8</div><button value="sanity" option="heal" player="player1" action="increase" onclick="Selector(this)">+</button>
-        </div>
-      </div>
-    </div>
-    <div class="skills">
-      <table>
-        <tr class="skills-header">
-          <td id="lore-bg">lore</td>
-          <td id="inf-bg">inf</td>
-          <td id="obs-bg">obs</td>
-          <td id="str-bg">str</td>
-          <td id="will-bg">will</td>
-        </tr>
-        <tr>
-          <td id="max-lore">0</td>
-          <td id="max-inf">0</td>
-          <td id="max-obs">0</td>
-          <td id="max-str">0</td>
-          <td id="max-will">0</td>
-        </tr>
-        <tr class="skills-number">
-          <td><button value="lore" option="skills" player="player1" action="reduce" onclick="Selector(this)">-</button><span id="lore">0</span><button value="lore" option="skills" player="player1" action="increase" onclick="Selector(this)">+</button>
-          </td>
-          <td><button value="inf" option="skills" player="player1" action="reduce" onclick="Selector(this)">-</button><span id="inf">0</span><button value="inf" option="skills" player="player1" action="increase" onclick="Selector(this)">+</button>
-          </td>
-          <td><button value="obs" option="skills" player="player1" action="reduce" onclick="Selector(this)">-</button><span id="obs">0</span><button value="obs" option="skills" player="player1" action="increase" onclick="Selector(this)">+</button>
-          </td>
-          <td><button value="str" option="skills" player="player1" action="reduce" onclick="Selector(this)">-</button><span id="str">0</span><button value="str" option="skills" player="player1" action="increase" onclick="Selector(this)">+</button>
-          </td>
-          <td><button value="will" option="skills" player="player1" action="reduce" onclick="Selector(this)">-</button><span id="will">0</span><button value="will" option="skills" player="player1" action="increase" onclick="Selector(this)">+</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="tokens">
-      <table>
-        <tr class="tokens-header">
-          <td>focus</td>
-          <td>resource</td>
-          <td>ship</td>
-          <td>train</td>
-        </tr>
-        <tr class="tokens-number">
-          <td>
-            <button>-</button>
-            <span id="focus">0</span>
-            <button>+</button>
-          </td>
-          <td>
-            <button>-</button>
-            <span id="resource">0</span>
-            <button>+</button>
-          </td>
-          <td>
-            <button>-</button>
-            <span id="ship">0</span>
-            <button>+</button>
-          </td>
-          <td>
-            <button>-</button>
-            <span id="train">0</span>
-            <button>+</button>
-          </td>
-        </tr>
-      </table>
-      <table>
-        <tr class="tokens-header">
-          <td>clues</td>
-          <td>eldritch</td>
-        </tr>
-        <tr class="tokens-number">
-          <td>
-            <button>-</button>
-            <span id="clue">0</span>
-            <button>+</button>
-          </td>
-          <td>
-            <button>-</button>
-            <span id="eldritch">0</span>
-            <button>+</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="actions-container">
-      <button>Trade</button>
-      <button>Adquire</button>
-      <button>Delayed</button>
-    </div>
-    <div class="location-container">
-      <button id="location">current location</button>
-    </div>
-    <div class="available-actions-main-container">
-      <div class="available-actions-header">Available Actions</div>
-      <div class="available-actions-container">
-        <div id="av-move">Move</div>
-        <div id="av-rest">Rest</div>
-        <div id="av-adquire">Adquire</div>
-        <div id="av-trade">Trade</div>
-        <div id="av-action">Actions</div>
-      </div>
-      <div class="available-actions-container">
-        <div id="av-focus">Focus</div>
-        <div id="av-resource">Resource</div>
-        <div id="av-ship">Ship</div>
-        <div id="av-train">Train</div>
-        <div id="av-delayed">Delayed</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td class="sheets" id="p1">
+          <div class="chars_sheet" id="char_sheet1">
+            <div id="player1" class="player">player1</div>
+            <div id="char_name0">
+              <div class="char_drop_div"><select onchange="Selector(this)" player="player1" option="character">
+                  <option value="start">Select Character</option>
+                  <option value="Zoe Samaras">Zoe Samaras</option>
+                  <option value="Caroline Fern">Caroline Fern</option>
+                  <option value="Luke Robinson">Luke Robinson</option>
+                  <option value="Vincent Lee">Vincent Lee</option>
+                </select></div>
+            </div>
+            <div class="abilities">
+              <ul>
+                <li id="ability_01"></li>
+                <li id="ability_02"></li>
+              </ul>
+            </div>
+            <div class="att-container">
+              <div class="att-HnS">
+                <div class="att-max-container">
+                  <div>Max Health:</div>
+                  <div id="max-health">0</div>
+                </div>
+                <div class="att-number-container" id="att-number-health"><button value="health" option="heal"
+                    player="player1" action="reduce" onclick="Selector(this)">-</button>
+                  <div id="health" class="att-number">8</div><button value="health" option="heal" player="player1"
+                    action="increase" onclick="Selector(this)">+</button>
+                </div>
+              </div>
+              <div class="att-rest-cont">
+                <div class="att-rest-btn-cont"><button option="rest" player="player1" action="increase"
+                    onclick="Selector(this)">Simple Rest</button></div>
+                <div class="att-rest-label-cont"><button value="" option="spend_rest_resource" player="player1"
+                    action="increase" onclick="Selector(this)">Rest spending resources</button></div>
+                <div class="att-rest-label-type-cont">
+                  <div class="att-rest-label-health-cont"><label>health</label></div>
+                  <div class="att-rest-label-sanity-cont"><label>sanity</label></div>
+                </div>
+                <div class="att-rest-numbers-cont">
+                  <div><button value="health_resource" option="rest_resource" player="player1" action="reduce"
+                      onclick="Selector(this)">-</button><label id="health_resource">0</label><button
+                      value="health_resource" option="rest_resource" player="player1" action="increase"
+                      onclick="Selector(this)">+</button></div>
+                  <div><button value="sanity_resource" option="rest_resource" player="player1" action="reduce"
+                      onclick="Selector(this)">-</button><label id="sanity_resource">0</label><button
+                      value="sanity_resource" option="rest_resource" player="player1" action="increase"
+                      onclick="Selector(this)">+</button></div>
+                </div>
+              </div>
+              <div class="att-HnS">
+                <div class="att-max-container">
+                  <div>Max Sanity:</div>
+                  <div id="max-sanity">0</div>
+                </div>
+                <div class="att-number-container" id="att-number-sanity"><button value="sanity" option="heal"
+                    player="player1" action="reduce" onclick="Selector(this)">-</button>
+                  <div id="sanity" class="att-number">8</div><button value="sanity" option="heal" player="player1"
+                    action="increase" onclick="Selector(this)">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="skills">
+              <table>
+                <tr class="skills-header">
+                  <td id="lore-bg">lore</td>
+                  <td id="inf-bg">inf</td>
+                  <td id="obs-bg">obs</td>
+                  <td id="str-bg">str</td>
+                  <td id="will-bg">will</td>
+                </tr>
+                <tr>
+                  <td id="max-lore">0</td>
+                  <td id="max-inf">0</td>
+                  <td id="max-obs">0</td>
+                  <td id="max-str">0</td>
+                  <td id="max-will">0</td>
+                </tr>
+                <tr class="skills-number">
+                  <td>
+                    <button>-</button>
+                    <span id="lore">0</span>
+                    <button>+</button>
+                  </td>
+                  <td><button>-</button>
+                    <span id="inf">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="obs">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="str">0</span>
+                    <button>+</button>
+                  </td>
+                  <td><button>-</button>
+                    <span id="will">0</span>
+                    <button>+</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="tokens">
+              <table>
+                <tr class="tokens-header">
+                  <td>focus</td>
+                  <td>resource</td>
+                  <td>ship</td>
+                  <td>train</td>
+                </tr>
+                <tr class="tokens-number">
+                  <td>
+                    <button>-</button>
+                    <span id="focus">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="resource">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="ship">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="train">0</span>
+                    <button>+</button>
+                  </td>
+                </tr>
+              </table>
+              <table>
+                <tr class="tokens-header">
+                  <td>clues</td>
+                  <td>eldritch</td>
+                </tr>
+                <tr class="tokens-number">
+                  <td>
+                    <button>-</button>
+                    <span id="clue">0</span>
+                    <button>+</button>
+                  </td>
+                  <td>
+                    <button>-</button>
+                    <span id="eldritch">0</span>
+                    <button>+</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="actions-container">
+              <button>Trade</button>
+              <button>Adquire</button>
+              <button>Delayed</button>
+            </div>
+
+
+            <div class="location-container">
+              <button id="location">current location</button>
+            </div>
+            <div class="available-actions-main-container">
+              <div class="available-actions-header">Available Actions</div>
+              <div class="available-actions-container">
+                <div id="av-move">Move</div>
+                <div id="av-rest">Rest</div>
+                <div id="av-adquire">Adquire</div>
+                <div id="av-trade">Trade</div>
+                <div id="av-action">Actions</div>
+              </div>
+              <div class="available-actions-container">
+                <div id="av-focus">Focus</div>
+                <div id="av-resource">Resource</div>
+                <div id="av-ship">Ship</div>
+                <div id="av-train">Train</div>
+                <div id="av-delayed">Delayed</div>
+              </div>
+            </div>
+          </div>
+          <div class="items-container">
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Artifacts</div>
+              <div class="items-subcontainer" id="artifacts">
+                <div>artifact item1</div>
+                <div>artifact item2</div>
+                <div>artifact item2</div>
+              </div>
+            </div>
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Assets</div>
+              <div class="items-subcontainer" id="assets">
+                <div>Dream Diary
+                  Gain +1Lore during Other World Encounters.
+                  When you perform a Rest action, spawn 1 Clue.
+                </div>
+                <div>asset item2</div>
+              </div>
+            </div>
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Conditions</div>
+              <div class="items-subcontainer" id="conditions">
+                <div>item1</div>
+                <div>item1</div>
+                <div>item1</div>
+              </div>
+            </div>
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Spells</div>
+              <div class="items-subcontainer" id="spells">
+                <div>spells item1</div>
+                <div>spells item2</div>
+              </div>
+            </div>
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Unique Assets</div>
+              <div class="items-subcontainer" id="unique">
+                <div>unique item1</div>
+                <div>unique item2</div>
+                <div>unique item2</div>
+                <div>unique item2</div>
+                <div>unique item2</div>
+              </div>
+            </div>
+
+            <div class="items-subcontainer2">
+              <div class="items-header">Personal Story</div>
+              <div class="items-subcontainer" id="personal">
+                <div>personal item1</div>
+                <div>personal item2</div>
+              </div>
+            </div>
+
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
 </html>
