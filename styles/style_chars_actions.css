@@ -1,0 +1,80 @@
+
+.actions-container {
+  /*   background-color: brown; */
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 9px;
+  margin-bottom: 10px;
+}
+
+.actions-container button {
+  /*   background-color: darkseagreen; */
+  /*   color: black; */
+  width: 32%;
+  padding: 5px 0;
+}
+
+.available-actions-main-container {
+  margin: 10px 9px;
+  border: 1px solid black;
+}
+
+.available-actions-header {
+  text-align: center;
+  background-color: brown;
+}
+
+.available-actions-container {
+  display: flex;
+  margin: 5px;
+}
+
+.available-actions-container div {
+  background-color: lightblue;
+  color: black;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+#av-move {
+  /*     display: none; */
+}
+
+#av-rest {
+  /* display: none; */
+}
+
+#av-adquire {
+  /* display: none; */
+}
+
+#av-trade {
+  /* display: none; */
+}
+
+#av-action {
+  /* display: none; */
+}
+
+#av-focus {
+  /* display: none; */
+}
+
+#av-resource {
+  /* display: none; */
+}
+
+#av-ship {
+  /* display: none; */
+}
+
+#av-train {
+  /* display: none; */
+}
+
+#av-delayed {
+  /* display: none; */
+}

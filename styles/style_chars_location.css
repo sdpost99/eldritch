@@ -1,0 +1,15 @@
+
+.location-container {
+    /*   background-color: lightcoral; */
+      margin: 0 9px;
+      margin-bottom: 10px;
+    /*   padding: 10px; */
+    }
+    
+    #location {
+      font-size: 16px;
+      background-color: #264124;
+      padding: 6px 0;
+      width: 100%;
+    }
+    

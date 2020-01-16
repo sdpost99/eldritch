@@ -1,6 +1,10 @@
 @import './style_rest_modal.css';
 @import './style_chars_sheet.css';
-@import './style_chars_sheet_new.css';
+@import './style_chars_actions.css';
+@import './style_chars_cards.css';
+@import './style_chars_attributes.css';
+@import './style_chars_abilities.css';
+@import './style_chars_location.css';
 
 body,
 button {
