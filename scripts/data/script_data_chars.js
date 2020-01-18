@@ -66,12 +66,12 @@ function players_RAW() {
         'clue': 7,
         'eldritch': 0
       },
-      'artifacts': [],
-      'assets': ['Dream Diary'],
+      'artifacts': ['alien_device','black_book'],
+      'assets': ['dream_diary'],
       'conditions': [],
       'spells': [],
-      'unique_assets': ['Death XIII'],
-      'personal_story': 'Final Analysis',
+      'unique_assets': [],
+      'personal_story': '',
       'original_location': 'RM',
       'abilities': [
         'Action: You or another investigator on your space may discard 1 Madness Condition and/or perform a Rest Action',

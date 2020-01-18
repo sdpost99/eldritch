@@ -30,6 +30,8 @@
   <script src="./scripts/script_buttons_Factory.js"></script>
   <script src="./scripts/script_Move.js"></script>
   <script src="./scripts/script_Move_modal.js"></script>
+  <script src="./scripts/script_cards.js"></script>
+  <script src="./scripts/data/script_data_cards.js"></script>
   <div>
     <select id="n_players" onchange="UI_builder(this)">
       <!-- <option value="0">Players</option> -->
@@ -48,103 +50,6 @@
   </div>
 
     <div class="sheets" id="p1">
-      <div class="tab-container">
-        <div class="tab">
-          <button class="tablinks" onmousedown="openCity(event, 'artifacts')">Artifacts</button>
-          <button class="tablinks" onmousedown="openCity(event, 'assets')">Assets</button>
-          <button class="tablinks" onmousedown="openCity(event, 'conditions')">Conditions</button>
-          <button class="tablinks" onmousedown="openCity(event, 'spells')">Spells</button>
-          <button class="tablinks" onmousedown="openCity(event, 'unique')">Unique Assets</button>
-          <button class="tablinks" onmousedown="openCity(event, 'personal')">Personal Story</button>
-        </div>
-
-        <div id="artifacts" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>Artifacts</b>
-          </div>
-          <div>
-            <div class="items-container2">
-              <div class="item">
-                <h4>
-                  Dream Diary
-                </h4>
-                <div>
-                  Gain +1Lore during Other World Encounters.<br><br>
-                  When you perform a Rest action, spawn 1 Clue.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="assets" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>Assets</b>
-          </div>
-
-          <div class="items-container2">
-            <div class="item">
-              <h4>
-                artifact item 2
-              </h4>
-              <div>
-                descripcion de item
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="conditions" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>
-              Conditions
-            </b>
-          </div>
-          <div class="items-container2">
-            <div>No tienes condiciones</div>
-          </div>
-        </div>
-
-        <div id="spells" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>
-              Spells
-            </b>
-          </div>
-          <div class="items-container2">
-            <div>No tienes condiciones</div>
-          </div>
-        </div>
-
-        <div id="unique" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>
-              Unique Assets
-            </b>
-          </div>
-          <div class="items-container2">
-            <div>No tienes condiciones</div>
-          </div>
-        </div>
-
-        <div id="personal" class="tabcontent">
-          <div class="tabcontent-header">
-            <b>
-              Personal Story
-            </b>
-          </div>
-          <div class="item">
-            <h4>
-              artifact item 2
-            </h4>
-            <div>
-              descripcion de item
-            </div>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
     </div>
 
     
@@ -216,6 +121,7 @@
 
     <script>
       var rawData = players_RAW();
+      var rawCardsData = cards_Data();
       var newData = {};
       var rawData_Locations = Locations_RAW();
       var gameProp = game_properties();

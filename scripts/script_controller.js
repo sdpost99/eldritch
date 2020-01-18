@@ -27,9 +27,10 @@ function Controller(args) {
             Tokens(args);
             break;
         case 'move':
-            console.log('move');
             Move(args);
             break;
+        case 'cards':
+            Cards(args);
     }
 }
 

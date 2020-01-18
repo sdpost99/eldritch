@@ -106,7 +106,6 @@ function UI_builder(players) {
     abilities_div.appendChild(abilities_ul);
     char_sheet_div.appendChild(abilities_div);
 
-
     //new attributes test
     let att_main_div = document.createElement('div');
     att_main_div.setAttribute('class', 'att-container')
@@ -319,7 +318,7 @@ function UI_builder(players) {
       });
     }
 
-    
+
     //actions
     var action_div = document.createElement('div');
     action_div.setAttribute('class', 'actions-container');
@@ -346,10 +345,75 @@ function UI_builder(players) {
     location_btn.setAttribute('onclick', 'Controller(this)');
     location_btn.innerHTML = 'current location';
     location_div.appendChild(location_btn);
-    
-    
+
+
     char_sheet_div.appendChild(action_div);
     char_sheet_div.appendChild(location_div);
+
+
+    //cards builder
+
+    let cards_type_list = ['artifacts', 'assets', 'conditions', 'spells', 'unique', 'personal'];
+    let cards_container = document.createElement('div');
+    cards_container.setAttribute('class', 'tab-container');
+    let cards_div = document.createElement('div');
+    cards_div.setAttribute('class', 'tab');
+
+    cards_type_list.forEach(function (item) {
+      let cardType_btn = document.createElement('button');
+      cardType_btn.setAttribute('class', 'tablinks');
+      // cardType_btn.setAttribute('onmousedown', 'openCity(event,' + '"' + item + '"' + ')');
+
+
+      cardType_btn.setAttribute('value', item);
+      cardType_btn.setAttribute('option', 'cards');
+      cardType_btn.setAttribute('player', 'player' + (row + 1));
+      // cardType_btn.setAttribute('action', action);
+      cardType_btn.setAttribute('onclick', 'Controller(this)');
+
+      cardType_btn.innerHTML = item;
+      cards_div.appendChild(cardType_btn);
+
+    });
+    cards_container.appendChild(cards_div);
+
+
+
+    cards_type_list.forEach(function (item, index) {
+      let card_content = document.createElement('div');
+      card_content.setAttribute('id', item);
+      card_content.setAttribute('class', 'tabcontent');
+      let card_content_header = document.createElement('div');
+      card_content_header.setAttribute('class', 'tabcontent-header');
+      card_content_header.innerHTML = item;
+
+      let card_container_items = document.createElement('div');
+      card_container_items.setAttribute('class', 'items-container2');
+      // let card_item = document.createElement('div');
+      // card_item.setAttribute('class', 'item');
+      // let card_item_header = document.createElement('h4');
+      // card_item_header.setAttribute('id', item + (index + 1) + '_header');
+      // card_item_header.innerHTML = 'XXXXXX';
+      // let card_item_text = document.createElement('div');
+      // card_item_text.setAttribute('id', item + (index + 1) + '_text');
+      // card_item_text.innerHTML = 'Gain +1Lore during Other World Encounters. When you perform a Rest action, spawn 1 Clue'
+
+
+      // card_item.appendChild(card_item_header);
+      // card_item.appendChild(card_item_text);
+      // card_container_items.appendChild(card_item);
+
+      card_content.appendChild(card_content_header);
+      card_content.appendChild(card_container_items);
+
+      cards_container.appendChild(card_content);
+    });
+
+
+
+
+    newChar.appendChild(cards_container);
+
 
   }
 }

@@ -77,4 +77,7 @@ function NewData_Factory(args) {
     Printer(player, 'train', player_att.tokens.train);
     Printer(player, 'clue', player_att.tokens.clue);
     Printer(player, 'eldritch', player_att.tokens.eldritch);
+    Printer_cards(player, 'cards', newData[player].cards);
+
+
 }
