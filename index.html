@@ -47,6 +47,7 @@
 
     <button type="button" onclick="Logger()">newData</button>
     <button type="button" onclick="Logger2()">rawData</button>
+    <button type="button" onclick="addCard()">add a Card</button>
   </div>
 
     <div class="sheets" id="p1">
@@ -135,6 +136,15 @@
 
       function Logger2() {
         console.log(rawData);
+      }
+
+      function addCard(){
+        
+        newData.player1.cards.conditions = ['xxx'];
+        // console.log(newData.player1.cards);
+        // console.log(AdquireCards('player1', newData.player1.cards));
+        Printer_cards('player1', 'cards', newData.player1.cards);
+
       }
 
       function openCity(evt, cityName) {

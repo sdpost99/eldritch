@@ -27,7 +27,7 @@ function cards_Data() {
         'black_book': {
             'name': 'Black Book',
 
-            'tags': ['Item','Tome'],
+            'tags': ['Item', 'Tome'],
 
             'effect': true,
             'effect_text': null,
@@ -42,7 +42,7 @@ function cards_Data() {
             'reroll_text': null,
 
             'additional_dice': false,
-            
+
             'reckoning': false,
         }
     }
@@ -53,7 +53,7 @@ function cards_Data() {
 
             'cost': 1,
 
-            'tags': ['Item','Tome'],
+            'tags': ['Item', 'Tome'],
 
             'effect': true,
             'effect_text': 'When you perform a Rest action, spawn 1 Clue.',
@@ -68,12 +68,22 @@ function cards_Data() {
             'reroll_text': null,
 
             'additional_dice': false,
-            
+
             'reckoning': false,
         }
     }
 
+    var cardTypes = [
+        'artifacts',
+        'assets',
+        'conditions',
+        'spells',
+        'unique_assets',
+        'personal_story'
+    ]
+
     data.artifacts = artifacts;
     data.assets = assets;
+    data.cardTypes = cardTypes;
     return data;
 }

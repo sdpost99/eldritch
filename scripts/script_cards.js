@@ -14,29 +14,29 @@ function Cards(args) {
   // console.log("Output: Cards -> action", action)
 
   let sel_att_value = newData[player].cards[value];
-  console.log("Output: Cards -> sel_att_value", sel_att_value);
-  console.log('');
+  // console.log("Output: Cards -> sel_att_value", sel_att_value);
+  // // console.log('');
 
-  let adder = ['name', 'tags', 'effect_text', 'action_text', 'skill_bonus_text', 'reroll_text', 'reckoning'];
-  var results = [];
-  sel_att_value.forEach(element => {
-    var result_text = [];
+  // let adder = ['name', 'tags', 'effect_text', 'action_text', 'skill_bonus_text', 'reroll_text', 'reckoning'];
+  // var results = [];
+  // sel_att_value.forEach(element => {
+  //   var result_text = [];
 
-    adder.forEach(att => {
-      let adder_temp = rawCardsData[value][element][att];
-      if (adder_temp != null) {
-        // console.log("Output: Cards -> adder_temp", adder_temp)
-        result_text.push(adder_temp);
-      }
-    })
+  //   adder.forEach(att => {
+  //     let adder_temp = rawCardsData[value][element][att];
+  //     if (adder_temp != null) {
+  //       // console.log("Output: Cards -> adder_temp", adder_temp)
+  //       result_text.push(adder_temp);
+  //     }
+  //   })
 
-    console.log('');
+  //   console.log('');
     
-    results.push(result_text);
+  //   results.push(result_text);
 
 
-  });
-  console.log("Output: Cards -> result_text", results);
+  // });
+  // console.log("Output: Cards -> result_text", results);
 
 
   // let sel_att_value_top = newData[player].attributes[value + '_max'];
