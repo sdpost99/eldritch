@@ -67,7 +67,7 @@ function players_RAW() {
         'eldritch': 0
       },
       'artifacts': ['alien_device','black_book'],
-      'assets': ['dream_diary'],
+      'assets': ['dream_diary','charter_flight'],
       'conditions': [],
       'spells': [],
       'unique_assets': [],

@@ -48,119 +48,127 @@
     <button type="button" onclick="Logger()">newData</button>
     <button type="button" onclick="Logger2()">rawData</button>
     <button type="button" onclick="addCard()">add a Card</button>
+    <button type="button" onclick="removeCard()">remove a Card</button>
   </div>
 
-    <div class="sheets" id="p1">
-    </div>
+  <div class="sheets" id="p1">
+  </div>
 
-    
-    <div class="sheets" id="p2"></div>
-    <div class="sheets" id="p3"></div>
-    <div class="sheets" id="p4"></div>
-    <div class="sheets" id="p5"></div>
-    <div class="sheets" id="p6"></div>
-    <div class="sheets" id="p7"></div>
-    <div class="sheets" id="p8"></div>
 
-    <div class="modal-blocker">
+  <div class="sheets" id="p2"></div>
+  <div class="sheets" id="p3"></div>
+  <div class="sheets" id="p4"></div>
+  <div class="sheets" id="p5"></div>
+  <div class="sheets" id="p6"></div>
+  <div class="sheets" id="p7"></div>
+  <div class="sheets" id="p8"></div>
 
-      <div class="modal-container" id="modal-rest">
-        <div class="modal-header" id="modal-drag-rest">
-          Character Rest Options
-        </div>
-        <div class="modal-content">
-          <div class="modal-title">
-            <p>Available resources:<span id="av_res"></span></p>
-          </div>
-          <div class="row">
-            <div class="column" name='rest'>
-              <div class="sub-title">Select amount of resources:</div>
-              <div id="rest_radio"></div>
-            </div>
-          </div>
+  <div class="modal-blocker">
 
-          <div class="modal-buttons">
-            <button id="rest_health_btn">Restore Health</button>
-            <button id="rest_sanity_btn">Restore Sanity</button>
-            <button id="rest_cancel_btn">Cancel</button>
-          </div>
-
-        </div>
+    <div class="modal-container" id="modal-rest">
+      <div class="modal-header" id="modal-drag-rest">
+        Character Rest Options
       </div>
-
-      <div class="modal-container" id="modal-move">
-        <div class="modal-header" id="modal-drag-move">
-          Character Movement Options
+      <div class="modal-content">
+        <div class="modal-title">
+          <p>Available resources:<span id="av_res"></span></p>
         </div>
-        <div class="modal-content">
-          <div class="modal-title">
-            <p>Current Location: <span id="cl"></span></p>
+        <div class="row">
+          <div class="column" name='rest'>
+            <div class="sub-title">Select amount of resources:</div>
+            <div id="rest_radio"></div>
           </div>
-          <div class="row">
-            <div class="column" name='move'>
-              <div class="sub-title">Available movements:</div>
-              <div id="move-normal-radio"></div>
-            </div>
-            <div class="column" name='move'>
-              <div class="sub-title">Extra ship movements:</div>
-              <div id="move-ship-radio"></div>
-            </div>
-            <div class="column" name='move'>
-              <div class="sub-title">Extra train movements:</div>
-              <div id="move-train-radio"></div>
-            </div>
-          </div>
-
-          <div class="modal-buttons">
-            <button id="move-accept-btn">Move</button>
-            <button id="move-cancel-btn">Cancel</button>
-          </div>
-
         </div>
+
+        <div class="modal-buttons">
+          <button id="rest_health_btn">Restore Health</button>
+          <button id="rest_sanity_btn">Restore Sanity</button>
+          <button id="rest_cancel_btn">Cancel</button>
+        </div>
+
       </div>
     </div>
 
-    <script>
-      var rawData = players_RAW();
-      var rawCardsData = cards_Data();
-      var newData = {};
-      var rawData_Locations = Locations_RAW();
-      var gameProp = game_properties();
+    <div class="modal-container" id="modal-move">
+      <div class="modal-header" id="modal-drag-move">
+        Character Movement Options
+      </div>
+      <div class="modal-content">
+        <div class="modal-title">
+          <p>Current Location: <span id="cl"></span></p>
+        </div>
+        <div class="row">
+          <div class="column" name='move'>
+            <div class="sub-title">Available movements:</div>
+            <div id="move-normal-radio"></div>
+          </div>
+          <div class="column" name='move'>
+            <div class="sub-title">Extra ship movements:</div>
+            <div id="move-ship-radio"></div>
+          </div>
+          <div class="column" name='move'>
+            <div class="sub-title">Extra train movements:</div>
+            <div id="move-train-radio"></div>
+          </div>
+        </div>
 
-      dragElement(document.getElementById("modal-drag-move"));
-      dragElement(document.getElementById("modal-drag-rest"));
+        <div class="modal-buttons">
+          <button id="move-accept-btn">Move</button>
+          <button id="move-cancel-btn">Cancel</button>
+        </div>
 
-      function Logger() {
-        console.log(newData);
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var rawData = players_RAW();
+    var rawCardsData = cards_Data();
+    var newData = {};
+    var rawData_Locations = Locations_RAW();
+    var gameProp = game_properties();
+
+    dragElement(document.getElementById("modal-drag-move"));
+    dragElement(document.getElementById("modal-drag-rest"));
+
+    function Logger() {
+      console.log(newData);
+    }
+
+    function Logger2() {
+      console.log(rawData);
+    }
+
+    function addCard() {
+      var newItem = {}
+      var newItem2 = {}
+      newItem['assets'] = ['_18_derringer'];
+      newItem2['assets'] = ['enchanted_dagger'];
+      // newItem['assets'] = ['dream_diary'];
+      AddCard('player1', newItem);
+      AddCard('player1', newItem2);
+    }
+
+    function removeCard(){
+      removeItem = {};
+      removeItem['assets'] = ['_18_derringer'];
+      RemoveCard('player1', removeItem);
+    }
+
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
       }
-
-      function Logger2() {
-        console.log(rawData);
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace("active", "");
       }
-
-      function addCard(){
-        
-        newData.player1.cards.conditions = ['xxx'];
-        // console.log(newData.player1.cards);
-        // console.log(AdquireCards('player1', newData.player1.cards));
-        Printer_cards('player1', 'cards', newData.player1.cards);
-
-      }
-
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace("active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += "active";
-      }
-    </script>
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += "active";
+    }
+  </script>
 </body>
 
 </html>
