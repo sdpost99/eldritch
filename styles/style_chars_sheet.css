@@ -19,12 +19,13 @@
   background-color: #171c1c;
   text-align: center;
   color: rgb(200, 200, 200);
+  font-size: 14px;
 }
 
 .chars_sheet select {
   border: none;
   border-bottom: 1px solid black;
-  font-size: 24px;
+  font-size: 20px;
   padding: 5px 10px;
   width: 100%;
   box-sizing: border-box;

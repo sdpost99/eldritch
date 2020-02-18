@@ -57,7 +57,7 @@
   .tabcontent {
     padding: 5px;
     /* desactivar para visualizar sin hover */
-    /* display: none; */
+    display: none;
     font-size: 11px;
     background-color: orange;
     color: black;

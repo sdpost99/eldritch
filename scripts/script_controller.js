@@ -29,8 +29,6 @@ function Controller(args) {
         case 'move':
             Move(args);
             break;
-        case 'cards':
-            Cards(args);
     }
 }
 

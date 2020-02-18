@@ -1,6 +1,21 @@
 function cards_Data() {
     let data = {};
 
+    var unique_assets = {
+        'death_xiii' : {
+            'name': 'Death XIII',
+            'cost': false,
+            'tags': ['Trinket','Tarot'],
+            'effect': 'Whenever a Mystery is solved, retreat Doom by 1.',
+            'action': false,
+            'skill_bonus': false,
+            'reroll': false,
+            'additional_dice': false,
+            'one_shot': false,
+            'reckoning': false
+        }
+    }
+
     var artifacts = {
         'alien_device': {
             'name': 'Alien  Device',
@@ -14,7 +29,6 @@ function cards_Data() {
             'one_shot': false,
             'reckoning': false
         },
-
         'black_book': {
             'name': 'Black Book',
             'cost': false,
@@ -66,6 +80,18 @@ function cards_Data() {
             'one_shot': false,
             'reckoning': false,
         },
+        'holy_cross': {
+            'name': 'Holy Cross',
+            'cost': 'Cost: 2',
+            'tags': ['Item'],
+            'effect': 'Gain +2 Will during Combat Encounters.',
+            'action': false,
+            'skill_bonus': false,
+            'reroll': false,
+            'additional_dice': false,
+            'one_shot': false,
+            'reckoning': false,
+        },
         '_18_derringer': {
             'name': '.18 Derringer',
             'cost': 'Cost: 1',
@@ -101,6 +127,7 @@ function cards_Data() {
 
     data.artifacts = artifacts;
     data.assets = assets;
+    data.unique_assets = unique_assets;
     data.cardTypes = cardTypes;
     data.cardInfo = cardInfo;
     return data;

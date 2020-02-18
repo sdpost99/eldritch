@@ -45,6 +45,12 @@ function players_RAW() {
         'clue': 5,
         'eldritch': 6
       },
+      'artifacts': [],
+      'assets': ['holy_cross'],
+      'conditions': [],
+      'spells': [],
+      'unique_assets': [],
+      'personal_story': '',
       'original_location': 'RM',
       'abilities': ['Action: If you have fewer than 2 Task Assets, gain 1 Task Unique Asset.', 'If you have not lost Sanity during a Combat Encounter, roll 2 additional dice when resolving the Strength test during that encounter.']
     },
@@ -66,11 +72,11 @@ function players_RAW() {
         'clue': 7,
         'eldritch': 0
       },
-      'artifacts': ['alien_device','black_book'],
-      'assets': ['dream_diary','charter_flight'],
+      'artifacts': [],
+      'assets': ['dream_diary'],
       'conditions': [],
       'spells': [],
-      'unique_assets': [],
+      'unique_assets': ['death_xiii'],
       'personal_story': '',
       'original_location': 'RM',
       'abilities': [
