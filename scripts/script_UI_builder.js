@@ -302,7 +302,25 @@ function UI_builder(players) {
 
       list.forEach(function (item) {
         var tokens_header_td = document.createElement('td');
-        tokens_header_td.innerHTML = item;
+
+        if(item == 'clue' || item == 'eldritch'){
+
+          tokens_header_td.innerHTML = item + 'xx';
+        } else {
+          var tokens_header_btn = document.createElement('button');
+          tokens_header_btn.innerHTML = item;
+          
+          tokens_header_btn.setAttribute('value', item);
+          tokens_header_btn.setAttribute('option', 'tokens');
+          tokens_header_btn.setAttribute('player', 'player' + (row + 1));
+          tokens_header_btn.setAttribute('action', 'increase');
+          // tokens_header_btn.button.setAttribute('text', 'increase');
+          tokens_header_btn.setAttribute('onclick', 'Controller(this)');
+          // innerHeight
+          
+          tokens_header_td.appendChild(tokens_header_btn);
+        }
+
         action_tokens_tr1.appendChild(tokens_header_td);
         var tokens_number_td = document.createElement('td');
         let tokens_reduce_btn = new Buttons_Factory(item, 'tokens', (row + 1), 'reduce', '-').button;
