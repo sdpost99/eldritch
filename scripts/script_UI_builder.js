@@ -303,13 +303,13 @@ function UI_builder(players) {
       list.forEach(function (item) {
         var tokens_header_td = document.createElement('td');
 
-        if(item == 'clue' || item == 'eldritch'){
+        if (item == 'clue' || item == 'eldritch') {
 
           tokens_header_td.innerHTML = item + 'xx';
         } else {
           var tokens_header_btn = document.createElement('button');
           tokens_header_btn.innerHTML = item;
-          
+
           tokens_header_btn.setAttribute('value', item);
           tokens_header_btn.setAttribute('option', 'tokens');
           tokens_header_btn.setAttribute('player', 'player' + (row + 1));
@@ -317,7 +317,7 @@ function UI_builder(players) {
           // tokens_header_btn.button.setAttribute('text', 'increase');
           tokens_header_btn.setAttribute('onclick', 'Controller(this)');
           // innerHeight
-          
+
           tokens_header_td.appendChild(tokens_header_btn);
         }
 
@@ -365,12 +365,58 @@ function UI_builder(players) {
     location_div.appendChild(location_btn);
 
 
+    //actions display builder
+    var actions_display_div = document.createElement('div');
+    actions_display_div.setAttribute('class', 'available-actions-main-container');
+
+    var actions_display_header_div = document.createElement('div');
+    actions_display_header_div.innerHTML = 'Available Actions';
+    actions_display_header_div.setAttribute('class', 'available-actions-header');
+
+    var actions_display_row1_div = document.createElement('div');
+    var actions_display_row2_div = document.createElement('div');
+    var actions_display_row3_div = document.createElement('div');
+    actions_display_row1_div.setAttribute('class', 'available-actions-container');
+    actions_display_row2_div.setAttribute('class', 'available-actions-container');
+    actions_display_row3_div.setAttribute('class', 'available-actions-container');
+
+    var actions_list1 = ['Move', 'Rest', 'Adquire', 'Trade', 'Action'];
+    var actions_list2 = ['Local Action', 'Focus', 'Resource', 'Ticket', 'Delayed'];
+    var actions_list3 = ['Lost in Time and Space', 'Detained'];
+
+    actions_list1.forEach(function (item) {
+      var actions_display_item = document.createElement('div');
+      actions_display_item.setAttribute('id', 'av-'+ item);
+      actions_display_item.innerHTML = item;
+      actions_display_row1_div.appendChild(actions_display_item);
+    });
+    actions_list2.forEach(function (item) {
+      var actions_display_item = document.createElement('div');
+      actions_display_item.setAttribute('id', 'av-'+ item);
+      actions_display_item.innerHTML = item;
+      actions_display_row2_div.appendChild(actions_display_item);
+    });
+    actions_list3.forEach(function (item) {
+      var actions_display_item = document.createElement('div');
+      actions_display_item.setAttribute('id', 'av-'+ item);
+      actions_display_item.innerHTML = item;
+      actions_display_row3_div.appendChild(actions_display_item);
+    });
+
+
+
+    actions_display_div.appendChild(actions_display_header_div);
+    actions_display_div.appendChild(actions_display_row1_div);
+    actions_display_div.appendChild(actions_display_row2_div);
+    actions_display_div.appendChild(actions_display_row3_div);
+    
+
     char_sheet_div.appendChild(action_div);
     char_sheet_div.appendChild(location_div);
+    char_sheet_div.appendChild(actions_display_div);
 
 
     //cards builder
-
     let cards_type_list = ['artifacts', 'assets', 'conditions', 'spells', 'unique_assets', 'personal'];
     let cards_container = document.createElement('div');
     cards_container.setAttribute('class', 'tab-container');

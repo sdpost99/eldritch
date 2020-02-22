@@ -53,6 +53,23 @@ function NewData_Factory(args) {
     newData[player].actions.health_resource = 0;
     newData[player].actions.sanity_resource = 0;
 
+    newData[player].available_actions = {};
+    newData[player].available_actions.move = undefined;
+    newData[player].available_actions.rest = undefined;
+    newData[player].available_actions.adquire = undefined;
+    newData[player].available_actions.trade = undefined;
+    newData[player].available_actions.action = undefined;
+    newData[player].available_actions.local_action = undefined;
+    newData[player].available_actions.focus = undefined;
+    newData[player].available_actions.resource = undefined;
+    newData[player].available_actions.train = undefined;
+    newData[player].available_actions.ship = undefined;
+    newData[player].available_actions.delayed = undefined;
+    newData[player].available_actions.detained = undefined;
+    newData[player].available_actions.lost = undefined;
+    Actions(player);
+
+
 
     Printer(player, 'health', player_att.health);
     Printer(player, 'max-health', player_att.health);

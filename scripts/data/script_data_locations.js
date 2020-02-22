@@ -299,7 +299,21 @@ function Locations_RAW() {
       'IS': 'train',
       's14': 'train'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['xxx'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   }
   locations.IS = {
     'name': 'Istanbul, Turkey',

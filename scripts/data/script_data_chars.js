@@ -38,12 +38,12 @@ function players_RAW() {
         'inf': 2
       },
       'tokens': {
-        'focus': 2,
-        'resource': 1,
+        'focus': 0,
+        'resource': 0,
         'ship': 0,
-        'train': 1,
-        'clue': 5,
-        'eldritch': 6
+        'train': 0,
+        'clue': 0,
+        'eldritch': 0
       },
       'artifacts': [],
       'assets': ['holy_cross'],
@@ -66,10 +66,10 @@ function players_RAW() {
       },
       'tokens': {
         'focus': 0,
-        'resource': 2,
-        'ship': 1,
+        'resource': 0,
+        'ship': 0,
         'train': 0,
-        'clue': 7,
+        'clue': 0,
         'eldritch': 0
       },
       'artifacts': [],
@@ -99,8 +99,8 @@ function players_RAW() {
         'resource': 0,
         'ship': 0,
         'train': 0,
-        'clue': 7,
-        'eldritch': 3
+        'clue': 2,
+        'eldritch': 0
       },
       'original_location': 'AR',
       'abilities': ['Action: Move to a space containing a Gate that corresponds to the current Omen.', 'During the Encounter Phase, you may spend 1 Focus or 1 Sanity to encounter a Gate on your space as if there are no Monsters on your space.']
@@ -120,8 +120,8 @@ function players_RAW() {
         'resource': 0,
         'ship': 0,
         'train': 0,
-        'clue': 6,
-        'eldritch': 4
+        'clue': 1,
+        'eldritch': 0
       },
       'original_location': 's17',
       'abilities': ['Action: You or another investigator on you space may discard 1 Injury or Illness Condition and/or perform a Rest action.', 'When you or another investigator on your space performs a Rest action, that investigator may recover 1 additional Health.']
@@ -138,10 +138,10 @@ function players_RAW() {
 
 function game_properties() {
   var data = {};
-  data.focus = 6;
-  data.train = 5;
-  data.ship = 4;
-  data.resource = 10;
+  data.focus = 2;
+  data.train = 1;
+  data.ship = 1;
+  data.resource = 2;
   data.clue = 100;
   data.eldritch = 100;
   return data;
