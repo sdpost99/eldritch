@@ -305,7 +305,7 @@ function UI_builder(players) {
 
         if (item == 'clue' || item == 'eldritch') {
 
-          tokens_header_td.innerHTML = item + 'xx';
+          tokens_header_td.innerHTML = item;
         } else {
           var tokens_header_btn = document.createElement('button');
           tokens_header_btn.innerHTML = item;
@@ -381,8 +381,8 @@ function UI_builder(players) {
     actions_display_row3_div.setAttribute('class', 'available-actions-container');
 
     var actions_list1 = ['Move', 'Rest', 'Adquire', 'Trade', 'Action'];
-    var actions_list2 = ['Local Action', 'Focus', 'Resource', 'Ticket', 'Delayed'];
-    var actions_list3 = ['Lost in Time and Space', 'Detained'];
+    var actions_list2 = ['Local', 'Focus', 'Resource', 'Ticket'];
+    var actions_list3 = ['Delayed', 'Lost', 'Detained'];
 
     actions_list1.forEach(function (item) {
       var actions_display_item = document.createElement('div');

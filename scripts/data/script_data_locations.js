@@ -160,7 +160,21 @@ function Locations_RAW() {
       's15': 'ship',
       's20': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : [],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s18 = {
     'name': "Antartic Lands (sp.18)",
@@ -245,7 +259,21 @@ function Locations_RAW() {
       'SY': 'ship',
       's12': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : [],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.SF = {
     'name': 'San Francisco, USA',
@@ -267,7 +295,21 @@ function Locations_RAW() {
       's9': 'ship',
       'LN': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : [],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.BA = {
     'name': 'Buenos Aires, Argentina',
@@ -304,7 +346,7 @@ function Locations_RAW() {
       'focus': 0,
       'clues': 0,
       'eldritch': 0,
-      'enemies' : ['xxx'],
+      'enemies' : ['mostro'],
       'players': [],
       'gate': [],
       'rumors': [],

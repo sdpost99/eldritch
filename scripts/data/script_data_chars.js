@@ -102,6 +102,12 @@ function players_RAW() {
         'clue': 2,
         'eldritch': 0
       },
+      'artifacts': [],
+      'assets': [],
+      'conditions': [],
+      'spells': [],
+      'unique_assets': [],
+      'personal_story': '',
       'original_location': 'AR',
       'abilities': ['Action: Move to a space containing a Gate that corresponds to the current Omen.', 'During the Encounter Phase, you may spend 1 Focus or 1 Sanity to encounter a Gate on your space as if there are no Monsters on your space.']
     },
@@ -123,7 +129,14 @@ function players_RAW() {
         'clue': 1,
         'eldritch': 0
       },
-      'original_location': 's17',
+      'artifacts': [],
+      'assets': [],
+      'conditions': [],
+      'spells': [],
+      'unique_assets': [],
+      'personal_story': '',
+      // 'original_location': 's17',
+      'original_location': 'AN',
       'abilities': ['Action: You or another investigator on you space may discard 1 Injury or Illness Condition and/or perform a Rest action.', 'When you or another investigator on your space performs a Rest action, that investigator may recover 1 additional Health.']
     }
   };

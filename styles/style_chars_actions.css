@@ -39,42 +39,50 @@
   font-size: 12px;
 }
 
-#av-move {
-  /*     display: none; */
+#av-Move {
+  display: none;
 }
 
-#av-rest {
-  /* display: none; */
+#av-Rest {
+  display: none;
 }
 
-#av-adquire {
-  /* display: none; */
+#av-Adquire {
+  display: none;
 }
 
-#av-trade {
-  /* display: none; */
+#av-Trade {
+  display: none;
 }
 
-#av-action {
-  /* display: none; */
+#av-Action {
+  display: none;
 }
 
-#av-focus {
-  /* display: none; */
+#av-Local {
+  display: none;
 }
 
-#av-resource {
-  /* display: none; */
+#av-Focus {
+  display: none;
 }
 
-#av-ship {
-  /* display: none; */
+#av-Resource {
+  display: none;
 }
 
-#av-train {
-  /* display: none; */
+#av-Ticket {
+  display: none;
 }
 
-#av-delayed {
-  /* display: none; */
+#av-Delayed {
+  display: none;
+}
+
+#av-Lost {
+  display: none;
+}
+
+#av-Detained {
+  display: none;
 }
