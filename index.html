@@ -35,7 +35,7 @@
   <script src="./scripts/script_Actions.js"></script>
   <div>
     <select id="n_players" onchange="UI_builder(this)">
-      <!-- <option value="0">Players</option> -->
+      <option value="0">Players</option>
       <option value="1">1 Player</option>
       <option value="2">2 Players</option>
       <!-- <option value="3">3 Players</option> -->
@@ -48,6 +48,7 @@
 
     <button type="button" onclick="Logger()">newData</button>
     <button type="button" onclick="Logger2()">rawData</button>
+    <button type="button" onclick="Logger3()">rawLocationData</button>
     <button type="button" onclick="addCard()">add a Card</button>
     <button type="button" onclick="removeCard()">remove a Card</button>
   </div>
@@ -138,6 +139,10 @@
 
     function Logger2() {
       console.log(rawData);
+    }
+
+    function Logger3(){
+      console.log(rawData_Locations);
     }
 
     function addCard() {

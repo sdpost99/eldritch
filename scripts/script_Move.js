@@ -55,6 +55,12 @@ function Move(args) {
     } else {
       Moving(newLocation, 'normal', data);
     }
+
+    let playerLocation = newData[data.player].current_location;
+    let location = rawData_Locations[playerLocation]
+    console.log("Output: Move -> location", location.name)
+    console.log("Output: Move -> location", location.content.players)
+  
   }
 
   function Moving(newLocation, type) {
@@ -70,5 +76,4 @@ function Move(args) {
 
   }
 
-  console.log(newData[data.player].attributes);
 }

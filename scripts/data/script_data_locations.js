@@ -26,7 +26,21 @@ function Locations_RAW() {
       'SF': 'ship',
       'TK': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s3 = {
     'name': "Oceanic Pole (sp.3",
@@ -34,7 +48,21 @@ function Locations_RAW() {
       'BA': 'ship',
       'SY': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s4 = {
     'name': "Providence, Canada (sp.4)",
@@ -42,7 +70,21 @@ function Locations_RAW() {
       's1': 'uncharted',
       's5': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s5 = {
     'name': "Chicago, USA (sp.5)",
@@ -51,7 +93,21 @@ function Locations_RAW() {
       'AR': 'train',
       's4': 'uncharted'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s6 = {
     'name': "Texas, USA (sp.6)",
@@ -60,7 +116,21 @@ function Locations_RAW() {
       'AR': 'train',
       's7': 'train'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s7 = {
     'name': "Panama (sp.7)",
@@ -71,7 +141,21 @@ function Locations_RAW() {
       's6': 'train',
       's8': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s8 = {
     'name': "Bermuda Triangle (sp.8)",
@@ -81,14 +165,42 @@ function Locations_RAW() {
       's7': 'ship',
       's10': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s9 = {
     'name': "Greenland (sp.9)",
     'conn': {
       'AR': 'ship'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s10 = {
     'name': "Dakar, Senegal (sp.10)",
@@ -98,7 +210,21 @@ function Locations_RAW() {
       's8': 'ship',
       's15': 'ship'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s11 = {
     'name': "Tristan de Cunha (sp.11",
@@ -106,7 +232,21 @@ function Locations_RAW() {
       'BA': 'ship',
       's15': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s12 = {
     'name': "Sandwich Island (sp.12)",
@@ -114,14 +254,42 @@ function Locations_RAW() {
       'BA': 'ship',
       'AN': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s13 = {
     'name': "Artic Circle (sp.13)",
     'conn': {
       'LN': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s14 = {
     'name': "Helsinski, Finland (sp.14)",
@@ -129,7 +297,21 @@ function Locations_RAW() {
       'RM': 'train',
       's16': 'train'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s15 = {
     'name': "Cape Town, S. Africa (sp.15)",
@@ -140,7 +322,21 @@ function Locations_RAW() {
       's17': 'ship',
       's18': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s16 = {
     'name': "Krasnoyark, Rusia (sp.16)",
@@ -149,7 +345,21 @@ function Locations_RAW() {
       'TG': 'train',
       's14': 'train'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s17 = {
     'name': "Bombay, India (sp.17)",
@@ -182,7 +392,21 @@ function Locations_RAW() {
       'SY': 'ship',
       's15': 'ship'
     },
-    'type': 'sea'
+    'type': 'sea',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s19 = {
     'name': "Beringovsky, Rusia (sp.19)",
@@ -192,7 +416,21 @@ function Locations_RAW() {
       'TK': 'ship',
       's1': 'ship'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s20 = {
     'name': "Makassar, Indonesia (sp.20)",
@@ -202,14 +440,42 @@ function Locations_RAW() {
       'SY': 'ship',
       's17': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.s21 = {
     'name': "Uluru, Australia (sp.21)",
     'conn': {
       'SY': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.AM = {
     'name': "The Amazon, Brazil",
@@ -217,7 +483,21 @@ function Locations_RAW() {
       'BA': 'uncharted',
       's7': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.PY = {
     'name': 'The Pyramids, Egypt',
@@ -227,7 +507,21 @@ function Locations_RAW() {
       'HA': 'uncharted',
       's10': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.HA = {
     'name': 'The Heart of Africa, Congo',
@@ -235,7 +529,21 @@ function Locations_RAW() {
       'PY': 'uncharted',
       's15': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.HM = {
     'name': 'The Himalayas, China',
@@ -243,7 +551,21 @@ function Locations_RAW() {
       'SH': 'uncharted',
       's17': 'uncharted'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.TG = {
     'name': 'Tunguska, Rusia',
@@ -251,7 +573,21 @@ function Locations_RAW() {
       's16': 'train',
       's19': 'train'
     },
-    'type': 'wild'
+    'type': 'wild',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.AN = {
     'name': 'Antarctica',
@@ -284,7 +620,21 @@ function Locations_RAW() {
       's6': 'train',
       's7': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.AR = {
     'name': 'Arkham, USA',
@@ -321,7 +671,21 @@ function Locations_RAW() {
       's11': 'ship',
       's12': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.LN = {
     'name': 'London, England',
@@ -330,7 +694,21 @@ function Locations_RAW() {
       'AR': 'ship',
       'RM': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.RM = {
     'name': 'Rome, Italy',
@@ -365,7 +743,21 @@ function Locations_RAW() {
       'RM': 'train',
       'PY': 'train'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.TK = {
     'name': 'Tokyo, Japan',
@@ -375,7 +767,21 @@ function Locations_RAW() {
       's2': 'ship',
       's20': 'ship'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.SH = {
     'name': 'Shanghai, China',
@@ -386,7 +792,21 @@ function Locations_RAW() {
       's19': 'train',
       'HM': 'uncharted'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   locations.SY = {
     'name': 'Sydney, Australia',
@@ -397,7 +817,21 @@ function Locations_RAW() {
       's20': 'ship',
       's21': 'uncharted'
     },
-    'type': 'city'
+    'type': 'city',
+    'content': {
+      'focus': 0,
+      'clues': 0,
+      'eldritch': 0,
+      'enemies' : ['mostro'],
+      'players': [],
+      'gate': [],
+      'rumors': [],
+      'expedition': false,
+      'mystic': false,
+      'adventure': false,
+      'dream': false,
+      'devastation': false
+    }
   };
   return locations;
 }

@@ -15,6 +15,16 @@ function Actions(player) {
     let sheet = document.getElementById(player_sheet);
 
     var data = newData[player].available_actions;
+    let playerLocation = newData[player].current_location;
+    let playerName = newData[player].char;
+    let locationEnemies = rawData_Locations[playerLocation].content.enemies;
+    let locationPlayers = rawData_Locations[playerLocation].content.players;
+
+    locationPlayers.push(playerName);
+    rawData_Locations[playerLocation].content.players = locationPlayers;
+    
+    console.log("Output: Actions -> playerName", playerName);
+    console.log("Output: Actions -> locationPlayers", locationPlayers);
 
     //move 
     if (data.delayed != true) {
@@ -26,8 +36,6 @@ function Actions(player) {
 
     //rest
     if (data.delayed != true) {
-        let playerLocation = newData[player].current_location;
-        let locationEnemies = rawData_Locations[playerLocation].content.enemies;
 
         if (locationEnemies.length == 0) {
             newData[player].available_actions.rest = true;
